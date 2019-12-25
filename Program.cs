@@ -15,7 +15,8 @@ namespace PrivateSchool
         {
             PrivateSchool.Menu.selectFromMenu();
 
-            Console.ReadKey();
+            Console.WriteLine("Press any key to exit the program.");
+            Console.ReadKey(); 
         }
     }
 }
