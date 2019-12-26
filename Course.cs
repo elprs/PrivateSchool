@@ -10,15 +10,15 @@ namespace PrivateSchool
     {/// <summary>
 /// Contains the fields, the constructors and the methods of the class Course
 /// </summary>
-        private string Title { get; set; }
-        private string Stream { get; set; }
-        private string Type { get; set; }
-        private DateTime StartDate { get; set; }
-        private DateTime EndDate { get; set; }
-
-        private List<Student> courseStudents = new List<Student>();
-        private List<Trainer> courseTrainers = new List<Trainer>();
-        private List<AssignmentProject> courseAssignmentsProjects = new List<AssignmentProject>();
+        public string Title { get; set; }
+        public string Stream { get; set; }
+        public string Type { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public
+        List<Student> courseStudents = new List<Student>();
+        public List<Trainer> courseTrainers = new List<Trainer>();
+        public List<AssignmentProject> courseAssignmentsProjects = new List<AssignmentProject>();
 
         public Course()
         {
@@ -34,5 +34,18 @@ namespace PrivateSchool
             EndDate = endDate;
 
         }
+
+        public void FillCourseProperty()
+        {
+            
+            Title = "CB8";
+            Stream = "C#" ;
+            Type = "Part time";
+            StartDate = DateTime.Now;
+            EndDate = DateTime.Now;
+            Console.WriteLine("The course details are filled automatically");
+        }
+
+
     }
 }

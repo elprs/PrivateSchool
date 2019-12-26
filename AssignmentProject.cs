@@ -27,5 +27,16 @@ namespace PrivateSchool
             OralMark = oralMark;
             TotalMark = totalMark;
         }
+
+        public void FillAssignmentProjectProperty()
+        {
+            Title = "Assignment A";
+            Description = "Individual";
+            SubDateTime = DateTime.Now;
+            OralMark = 100.0f;
+            TotalMark = 100.0f;
+            Console.WriteLine("The assignment/project details are filled automatically");
+
+        }
     }
 }

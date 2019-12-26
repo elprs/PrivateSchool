@@ -8,11 +8,10 @@ namespace PrivateSchool
 {
     class PrivateSchool
     {
-        private List<Course> allCourses = new List<Course>();
-
-        private List<Student> allStudents = new List<Student>();
-        private List<Trainer> allTrainers = new List<Trainer>();
-        private List<AssignmentProject> allAssignmentsProjects = new List<AssignmentProject>();
+        public List<Course> allCourses = new List<Course>();
+        public List<Student> allStudents = new List<Student>();
+        public List<Trainer> allTrainers = new List<Trainer>();
+        public List<AssignmentProject> allAssignmentsProjects = new List<AssignmentProject>();
 
         public PrivateSchool()
         {

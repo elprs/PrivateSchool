@@ -21,5 +21,12 @@ namespace PrivateSchool
             FirstName = firstName;
             LastName = lastName;
         }
+
+        //Virtual method
+        public virtual void FillPersonProperty()
+        {
+            FirstName = "Giorgos";
+            LastName = "Kotopoulos";
+        }
     }
 }

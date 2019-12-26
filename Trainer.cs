@@ -16,12 +16,12 @@ namespace PrivateSchool
         {
 
         }
-
-
-
-
-
-
+        public override void FillPersonProperty()
+        {
+            FirstName = "Giorgos";
+            LastName = "Kotopoulos";
+            Subject subj = Subject.CSharp;
         }
+
     }
 }

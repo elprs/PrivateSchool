@@ -23,5 +23,13 @@ namespace PrivateSchool
             DateOfBirth = dateOfBirth;
             TuitionFees = fees;
         }
+
+        public override void FillPersonProperty()
+        {
+            FirstName = "Giorgos";
+            LastName = "Kotopoulos";
+            DateOfBirth = DateTime.Now;
+            TuitionFees = 1000;
+        }
     }
 }
