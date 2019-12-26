@@ -10,8 +10,8 @@ namespace PrivateSchool
     {/// <summary>
     /// Contains the fields, the constructors and the methods of the child class Student
     /// </summary>
-        private DateTime DateOfBirth { get; set; }
-        private int TuitionFees { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public int TuitionFees { get; set; }
 
         public Student()
         {

@@ -10,8 +10,8 @@ namespace PrivateSchool
 /// </summary>
     class Person
     {
-        protected string FirstName { get; set; }
-        protected string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
         public Person()
         {}
