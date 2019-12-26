@@ -46,6 +46,7 @@
     <Compile Include="AssignmentProject.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Person.cs" />
+    <Compile Include="PrivateSchool.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Trainer.cs" />
