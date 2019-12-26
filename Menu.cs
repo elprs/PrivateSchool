@@ -13,6 +13,7 @@ namespace PrivateSchool
         static int showStartMenu()
         {
             int input = 1;
+            Console.WriteLine("Start Menu:");
             Console.WriteLine();
             Console.WriteLine("Press 0 to input inforamation.");
             Console.WriteLine("Press 1 to find/read information.");

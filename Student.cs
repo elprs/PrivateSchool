@@ -12,5 +12,16 @@ namespace PrivateSchool
     /// </summary>
         private DateTime DateOfBirth { get; set; }
         private int TuitionFees { get; set; }
+
+        public Student()
+        {
+
+        }
+
+        public Student(DateTime dateOfBirth, int fees)
+        {
+            DateOfBirth = dateOfBirth;
+            TuitionFees = fees;
+        }
     }
 }

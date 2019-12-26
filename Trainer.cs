@@ -11,5 +11,17 @@ namespace PrivateSchool
     class Trainer : Person
     {
         private enum Subject { CSharp, Java, HTML_CSS, SQL, JavaScript, BootstrapFramework, AngularJSReact, VersionControlGit, architecture, webServersApache, xUnit, UnixCommandLine, UiUXDesign, CloudBasedServices}
+
+        public Trainer()
+        {
+
+        }
+
+
+
+
+
+
+        }
     }
 }

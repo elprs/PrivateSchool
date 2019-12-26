@@ -14,6 +14,18 @@ namespace PrivateSchool
         private string Description { get; set; }
         private DateTime SubDateTime { get; set; }
         private float OralMark { get; set; }
-        private string TotalMark { get; set; }
+        private float TotalMark { get; set; }
+
+        public AssignmentProject()
+        { }
+
+        public AssignmentProject(string title, string description, DateTime subDateTime, float oralMark, float totalMark)
+        {
+            Title = title;
+            Description = description;
+            SubDateTime = subDateTime;
+            OralMark = oralMark;
+            TotalMark = totalMark;
+        }
     }
 }

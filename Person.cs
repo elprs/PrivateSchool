@@ -12,5 +12,14 @@ namespace PrivateSchool
     {
         protected string FirstName { get; set; }
         protected string LastName { get; set; }
+
+        public Person()
+        {}
+
+        public Person(string firstName, string lastName)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
     }
 }
