@@ -52,28 +52,15 @@ namespace PrivateSchool
         {
             List<Course> CourseSyntheticData = new List<Course>();
 
-           Course c1 = new Course();
-           Course c2 = new Course();
-           Course c3 = new Course();
-           Course c4 = new Course();
-           Course c5 = new Course();
-           Course c6 = new Course();
-           Course c7 = new Course();
-           Course c8 = new Course();
-           Course c9 = new Course();
+            for (int i = 0; i < 9; i++)
+            {
+                Course c1 = new Course(SyntheticData.GetSyntheticCourseTitle(), );
+                c1.Title = ;
+                CourseSyntheticData.Add(c1);
+
+            }
            
-
-           CourseSyntheticData.Add(c1);
-           CourseSyntheticData.Add(c2);
-           CourseSyntheticData.Add(c3);
-           CourseSyntheticData.Add(c4);
-           CourseSyntheticData.Add(c5);
-           CourseSyntheticData.Add(c6);
-           CourseSyntheticData.Add(c7);
-           CourseSyntheticData.Add(c8);
-           CourseSyntheticData.Add(c9);
-
-
+         
             return CourseSyntheticData;
 
         }
