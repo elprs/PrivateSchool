@@ -233,7 +233,7 @@ namespace PrivateSchool
         {
             List<int> StudentFees = new List<int>();
             
-                for(int i = 2000; i < 2600; i =+ 100)
+                for(int i = 2000; i < 2600; i += 100)
             {
                 StudentFees.Add(i);
             }
@@ -267,6 +267,7 @@ namespace PrivateSchool
             };
 
             Random ran = new Random();
+            
             return TrainerSubject[ran.Next(0, TrainerSubject.Count)];
         }
 

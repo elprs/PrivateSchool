@@ -61,22 +61,6 @@ namespace PrivateSchool
             Console.WriteLine("Please insert the title of the course.");
             c1.Title = Console.ReadLine();
 
-            if (c1.Title == "")
-            {
-                c1.FillCourseProperty();
-            }
-            else
-            {
-                Console.WriteLine("Please insert the stream of the course (CSharp or Java).");
-                c1.Stream = Console.ReadLine();
-                Console.WriteLine("Please insert the type of the course(Full time or Part time).");
-                c1.Type = Console.ReadLine();
-                Console.WriteLine("Please insert the Starting date of the course(eg. 10 - 10 - 2014 15:00:00");
-                c1.StartDate = Convert.ToDateTime(Console.ReadLine());
-                Console.WriteLine("Please insert the Starting date of the course(eg. 10 - 10 - 2014 15:00:00");
-                c1.EndDate = Convert.ToDateTime(Console.ReadLine());
-            }
-
             return c1;
         }
 
@@ -88,21 +72,7 @@ namespace PrivateSchool
             Console.WriteLine("Please insert the first name of the trainer.");
             t1.FirstName = Console.ReadLine();
 
-            if (t1.FirstName == "")
-            {
-                t1.FillCourseProperty();
-            }
-            else
-            {
-                Console.WriteLine("Please insert the stream of the course (CSharp or Java).");
-                t1.Stream = Console.ReadLine();
-                Console.WriteLine("Please insert the type of the course(Full time or Part time).");
-                t1.Type = Console.ReadLine();
-                Console.WriteLine("Please insert the Starting date of the course(eg. 10 - 10 - 2014 15:00:00");
-                t1.StartDate = Convert.ToDateTime(Console.ReadLine());
-                Console.WriteLine("Please insert the Starting date of the course(eg. 10 - 10 - 2014 15:00:00");
-                t1.EndDate = Convert.ToDateTime(Console.ReadLine());
-            }
+            
 
             return t1;
         }

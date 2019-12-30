@@ -18,9 +18,9 @@ namespace PrivateSchool
        
         public DateTime EndDate { get; set; } = new DateTime();
 
-        public List<Student> courseStudents = new List<Student>();
-        public List<Trainer> courseTrainers = new List<Trainer>();
-        public List<AssignmentProject> courseAssignmentsProjects = new List<AssignmentProject>();
+        public List<Student> CourseStudents = new List<Student>();
+        public List<Trainer> CourseTrainers = new List<Trainer>();
+        public List<AssignmentProject> CourseAssignmentsProjects = new List<AssignmentProject>();
 
         public Course()
         {
@@ -34,6 +34,10 @@ namespace PrivateSchool
             Type = type;
             StartDate = startDate;
             EndDate = endDate;
+            CourseStudents = courseStudents;
+            CourseTrainers = courseTrainers;
+            CourseAssignmentsProjects = courseAssignmentsProjects;
+
 
         }
 
@@ -65,11 +69,11 @@ namespace PrivateSchool
                 Console.WriteLine("StartDate : {0}.", Convert.ToString(course.StartDate));
                 Console.WriteLine("EndDate : {0}.", Convert.ToString(course.EndDate));
                 Console.WriteLine("The list of students is: " );
-                Student.PrintStudentSyntheticData(course.courseStudents); 
+                Student.PrintStudentSyntheticData(course.CourseStudents); 
                 Console.WriteLine("The list of trainers is: " );
-                Trainer.PrintTrainerSyntheticData(course.courseTrainers); 
+                Trainer.PrintTrainerSyntheticData(course.CourseTrainers); 
                 Console.WriteLine("The list of assignments/projects is: " );
-                AssignmentProject.PrintAssignementProjectSyntheticData(course.courseAssignmentsProjects);
+                AssignmentProject.PrintAssignementProjectSyntheticData(course.CourseAssignmentsProjects);
 
             }
 
