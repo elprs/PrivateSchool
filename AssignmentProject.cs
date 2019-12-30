@@ -10,11 +10,11 @@ namespace PrivateSchool
 /// </summary>
     class AssignmentProject
     {
-        private string Title { get; set; }
-        private string Description { get; set; }
-        private DateTime SubDateTime { get; set; }
-        private float OralMark { get; set; }
-        private float TotalMark { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public DateTime SubDateTime { get; set; }
+        public float OralMark { get; set; }
+        public float TotalMark { get; set; }
 
         public AssignmentProject()
         { }
@@ -28,15 +28,49 @@ namespace PrivateSchool
             TotalMark = totalMark;
         }
 
-        public void FillAssignmentProjectProperty()
+        public List<AssignmentProject> AssignmentProjectSyntheticData()
         {
-            Title = "Assignment A";
-            Description = "Individual";
-            SubDateTime = DateTime.Now;
-            OralMark = 100.0f;
-            TotalMark = 100.0f;
-            Console.WriteLine("The assignment/project details are filled automatically");
+            List<AssignmentProject> AssignmentProjectSyntheticData = new List<AssignmentProject>();
 
+            AssignmentProject ap1 = new AssignmentProject();
+            AssignmentProject ap2 = new AssignmentProject();
+            AssignmentProject ap3 = new AssignmentProject();
+            AssignmentProject ap4 = new AssignmentProject();
+            AssignmentProject ap5 = new AssignmentProject();
+            AssignmentProject ap6 = new AssignmentProject();
+            AssignmentProject ap7 = new AssignmentProject();
+            AssignmentProject ap8 = new AssignmentProject();
+            AssignmentProject ap9 = new AssignmentProject();
+            
+
+            AssignmentProjectSyntheticData.Add(ap1);
+            AssignmentProjectSyntheticData.Add(ap2);
+            AssignmentProjectSyntheticData.Add(ap3);
+            AssignmentProjectSyntheticData.Add(ap4);
+            AssignmentProjectSyntheticData.Add(ap5);
+            AssignmentProjectSyntheticData.Add(ap6);
+            AssignmentProjectSyntheticData.Add(ap7);
+            AssignmentProjectSyntheticData.Add(ap8);
+            AssignmentProjectSyntheticData.Add(ap9);
+            
+
+            return AssignmentProjectSyntheticData;
+
+        }
+
+        public void PrintAssignementProjectSyntheticData(List<AssignmentProject> assignmentProjectList)
+        {
+
+            foreach (var item in assignmentProjectList)
+            {
+                Console.WriteLine("Title : {0}.", item.Title);
+                Console.WriteLine("Description : {0}.", item.Description);
+                Console.WriteLine("SubDateTime : {0}.", item.SubDateTime);
+                Console.WriteLine("OralMark : {0}.", item.OralMark);
+                Console.WriteLine("TotalMark : {0}.", item.TotalMark);
+
+
+            }
         }
     }
 }
