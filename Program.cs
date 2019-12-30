@@ -13,6 +13,8 @@ namespace PrivateSchool
     {
         static void Main(string[] args)
         {
+
+
             PrivateSchool privateSchool = new PrivateSchool();
 
             int selection = Menu.GetMainMenuSelection();

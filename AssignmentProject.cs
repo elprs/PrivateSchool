@@ -28,44 +28,29 @@ namespace PrivateSchool
             TotalMark = totalMark;
         }
 
-        public List<AssignmentProject> AssignmentProjectSyntheticData()
+        public static List<AssignmentProject> AssignmentProjectListOfSyntheticData()
         {
-            List<AssignmentProject> AssignmentProjectSyntheticData = new List<AssignmentProject>();
+            List<AssignmentProject> AssignmentProjectListOfSyntheticData = new List<AssignmentProject>();
 
-            AssignmentProject ap1 = new AssignmentProject();
-            AssignmentProject ap2 = new AssignmentProject();
-            AssignmentProject ap3 = new AssignmentProject();
-            AssignmentProject ap4 = new AssignmentProject();
-            AssignmentProject ap5 = new AssignmentProject();
-            AssignmentProject ap6 = new AssignmentProject();
-            AssignmentProject ap7 = new AssignmentProject();
-            AssignmentProject ap8 = new AssignmentProject();
-            AssignmentProject ap9 = new AssignmentProject();
+            for (int i = 0; i < 9; i++)
+            {
+                AssignmentProject ap1 = new AssignmentProject();
+
+                AssignmentProjectListOfSyntheticData.Add(ap1);
+            }
             
-
-            AssignmentProjectSyntheticData.Add(ap1);
-            AssignmentProjectSyntheticData.Add(ap2);
-            AssignmentProjectSyntheticData.Add(ap3);
-            AssignmentProjectSyntheticData.Add(ap4);
-            AssignmentProjectSyntheticData.Add(ap5);
-            AssignmentProjectSyntheticData.Add(ap6);
-            AssignmentProjectSyntheticData.Add(ap7);
-            AssignmentProjectSyntheticData.Add(ap8);
-            AssignmentProjectSyntheticData.Add(ap9);
-            
-
-            return AssignmentProjectSyntheticData;
+            return AssignmentProjectListOfSyntheticData;
 
         }
 
-        public void PrintAssignementProjectSyntheticData(List<AssignmentProject> assignmentProjectList)
+        public static void PrintAssignementProjectSyntheticData(List<AssignmentProject> assignmentProjectList)
         {
 
             foreach (var item in assignmentProjectList)
             {
                 Console.WriteLine("Title : {0}.", item.Title);
                 Console.WriteLine("Description : {0}.", item.Description);
-                Console.WriteLine("SubDateTime : {0}.", item.SubDateTime);
+                Console.WriteLine("SubDateTime : {0}.", Convert.ToString(item.SubDateTime));
                 Console.WriteLine("OralMark : {0}.", item.OralMark);
                 Console.WriteLine("TotalMark : {0}.", item.TotalMark);
 
