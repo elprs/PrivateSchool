@@ -8,6 +8,7 @@ namespace PrivateSchool
 {
     class SyntheticData
     {
+       public static Random ran = new Random();
         //Course Synthetic Data ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         public static string GetSyntheticCourseTitle()
         {
@@ -23,7 +24,7 @@ namespace PrivateSchool
              "CB1",
              "CJ1"
             };
-            Random ran = new Random();
+            
             return CourseTitles[ran.Next(0, CourseTitles.Count)];
         }
 
@@ -34,7 +35,7 @@ namespace PrivateSchool
                 "Java", 
                 "C#"
             };
-            Random ran = new Random();
+            
             return CourseStream[ran.Next(0, CourseStream.Count)];
         }
 
@@ -45,7 +46,7 @@ namespace PrivateSchool
                 "Full Time",
                 "Part Time"
             };
-            Random ran = new Random();
+           
             return CourseType[ran.Next(0, CourseType.Count)];
         }
 
@@ -59,7 +60,7 @@ namespace PrivateSchool
                 
             };
            
-            Random ran = new Random();
+           
             return CourseStartDate[ran.Next(0, CourseStartDate.Count)];
         }
 
@@ -73,7 +74,7 @@ namespace PrivateSchool
 
             };
 
-            Random ran = new Random();
+            
             return CourseEndDate[ran.Next(0, CourseEndDate.Count)];
         }
 
@@ -91,7 +92,7 @@ namespace PrivateSchool
              "Project 2",
              
             };
-            Random ran = new Random();
+          
             return AssignmentProjectTitles[ran.Next(0, AssignmentProjectTitles.Count)];
         }
 
@@ -99,10 +100,10 @@ namespace PrivateSchool
         {
             List<string> AssignmentProjectDescription = new List<string>()
             {
-                "Indivudual",
+                "Individual",
                 "Team"
             };
-            Random ran = new Random();
+          
             return AssignmentProjectDescription[ran.Next(0, AssignmentProjectDescription.Count)];
         }
 
@@ -121,7 +122,7 @@ namespace PrivateSchool
                 12.7,
                 30.0
             };
-            Random ran = new Random();
+       
             return AssignmentProjectOralMark[ran.Next(0, AssignmentProjectOralMark.Count)];
         }
 
@@ -141,7 +142,6 @@ namespace PrivateSchool
                 20.0 + GetSyntheticAssignmentProjectOralMark()
             };
 
-            Random ran = new Random();
             return AssignmentProjectTotalMark[ran.Next(0, AssignmentProjectTotalMark.Count)];
         }
 
@@ -149,17 +149,16 @@ namespace PrivateSchool
         {
             List<DateTime> AssignmentProjectSubDateTime = new List<DateTime>()
             {
-                new DateTime(2020, 01, 10, 18, 00, 00),
-                new DateTime(2020, 02, 20, 17, 00, 00),
-                new DateTime(2020, 03, 30, 18, 00, 00),
-                new DateTime(2020, 04, 3, 17, 00, 00),
-                new DateTime(2020, 05, 4, 18, 00, 00),
-                new DateTime(2020, 06, 10, 18, 00, 00),
+                new DateTime(2020, 01, 10, 8, 00, 00),
+                new DateTime(2020, 02, 20, 9, 00, 00),
+                new DateTime(2020, 03, 30, 8, 00, 00),
+                new DateTime(2020, 04, 3, 9, 00, 00),
+                new DateTime(2020, 05, 4, 8, 00, 00),
+                new DateTime(2020, 06, 10, 8, 00, 00),
                 
 
             };
 
-            Random ran = new Random();
             return AssignmentProjectSubDateTime[ran.Next(0, AssignmentProjectSubDateTime.Count)];
         }
 
@@ -182,7 +181,7 @@ namespace PrivateSchool
              "Periklis"
 
             };
-            Random ran = new Random();
+          
             return PersonFirstNames[ran.Next(0, PersonFirstNames.Count)];
         }
 
@@ -204,7 +203,7 @@ namespace PrivateSchool
              "Perikleous"
 
             };
-            Random ran = new Random();
+           
             return PersonLastNames[ran.Next(0, PersonLastNames.Count)];
         }
 
@@ -225,7 +224,7 @@ namespace PrivateSchool
 
             };
 
-            Random ran = new Random();
+           
             return StudentDateOfBirth[ran.Next(0, StudentDateOfBirth.Count)];
         }
 
@@ -238,8 +237,6 @@ namespace PrivateSchool
                 StudentFees.Add(i);
             }
 
-
-            Random ran = new Random();
             return StudentFees[ran.Next(0, StudentFees.Count)];
         }
 
@@ -266,8 +263,6 @@ namespace PrivateSchool
               
             };
 
-            Random ran = new Random();
-            
             return TrainerSubject[ran.Next(0, TrainerSubject.Count)];
         }
 

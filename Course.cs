@@ -63,18 +63,25 @@ namespace PrivateSchool
 
             foreach (var course in courseList)
             {
-                Console.WriteLine("Title : {0}.", course.Title);
-                Console.WriteLine("Stream : {0}.", course.Stream);
-                Console.WriteLine("Type : {0}.", course.Type);
-                Console.WriteLine("StartDate : {0}.", Convert.ToString(course.StartDate));
-                Console.WriteLine("EndDate : {0}.", Convert.ToString(course.EndDate));
+                Console.WriteLine("Title : {0}", course.Title);
+                Console.WriteLine("Stream : {0}", course.Stream);
+                Console.WriteLine("Type : {0}", course.Type);
+                Console.WriteLine("StartDate : {0}", Convert.ToString(course.StartDate));
+                Console.WriteLine("EndDate : {0}", Convert.ToString(course.EndDate));
+
+                Console.ForegroundColor = ConsoleColor.Green; 
                 Console.WriteLine("The list of students is: " );
-                Student.PrintStudentSyntheticData(course.CourseStudents); 
+                Student.PrintStudentSyntheticData(course.CourseStudents);
+                
+
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("The list of trainers is: " );
                 Trainer.PrintTrainerSyntheticData(course.CourseTrainers); 
+
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("The list of assignments/projects is: " );
                 AssignmentProject.PrintAssignementProjectSyntheticData(course.CourseAssignmentsProjects);
-
+                Console.ForegroundColor = ConsoleColor.White;
             }
 
         }

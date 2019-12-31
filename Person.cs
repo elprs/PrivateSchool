@@ -49,8 +49,8 @@ namespace PrivateSchool
         {
             foreach (var item in personList)
             {
-                Console.WriteLine("First Name : {0}.", item.FirstName );
-                Console.WriteLine("Last Name : {0}.", item.LastName );
+                Console.WriteLine("First Name : {0}", item.FirstName );
+                Console.WriteLine("Last Name : {0}", item.LastName );
             }
         }
 

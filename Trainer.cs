@@ -45,9 +45,9 @@ class Trainer : Person
             
             foreach (var item in trainerList)
             {
-                Console.WriteLine("First Name : {0}.", item.FirstName);
-                Console.WriteLine("Last Name : {0}.", item.LastName);
-                Console.WriteLine("Subject : {0}.", Convert.ToString(item.Subject));
+                Console.WriteLine("First Name : {0}", item.FirstName);
+                Console.WriteLine("Last Name : {0}", item.LastName);
+                Console.WriteLine("Subject : {0}", Convert.ToString(item.Subject));
                 
             }
         }

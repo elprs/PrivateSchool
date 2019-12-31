@@ -38,9 +38,9 @@ namespace PrivateSchool
             //                //inserts a course to the list
             //                Course c1 = Menu.GetCourse();
             //                privateSchool.allCourses.Add(c1);
-            //                Console.WriteLine("A course in now added to the course list.");
+            //                Console.WriteLine("A course in now added to the course list");
 
-            //                Console.WriteLine("Would you like to add another course.\nPlease type yes or no.");
+            //                Console.WriteLine("Would you like to add another course.\nPlease type yes or no");
             //                yesORno = Console.ReadLine();
             //                addMore = Menu.AddMore(yesORno);
 
@@ -48,13 +48,13 @@ namespace PrivateSchool
             //            //........here you need to give an option to see all the menu again
             //            break;
             //        case 1:
-            //            //to insert a trainer.")" +
+            //            //to insert a trainer")" +
             //            break;
             //        case 2:
-            //            //to insert a student.")" +
+            //            //to insert a student")" +
             //            break;
             //        case 3:
-            //        //to insert an assignment/ project.");
+            //        //to insert an assignment/ project");
             //        case 4:
             //            //to see all the students.
             //            break;
@@ -82,7 +82,7 @@ namespace PrivateSchool
             //        case 12:
             //            //to see the students with more courses.
             //            break;
-            //        //exit.");
+            //        //exit");
             //        default:
             //            break;
 
