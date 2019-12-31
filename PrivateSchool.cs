@@ -31,16 +31,16 @@ namespace PrivateSchool
 
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("The list of students is: ");
-                Student.PrintStudentSyntheticData(course.CourseStudents);
+                PrivateSchool.PrintStudentData(course.CourseStudents);
 
 
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("The list of trainers is: ");
-                Trainer.PrintTrainerSyntheticData(course.CourseTrainers);
+                PrivateSchool.PrintTrainerData(course.CourseTrainers);
 
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("The list of assignments/projects is: ");
-                AssignmentProject.PrintAssignementProjectData(course.CourseAssignmentsProjects);
+                PrivateSchool.PrintAssignementProjectData(course.CourseAssignmentsProjects);
                 Console.ForegroundColor = ConsoleColor.White;
             }
 
@@ -98,11 +98,14 @@ namespace PrivateSchool
         public static int GetMenuSelection()
         {
             //initialised for test
-            int selection = 0;
-            //print menu
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("\t\t\tMenu");
-            Console.WriteLine("Please select an option by typing the number followed by the 'enter' key.");
+            int selection = -1;
+
+            do
+            {
+                //print menu
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("\tMenu");
+            Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("0. Input courses");
             Console.WriteLine("1. Input trainer");
@@ -119,88 +122,102 @@ namespace PrivateSchool
             Console.WriteLine("12. Output students per more courses");
             Console.WriteLine("13. Exit the program");
 
-            selection = Convert.ToInt32(Console.ReadLine());
 
 
 
 
-            //Get selection from user
+                //Get selection from user
+                try
+                {
+                    
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine("Please select an option \nby typing the number followed by the 'enter' key.");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        selection = Convert.ToInt32(Console.ReadLine());
 
-            //return the selection
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Your input was invalid.");
+                    Console.WriteLine();
+                } 
+
+            } while (!(selection >= 0 && selection <= 13));
+            
 
             return selection;
         }
-        //public static void ExecuteMenuSelection(int selection)
-        //{
 
-        //int selection = selection; ........
-        ////according to the user's selection, runs the appropriate method
 
-        //bool keepGoing = true;
-        //string yesORno = "yes";
-        //bool addMore = true;
+        public static void ExecuteMenuSelection(int inputedSelection)
+        {
+            //according to the user's selection, runs the appropriate methods
+            int selection = inputedSelection;
+            bool keepGoing = true;
+            string yesORno = "yes";
+            bool addMore = true;
 
-        //do
-        //{
-        //    switch (selection)
-        //    {
-        //        case 0:
-        //            do
-        //            {
-        //                //inserts a course to the list
-        //                Course c1 = Menu.GetCourse();
-        //                privateSchool.allCourses.Add(c1);
-        //                Console.WriteLine("A course in now added to the course list");
+            do
+            {
+                switch (selection)
+                {
+                    case 0:
+            //            do
+            //            {
+            //                //inserts a course to the list
+            //                Course c1 = Menu.GetCourse();
+            //                privateSchool.allCourses.Add(c1);
+            //                Console.WriteLine("A course in now added to the course list");
 
-        //                Console.WriteLine("Would you like to add another course.\nPlease type yes or no");
-        //                yesORno = Console.ReadLine();
-        //                addMore = Menu.AddMore(yesORno);
+            //                Console.WriteLine("Would you like to add another course.\nPlease type yes or no");
+            //                yesORno = Console.ReadLine();
+            //                addMore = Menu.AddMore(yesORno);
 
-        //            } while (addMore == true);
-        //            //........here you need to give an option to see all the menu again
-        //            break;
-        //        case 1:
-        //            //to insert a trainer")" +
-        //            break;
-        //        case 2:
-        //            //to insert a student")" +
-        //            break;
-        //        case 3:
-        //        //to insert an assignment/ project");
-        //        case 4:
-        //            //to see all the students.
-        //            break;
-        //        case 5:
-        //            //to see all the trainers.
-        //            break;
-        //        case 6:
-        //            //to see all the assignments / projects.
-        //            break;
-        //        case 7:
-        //            //to see all the courses.
-        //            break;
-        //        case 8:
-        //            //to see the students per course.
-        //            break;
-        //        case 9:
-        //            //to see the trainers per course.
-        //            break;
-        //        case 10:
-        //            //to see the assignments/ projects per course.
-        //            break;
-        //        case 11:
-        //            //to see the assignments/ projects per student
-        //            break;
-        //        case 12:
-        //            //to see the students with more courses.
-        //            break;
-        //        //exit");
-        //        default:
-        //            break;
+            //            } while (addMore == true);
+            //            //........here you need to give an option to see all the menu again
+                        break;
+            //        case 1:
+            //            //to insert a trainer")" +
+            //            break;
+            //        case 2:
+            //            //to insert a student")" +
+            //            break;
+            //        case 3:
+            //        //to insert an assignment/ project");
+            //        case 4:
+            //            //to see all the students.
+            //            break;
+            //        case 5:
+            //            //to see all the trainers.
+            //            break;
+            //        case 6:
+            //            //to see all the assignments / projects.
+            //            break;
+            //        case 7:
+            //            //to see all the courses.
+            //            break;
+            //        case 8:
+            //            //to see the students per course.
+            //            break;
+            //        case 9:
+            //            //to see the trainers per course.
+            //            break;
+            //        case 10:
+            //            //to see the assignments/ projects per course.
+            //            break;
+            //        case 11:
+            //            //to see the assignments/ projects per student
+            //            break;
+            //        case 12:
+            //            //to see the students with more courses.
+            //            break;
+            //        //exit");
+                    default:
+                        break;
 
-        //    }
-        //}
-        //while (keepGoing);
-        //}
+                }
+            }
+            while (keepGoing);
+        }
     }
 }

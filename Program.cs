@@ -13,10 +13,10 @@ namespace PrivateSchool
     {
         static void Main(string[] args)
         {
-            int selection;
-
             PrivateSchool privateSchool = new PrivateSchool();
-            selection = PrivateSchool.GetMenuSelection();
+            PrivateSchool.ExecuteMenuSelection(PrivateSchool.GetMenuSelection());
+           
+            
 
             
 
