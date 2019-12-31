@@ -43,19 +43,6 @@ namespace PrivateSchool
 
         }
 
-        public static void PrintAssignementProjectSyntheticData(List<AssignmentProject> assignmentProjectList)
-        {
-
-            foreach (var item in assignmentProjectList)
-            {
-                Console.WriteLine("Title : {0}", item.Title);
-                Console.WriteLine("Description : {0}", item.Description);
-                Console.WriteLine("SubDateTime : {0}", Convert.ToString(item.SubDateTime));
-                Console.WriteLine("OralMark : {0}", Convert.ToString(item.OralMark));
-                Console.WriteLine("TotalMark : {0}", Convert.ToString(item.TotalMark));
-
-
-            }
-        }
+       
     }
 }

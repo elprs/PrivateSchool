@@ -43,18 +43,7 @@ namespace PrivateSchool
 
         }
 
-        public static void PrintStudentSyntheticData(List<Student> studentList)
-        {
-            Console.WriteLine("Student count is: {0}", studentList.Count);
-            foreach (var item in studentList)
-            {
-                Console.WriteLine("First name : {0}", item.FirstName);
-                Console.WriteLine("Last name : {0}", item.LastName);
-                Console.WriteLine("Date of Birth : {0}", Convert.ToString(item.DateOfBirth) );
-                Console.WriteLine("Tuition fees : {0}", Convert.ToString(item.TuitionFees)  );
-
-            }
-        }
+        
 
     }
 }

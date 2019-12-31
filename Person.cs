@@ -45,14 +45,7 @@ namespace PrivateSchool
 
         }
 
-        public static void PrintPersonSyntheticData ( List<Person> personList)
-        {
-            foreach (var item in personList)
-            {
-                Console.WriteLine("First Name : {0}", item.FirstName );
-                Console.WriteLine("Last Name : {0}", item.LastName );
-            }
-        }
+        
 
     }          
 }
