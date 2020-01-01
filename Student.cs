@@ -49,7 +49,7 @@ namespace PrivateSchool
             List<Student> StudentListOfManualData = new List<Student>();
             PrivateSchool privateSchool = new PrivateSchool();
             bool addMore = true;
-            bool isInputValid = true;
+            bool isInputValid;
             string input = "y";
 
             do

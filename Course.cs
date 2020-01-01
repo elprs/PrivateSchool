@@ -62,12 +62,67 @@ namespace PrivateSchool
             List<Course> CourseListOfManualData = new List<Course>();
             PrivateSchool privateSchool = new PrivateSchool();
             bool addMore = true;
+            bool isInputValid;
             string input = "y";
 
             do
             {
                 Course c1 = new Course();
-                //..................create ctor to input data test
+
+
+                Console.WriteLine("Course's title:");
+                c1.Title = Console.ReadLine();
+                Console.WriteLine("Course's stream (Java or CSharp):");
+                c1.Stream = Console.ReadLine();
+                Console.WriteLine("Course's type (Full time or Part time):");
+                c1.Stream = Console.ReadLine();
+
+                do
+                {
+                    try
+                    {
+                        Console.WriteLine("Course's start date in the following format:\nyear/month/day e.g. 2020/01/01):");
+                        c1.StartDate = Convert.ToDateTime(Console.ReadLine());
+                        isInputValid = true;
+
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Your input was invalid, consult the following example.");
+                        Console.WriteLine();
+                        isInputValid = false;
+                    }
+                } while (isInputValid == false);
+                
+                
+                do
+                {
+                    try
+                    {
+                        Console.WriteLine("Course's End date in the following format:\nyear/month/day e.g. 2020/01/01):");
+                        c1.EndDate = Convert.ToDateTime(Console.ReadLine());
+                        isInputValid = true;
+
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Your input was invalid, consult the following example.");
+                        Console.WriteLine();
+                        isInputValid = false;
+                    }
+                } while (isInputValid == false);
+
+
+
+
+
+                //  List<Student> courseStudents, List<Trainer> courseTrainers, List<AssignmentProject> courseAssignmentsProjects
+                //??????????????????Should course have this connection with the other 3 classes??
+
+
+
+
+
 
                 CourseListOfManualData.Add(c1);
 
