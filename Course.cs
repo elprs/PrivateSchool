@@ -57,6 +57,56 @@ namespace PrivateSchool
 
         }
 
-        
+        public static List<Course> AddCourseManually()
+        {
+            List<Course> CourseListOfManualData = new List<Course>();
+            bool addMore = true;
+            string input = "y";
+
+            do
+            {
+                Course c1 = new Course();
+                //..................create ctor to input data test
+
+                CourseListOfManualData.Add(c1);
+
+                //Let the user add more courses
+
+                try
+                {
+
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine("If you would you like to add another course, please type the key 'y' folloew by 'enter'.");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    input = Console.ReadLine();
+
+                    if (input.ToLower() == "y")
+                    {
+                        addMore = true;
+                    }
+                    else
+                    {
+                        addMore = false;
+                        PrivateSchool.ExecuteMenuSelection(PrivateSchool.GetMenuSelection());
+
+                    }
+
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Your input was invalid.");
+                    Console.WriteLine();
+                }
+
+            }
+            while (addMore);
+
+
+
+            return CourseListOfManualData;
+
+        }
+
+
     }
 }

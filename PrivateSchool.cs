@@ -17,7 +17,7 @@ namespace PrivateSchool
         { }
 
         //printing methods+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        //needs fixing, now it ok for test
+        //needs fixing, test
         public void PrintCourseData(List<Course> courseList)
         {
 
@@ -103,24 +103,24 @@ namespace PrivateSchool
             do
             {
                 //print menu
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("\tMenu");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("0. Input courses");
-            Console.WriteLine("1. Input trainer");
-            Console.WriteLine("2. Input students");
-            Console.WriteLine("3. Input assignments/projects");
-            Console.WriteLine("4. Output students");
-            Console.WriteLine("5. Output trainers");
-            Console.WriteLine("6. Output assignments/projects");
-            Console.WriteLine("7. Output courses");
-            Console.WriteLine("8. Output students per course");
-            Console.WriteLine("9. Output trainers per course");
-            Console.WriteLine("10. Output assignments/projects per course");
-            Console.WriteLine("11. Output assignments/projects per student");
-            Console.WriteLine("12. Output students per more courses");
-            Console.WriteLine("13. Exit the program");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("\tMenu");
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("0. Input courses");
+                Console.WriteLine("1. Input trainer");
+                Console.WriteLine("2. Input students");
+                Console.WriteLine("3. Input assignments/projects");
+                Console.WriteLine("4. Output students");
+                Console.WriteLine("5. Output trainers");
+                Console.WriteLine("6. Output assignments/projects");
+                Console.WriteLine("7. Output courses");
+                Console.WriteLine("8. Output students per course");
+                Console.WriteLine("9. Output trainers per course");
+                Console.WriteLine("10. Output assignments/projects per course");
+                Console.WriteLine("11. Output assignments/projects per student");
+                Console.WriteLine("12. Output students per more courses");
+                Console.WriteLine("13. Exit the program");
 
 
 
@@ -129,21 +129,21 @@ namespace PrivateSchool
                 //Get selection from user
                 try
                 {
-                    
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
-                        Console.WriteLine("Please select an option \nby typing the number followed by the 'enter' key.");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        selection = Convert.ToInt32(Console.ReadLine());
+
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine("Please select an option \nby typing the number followed by the 'enter' key.");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    selection = Convert.ToInt32(Console.ReadLine());
 
                 }
                 catch (Exception)
                 {
                     Console.WriteLine("Your input was invalid.");
                     Console.WriteLine();
-                } 
+                }
 
             } while (!(selection >= 0 && selection <= 13));
-            
+
 
             return selection;
         }
@@ -154,70 +154,70 @@ namespace PrivateSchool
             //according to the user's selection, runs the appropriate methods
             int selection = inputedSelection;
             bool keepGoing = true;
-            string yesORno = "yes";
-            bool addMore = true;
+
 
             do
             {
                 switch (selection)
                 {
                     case 0:
-            //            do
-            //            {
-            //                //inserts a course to the list
-            //                Course c1 = Menu.GetCourse();
-            //                privateSchool.allCourses.Add(c1);
-            //                Console.WriteLine("A course in now added to the course list");
 
-            //                Console.WriteLine("Would you like to add another course.\nPlease type yes or no");
-            //                yesORno = Console.ReadLine();
-            //                addMore = Menu.AddMore(yesORno);
-
-            //            } while (addMore == true);
-            //            //........here you need to give an option to see all the menu again
+                        //                inserts a course to the list
+                       Course.AddCourseManually();
+                            //                Course c1 = Menu.GetCourse();
+                            //                privateSchool.allCourses.Add(c1);
+                            //                Console.WriteLine("A course in now added to the course list");
+          
+                        //            //........here you need to give an option to see all the menu again
                         break;
-            //        case 1:
-            //            //to insert a trainer")" +
-            //            break;
-            //        case 2:
-            //            //to insert a student")" +
-            //            break;
-            //        case 3:
-            //        //to insert an assignment/ project");
-            //        case 4:
-            //            //to see all the students.
-            //            break;
-            //        case 5:
-            //            //to see all the trainers.
-            //            break;
-            //        case 6:
-            //            //to see all the assignments / projects.
-            //            break;
-            //        case 7:
-            //            //to see all the courses.
-            //            break;
-            //        case 8:
-            //            //to see the students per course.
-            //            break;
-            //        case 9:
-            //            //to see the trainers per course.
-            //            break;
-            //        case 10:
-            //            //to see the assignments/ projects per course.
-            //            break;
-            //        case 11:
-            //            //to see the assignments/ projects per student
-            //            break;
-            //        case 12:
-            //            //to see the students with more courses.
-            //            break;
-            //        //exit");
+                    //        case 1:
+                    //            //to insert a trainer")" +
+                    //            break;
+                            case 2:
+                     Student.AddStudentManually();
+                        //needs the option to add synthetic data.....
+                                break;
+
+
+                    //        case 3:
+                    //        //to insert an assignment/ project");
+                    //        case 4:
+                    //            //to see all the students.
+                    //            break;
+                    //        case 5:
+                    //            //to see all the trainers.
+                    //            break;
+                    //        case 6:
+                    //            //to see all the assignments / projects.
+                    //            break;
+                    //        case 7:
+                    //            //to see all the courses.
+                    //            break;
+                    //        case 8:
+                    //            //to see the students per course.
+                    //            break;
+                    //        case 9:
+                    //            //to see the trainers per course.
+                    //            break;
+                    //        case 10:
+                    //            //to see the assignments/ projects per course.
+                    //            break;
+                    //        case 11:
+                    //            //to see the assignments/ projects per student
+                    //            break;
+                    //        case 12:
+                    //            //to see the students with more courses.
+                    //            break;
+                    //        //exit");
                     default:
                         break;
 
+
                 }
-            }
-            while (keepGoing);
+            } while (keepGoing);
         }
+       
+       
+
     }
 }
