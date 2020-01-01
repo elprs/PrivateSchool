@@ -99,6 +99,7 @@ namespace PrivateSchool
         {
             //initialised for test
             int selection = -1;
+            bool isInputValid;
 
             do
             {
@@ -126,21 +127,31 @@ namespace PrivateSchool
 
 
 
-                //Get selection from user
-                try
+                do
                 {
+                    //Get selection from user
+                    try
+                    {
 
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
-                    Console.WriteLine("Please select an option \nby typing the number followed by the 'enter' key.");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    selection = Convert.ToInt32(Console.ReadLine());
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine("Please select an option \nby typing the number followed by the 'enter' key.");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        selection = Convert.ToInt32(Console.ReadLine());
+                        isInputValid = true;
+
+
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Your input was invalid.");
+                        Console.WriteLine();
+                        isInputValid = false;
+                    }
 
                 }
-                catch (Exception)
-                {
-                    Console.WriteLine("Your input was invalid.");
-                    Console.WriteLine();
-                }
+                while (isInputValid == false);
+
+
 
             } while (!(selection >= 0 && selection <= 13));
 
@@ -149,11 +160,14 @@ namespace PrivateSchool
         }
 
 
-        public static void ExecuteMenuSelection(int inputedSelection)
+        public void ExecuteMenuSelection(int inputedSelection)
         {
             //according to the user's selection, runs the appropriate methods
             int selection = inputedSelection;
+            bool isInputValid;
+            char input = 's';
             bool keepGoing = true;
+
 
 
             do
@@ -163,21 +177,57 @@ namespace PrivateSchool
                     case 0:
 
                         //                inserts a course to the list
-                       Course.AddCourseManually();
-                            //                Course c1 = Menu.GetCourse();
-                            //                privateSchool.allCourses.Add(c1);
-                            //                Console.WriteLine("A course in now added to the course list");
-          
+
+
+                        //                Course c1 = Menu.GetCourse();
+                        //                privateSchool.allCourses.Add(c1);
+                        //                Console.WriteLine("A course in now added to the course list");
+
                         //            //........here you need to give an option to see all the menu again
                         break;
                     //        case 1:
                     //            //to insert a trainer")" +
                     //            break;
-                            case 2:
-                     Student.AddStudentManually();
-                        //needs the option to add synthetic data.....
-                                break;
 
+
+                    case 2:
+
+                        Console.WriteLine();
+                        Console.WriteLine("Hello, my lovely user!");
+                        Console.WriteLine("Press 's' followed by enter to insert synthetic data.");
+                        Console.WriteLine("Press 'm' followed by enter to insert manually your data.");
+                        do
+                        {
+                            try
+                            {
+
+                                input = Convert.ToChar(Console.ReadLine());
+                                isInputValid = true;
+                                if (input == 's')
+                                {
+                                    allStudents = Student.StudentSyntheticData();
+                                    Console.WriteLine("The synthetic data is now added to student 's list.");
+                                    isInputValid = true;
+                                }
+                                else if (input == 'm')
+                                {
+                                    allStudents = Student.AddStudentManually();
+                                    Console.WriteLine("Your data is now added to student 's list.");
+                                    isInputValid = true;
+                                    
+                                }
+                                
+
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("Your input is invalid.");
+                                isInputValid = false;
+                            }
+
+                        }
+                        while (isInputValid == false);
+                        break;//endCase:2
 
                     //        case 3:
                     //        //to insert an assignment/ project");
@@ -216,8 +266,8 @@ namespace PrivateSchool
                 }
             } while (keepGoing);
         }
-       
-       
+
+
 
     }
 }

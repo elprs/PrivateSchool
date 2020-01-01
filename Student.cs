@@ -47,6 +47,7 @@ namespace PrivateSchool
         public static List<Student> AddStudentManually()
         {
             List<Student> StudentListOfManualData = new List<Student>();
+            PrivateSchool privateSchool = new PrivateSchool();
             bool addMore = true;
             bool isInputValid = true;
             string input = "y";
@@ -119,7 +120,7 @@ namespace PrivateSchool
                         else
                         {
                             addMore = false;
-                            PrivateSchool.ExecuteMenuSelection(PrivateSchool.GetMenuSelection());
+                            privateSchool.ExecuteMenuSelection(PrivateSchool.GetMenuSelection());
 
                         }
 

@@ -60,6 +60,7 @@ namespace PrivateSchool
         public static List<Course> AddCourseManually()
         {
             List<Course> CourseListOfManualData = new List<Course>();
+            PrivateSchool privateSchool = new PrivateSchool();
             bool addMore = true;
             string input = "y";
 
@@ -87,7 +88,7 @@ namespace PrivateSchool
                     else
                     {
                         addMore = false;
-                        PrivateSchool.ExecuteMenuSelection(PrivateSchool.GetMenuSelection());
+                        privateSchool.ExecuteMenuSelection(PrivateSchool.GetMenuSelection());
 
                     }
 
