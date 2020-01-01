@@ -22,12 +22,6 @@ namespace PrivateSchool
             LastName = lastName;
         }
 
-        //Virtual method
-        public virtual void FillPersonProperty()
-        {
-            FirstName = "Giorgos";
-            LastName = "Kotopoulos";
-        }
 
         public List<Person> PersonSyntheticData()
         {

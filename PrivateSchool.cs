@@ -184,16 +184,52 @@ namespace PrivateSchool
                         //                Console.WriteLine("A course in now added to the course list");
 
                         //            //........here you need to give an option to see all the menu again
-                        break;
-                    //        case 1:
-                    //            //to insert a trainer")" +
-                    //            break;
+                        break;//endCase0
 
+                    case 1:
+                        Console.WriteLine();
+
+                        Console.WriteLine("Press 's' followed by enter to insert synthetic data.");
+                        Console.WriteLine("Press 'm' followed by enter to insert manually your data.");
+                        do
+                        {
+                            try
+                            {
+
+                                input = Convert.ToChar(Console.ReadLine());
+                                isInputValid = true;
+                                if (input == 's')
+                                {
+                                    allTrainers = Trainer.TrainerSyntheticData();
+                                    Console.WriteLine("The synthetic data is now added to Trainer 's list.");
+                                    isInputValid = true;
+                                    GetMenuSelection();
+                                }
+                                else if (input == 'm')
+                                {
+                                    allTrainers = Trainer.AddTrainerManually();
+                                    Console.WriteLine("Your data is now added to Trainer 's list.");
+                                    isInputValid = true;
+                                    GetMenuSelection();
+
+                                }
+
+
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("Your input is invalid.");
+                                isInputValid = false;
+                            }
+
+                        }
+                        while (isInputValid == false);
+                        break;//endCase:1
 
                     case 2:
 
                         Console.WriteLine();
-                        Console.WriteLine("Hello, my lovely user!");
+                        
                         Console.WriteLine("Press 's' followed by enter to insert synthetic data.");
                         Console.WriteLine("Press 'm' followed by enter to insert manually your data.");
                         do
@@ -208,12 +244,14 @@ namespace PrivateSchool
                                     allStudents = Student.StudentSyntheticData();
                                     Console.WriteLine("The synthetic data is now added to student 's list.");
                                     isInputValid = true;
+                                    GetMenuSelection();
                                 }
                                 else if (input == 'm')
                                 {
                                     allStudents = Student.AddStudentManually();
                                     Console.WriteLine("Your data is now added to student 's list.");
                                     isInputValid = true;
+                                    GetMenuSelection();
                                     
                                 }
                                 
@@ -229,8 +267,47 @@ namespace PrivateSchool
                         while (isInputValid == false);
                         break;//endCase:2
 
-                    //        case 3:
-                    //        //to insert an assignment/ project");
+                    case 3:
+
+                        Console.WriteLine();
+
+                        Console.WriteLine("Press 's' followed by enter to insert synthetic data.");
+                        Console.WriteLine("Press 'm' followed by enter to insert manually your data.");
+                        do
+                        {
+                            try
+                            {
+
+                                input = Convert.ToChar(Console.ReadLine());
+                                isInputValid = true;
+                                if (input == 's')
+                                {
+                                    allAssignmentsProjects = AssignmentProject.AssignmentProjectSyntheticData();
+                                    Console.WriteLine("The synthetic data is now added to AssignmentProject 's list.");
+                                    isInputValid = true;
+                                    GetMenuSelection();
+                                }
+                                else if (input == 'm')
+                                {
+                                    allAssignmentsProjects = AssignmentProject.AddAssignmentProjectManually();
+                                    Console.WriteLine("Your data is now added to AssignmentProject 's list.");
+                                    isInputValid = true;
+                                    GetMenuSelection();
+
+                                }
+
+
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("Your input is invalid.");
+                                isInputValid = false;
+                            }
+
+                        }
+                        while (isInputValid == false);
+                        break;//endCase:3
+
                     //        case 4:
                     //            //to see all the students.
                     //            break;

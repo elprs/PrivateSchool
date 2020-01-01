@@ -54,19 +54,19 @@ namespace PrivateSchool
 
             do
             {
-                Student c1 = new Student();
+                Student s1 = new Student();
                
                 Console.WriteLine("Student's first name:");
-                c1.FirstName = Console.ReadLine();
+                s1.FirstName = Console.ReadLine();
                 Console.WriteLine("Student's last name:");
-                c1.LastName = Console.ReadLine();
+                s1.LastName = Console.ReadLine();
 
                 do
                 {
                     try
                     {
                         Console.WriteLine("Student's date of birth in the following form:\nyear/month/day e.g. 1999/01/01):");
-                        c1.DateOfBirth = Convert.ToDateTime(Console.ReadLine());
+                        s1.DateOfBirth = Convert.ToDateTime(Console.ReadLine());
                         isInputValid = true;
                         
                     }
@@ -83,7 +83,7 @@ namespace PrivateSchool
                     try
                     {
                         Console.WriteLine("Student's tuition fees:");
-                        c1.TuitionFees = Convert.ToInt32(Console.ReadLine());
+                        s1.TuitionFees = Convert.ToInt32(Console.ReadLine());
                         isInputValid = true;
 
                     }
@@ -95,7 +95,7 @@ namespace PrivateSchool
                     } 
                 } while (isInputValid == false);
                
-                StudentListOfManualData.Add(c1);
+                StudentListOfManualData.Add(s1);
                 Console.WriteLine("The student is added to the student list.");
 
 

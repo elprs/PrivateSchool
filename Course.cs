@@ -48,7 +48,7 @@ namespace PrivateSchool
 
             for (int i = 0; i < 9; i++)
             {
-                Course c1 = new Course(SyntheticData.GetSyntheticCourseTitle(), SyntheticData.GetSyntheticCourseStream(), SyntheticData.GetSyntheticCourseType(), SyntheticData.GetSyntheticCourseStartDate(), SyntheticData.GetSyntheticCourseEndDate(), Student.StudentSyntheticData(), Trainer.TrainerSyntheticData(), AssignmentProject.AssignmentProjectListOfSyntheticData() ) ;
+                Course c1 = new Course(SyntheticData.GetSyntheticCourseTitle(), SyntheticData.GetSyntheticCourseStream(), SyntheticData.GetSyntheticCourseType(), SyntheticData.GetSyntheticCourseStartDate(), SyntheticData.GetSyntheticCourseEndDate(), Student.StudentSyntheticData(), Trainer.TrainerSyntheticData(), AssignmentProject.AssignmentProjectSyntheticData() ) ;
                 CourseListOfSyntheticData.Add(c1);
 
             }
@@ -102,11 +102,11 @@ namespace PrivateSchool
             }
             while (addMore);
 
-
-
             return CourseListOfManualData;
 
         }
+
+
 
 
     }
