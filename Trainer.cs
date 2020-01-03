@@ -24,7 +24,7 @@ namespace PrivateSchool
 
         }
 
-    }
+    
 
         //public Trainer(string firstName, string lastName, Subject subject)
         //{

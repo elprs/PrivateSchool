@@ -32,7 +32,7 @@ namespace PrivateSchool
 
 
 
-            Student s1 = new Student("Eleni", "Papapetrou");
+            Student s1 = new Student("Eleni", "Vasiliou");
             Student s2 = new Student("Giorgos", "Zinonos");
             Student s3 = new Student("Dimitris", "Papadopoulou");
             Student s4 = new Student("Giannis", "Parisi");
@@ -57,8 +57,6 @@ namespace PrivateSchool
             Students.Add(s10);
             Students.Add(s11);
             Students.Add(s12);
-
-
 
 
 
@@ -136,6 +134,9 @@ namespace PrivateSchool
             TrainerCourses.Add(tc6);
             TrainerCourses.Add(tc7);
             TrainerCourses.Add(tc8);
+            TrainerCourses.Add(tc9);
+            TrainerCourses.Add(tc10);
+            TrainerCourses.Add(tc11);
 
         }
         // //Course Synthetic Data ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

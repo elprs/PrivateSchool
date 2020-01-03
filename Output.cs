@@ -45,18 +45,24 @@ namespace PrivateSchool
             Console.WriteLine();
             Console.WriteLine("The Students are: ");
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(" ------------- ");
-            Console.WriteLine("|  First Name   ");
-            Console.WriteLine(" ------------- ");
+            Console.Write(" ------------- ");
+            Console.WriteLine(" ---------------- ");
+            Console.Write("|  First Name   ");
+            Console.WriteLine("| Last Name   ");
+            Console.Write(" ------------- ");
+            Console.WriteLine(" ---------------- ");
+
             Console.ForegroundColor = ConsoleColor.White;
 
             foreach (var item in students)
             {
 
-                Console.WriteLine(" ------------- ");
-                Console.WriteLine("| " + item.FirstName);
-                Console.WriteLine(" ------------- ");
-
+                Console.Write(" ------------- ");
+                Console.WriteLine(" ---------------- ");
+                Console.Write("| " + item.FirstName);
+                Console.WriteLine("\t| " + item.LastName);
+                Console.Write(" ------------- ");
+                Console.WriteLine(" ---------------- ");
 
             }
 
