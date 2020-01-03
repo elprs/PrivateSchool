@@ -30,18 +30,20 @@ namespace PrivateSchool
             Courses.Add(c3);
             Courses.Add(c4);
 
-            Student s1 = new Student("Eleni");
-            Student s2 = new Student("Giorgos");
-            Student s3 = new Student("Dimitris");
-            Student s4 = new Student("Giannis");
-            Student s5 = new Student("Thanasis");
-            Student s6 = new Student("Mitsos");
-            Student s7 = new Student("Konstantina");
-            Student s8 = new Student("Xristos");
-            Student s9 = new Student("Taksiarxis");
-            Student s10 = new Student("Dimitra");
-            Student s11 = new Student("Athina");
-            Student s12 = new Student("Periklis");
+
+
+            Student s1 = new Student("Eleni", "Papapetrou");
+            Student s2 = new Student("Giorgos", "Zinonos");
+            Student s3 = new Student("Dimitris", "Papadopoulou");
+            Student s4 = new Student("Giannis", "Parisi");
+            Student s5 = new Student("Thanasis", "Konstantinou");
+            Student s6 = new Student("Mitsos", "Axileou");
+            Student s7 = new Student("Konstantina", "Xhan");
+            Student s8 = new Student("Xristos", "Leontou");
+            Student s9 = new Student("Taksiarxis", "Antonioy");
+            Student s10 = new Student("Dimitra", "Liraki");
+            Student s11 = new Student("Athina", "Gaitanou");
+            Student s12 = new Student("Periklis", "Perikleous");
 
             Students.Add(s1);
             Students.Add(s2);
@@ -56,14 +58,18 @@ namespace PrivateSchool
             Students.Add(s11);
             Students.Add(s12);
 
-            Trainer t1 = new Trainer("Eleni");
-            Trainer t2 = new Trainer("Nikos");
-            Trainer t3 = new Trainer("Hektor");
-            Trainer t4 = new Trainer("Panos");
-            Trainer t5 = new Trainer("Kostas");
-            Trainer t6 = new Trainer("Manos");
-            Trainer t7 = new Trainer("Katia");
-            Trainer t8 = new Trainer("Filip");
+
+
+
+
+            Trainer t1 = new Trainer("Eleni", "Papapetrou");
+            Trainer t2 = new Trainer("Nikos", "Zinonos");
+            Trainer t3 = new Trainer("Hektor", "Papadopoulou");
+            Trainer t4 = new Trainer("Panos", "Petrakis");
+            Trainer t5 = new Trainer("Kostas", "Konstantinou");
+            Trainer t6 = new Trainer("Manos", "Axileou");
+            Trainer t7 = new Trainer("Katia", "Nikou");
+            Trainer t8 = new Trainer("Fillip", "Theoxarous");
 
             Trainers.Add(t1);
             Trainers.Add(t2);
@@ -94,7 +100,7 @@ namespace PrivateSchool
             StudentCourses.Add(sc1);
             StudentCourses.Add(sc2);
             StudentCourses.Add(sc3);
-            StudentCourses.Add(sc4); 
+            StudentCourses.Add(sc4);
             StudentCourses.Add(sc5);
             StudentCourses.Add(sc6);
             StudentCourses.Add(sc7);
@@ -271,27 +277,6 @@ namespace PrivateSchool
 
 
 
-        // public static string GetSyntheticPersonLastName()
-        // {
-        //     List<string> PersonLastNames = new List<string>()
-        //     {
-        //      "Papapetrou",
-        //      "Zinonos",
-        //      "Papadopoulou",
-        //      "Parisi",
-        //      "Konstantinou",
-        //      "Axileou",
-        //      "Xhan",
-        //      "Leontou",
-        //      "Antonioy",
-        //      "Liraki",
-        //      "Gaitanou",
-        //      "Perikleous"
-
-        //     };
-
-        //     return PersonLastNames[ran.Next(0, PersonLastNames.Count)];
-        // }
 
         // //Student Synthetic Data++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -352,7 +337,7 @@ namespace PrivateSchool
         //     return TrainerSubject[ran.Next(0, TrainerSubject.Count)];
         // }
 
-        
+
 
 
     }

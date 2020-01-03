@@ -17,10 +17,14 @@ namespace PrivateSchool
         public List<Course> Courses { get; set; } = new List<Course>();
 
         public Trainer(){}
-        public Trainer(string firstName) 
+        public Trainer(string firstName, string lastName) 
         { 
-            FirstName = firstName; 
+            FirstName = firstName;
+            LastName = lastName;
+
         }
+
+    }
 
         //public Trainer(string firstName, string lastName, Subject subject)
         //{

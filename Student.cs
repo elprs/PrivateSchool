@@ -18,9 +18,10 @@ namespace PrivateSchool
 
         public Student() { }
 
-        public Student(string firstName)
+        public Student(string firstName, string lastName)
         {
             FirstName = firstName;
+            LastName = lastName;
         }
 
         //public Student(string firstName, string lastName, DateTime dateOfBirth, int fees)
