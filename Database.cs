@@ -16,6 +16,7 @@ namespace PrivateSchool
         public List<Student> Students { get; set; } = new List<Student>();
         public List<Trainer> Trainers { get; set; } = new List<Trainer>();
         public List<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
+        public List<TrainerCourse> TrainerCourses { get; set; } = new List<TrainerCourse>();
 
         public Database()
         {
@@ -106,6 +107,29 @@ namespace PrivateSchool
             StudentCourses.Add(sc14);
             StudentCourses.Add(sc15);
 
+            TrainerCourse tc1 = new TrainerCourse(t1, c1);
+            TrainerCourse tc2 = new TrainerCourse(t2, c2);
+            TrainerCourse tc3 = new TrainerCourse(t3, c3);
+            TrainerCourse tc4 = new TrainerCourse(t4, c4);
+            TrainerCourse tc5 = new TrainerCourse(t5, c1);
+            TrainerCourse tc6 = new TrainerCourse(t6, c2);
+            TrainerCourse tc7 = new TrainerCourse(t7, c3);
+            TrainerCourse tc8 = new TrainerCourse(t8, c4);
+
+            TrainerCourse tc9 = new TrainerCourse(t1, c2);
+            TrainerCourse tc10 = new TrainerCourse(t2, c3);
+            TrainerCourse tc11 = new TrainerCourse(t8, c2);
+
+
+
+            TrainerCourses.Add(tc1);
+            TrainerCourses.Add(tc2);
+            TrainerCourses.Add(tc3);
+            TrainerCourses.Add(tc4);
+            TrainerCourses.Add(tc5);
+            TrainerCourses.Add(tc6);
+            TrainerCourses.Add(tc7);
+            TrainerCourses.Add(tc8);
 
         }
         // //Course Synthetic Data ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

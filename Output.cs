@@ -108,6 +108,30 @@ namespace PrivateSchool
             }
 
         }
+        public static void PrintTrainersPerCourse(List<Trainer> Trainers, Course course)
+        {
+            List<Trainer> trainers = Trainers;
+            Course course1 = course;
+
+            Console.WriteLine();
+            Console.WriteLine("The Trainers of the course {0} are: ", course1.Title);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(" ------------- ");
+            Console.WriteLine("|  " + course1.Title + "   ");
+            Console.WriteLine(" ------------- ");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            foreach (var item in course1.Trainers)
+            {
+
+                Console.WriteLine(" ------------- ");
+                Console.WriteLine("| " + item.FirstName);
+                Console.WriteLine(" ------------- ");
+
+
+            }
+
+        }
         public static void PrintCoursesPerStudent(List<Course> Courses, Student student)
         {
             List<Course> courses = Courses;
@@ -122,6 +146,31 @@ namespace PrivateSchool
             Console.ForegroundColor = ConsoleColor.White;
 
             foreach (var item in student1.Courses)
+            {
+
+                Console.WriteLine(" ------------- ");
+                Console.WriteLine("| " + item.Title);
+                Console.WriteLine(" ------------- ");
+
+
+            }
+
+        }
+
+        public static void PrintCoursesPerTrainer(List<Course> Courses, Trainer Trainer)
+        {
+            List<Course> courses = Courses;
+            Trainer Trainer1 = Trainer;
+
+            Console.WriteLine();
+            Console.WriteLine("The courses of the Trainer {0} are: ", Trainer1.FirstName);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(" ------------- ");
+            Console.WriteLine("|  " + Trainer1.FirstName + "   ");
+            Console.WriteLine(" ------------- ");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            foreach (var item in Trainer1.Courses)
             {
 
                 Console.WriteLine(" ------------- ");

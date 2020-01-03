@@ -20,6 +20,7 @@ namespace PrivateSchool
         //public DateTime EndDate { get; set; } = new DateTime();
 
         public List<Student> Students = new List<Student>();
+        public List<Trainer> Trainers = new List<Trainer>();
         //public List<Trainer> CourseTrainers = new List<Trainer>();
         //public List<AssignmentProject> CourseAssignmentsProjects = new List<AssignmentProject>();
 

@@ -14,9 +14,13 @@ namespace PrivateSchool
     class Trainer : Person
     {
        // public Subject Subject;
+        public List<Course> Courses { get; set; } = new List<Course>();
 
         public Trainer(){}
-        public Trainer(string firstName) { FirstName = firstName; }
+        public Trainer(string firstName) 
+        { 
+            FirstName = firstName; 
+        }
 
         //public Trainer(string firstName, string lastName, Subject subject)
         //{
