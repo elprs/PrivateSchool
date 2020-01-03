@@ -7,13 +7,21 @@ using System.Threading.Tasks;
 namespace PrivateSchool
 {
     class Student : Person
-    {/// <summary>
-    /// Contains the fields, the constructors and the methods of the child class Student
-    /// </summary>
+    {
+        /// <summary>
+        /// Contains the fields, properties, the constructors and the methods of the child class Student
+        /// </summary>
+
         //public DateTime DateOfBirth { get; set; }
         //public int TuitionFees { get; set; }
+        public List<Course> Courses { get; set; } = new List<Course>();
 
-        //public Student(){}
+        public Student() { }
+
+        public Student(string firstName)
+        {
+            FirstName = firstName;
+        }
 
         //public Student(string firstName, string lastName, DateTime dateOfBirth, int fees)
         //{
@@ -52,7 +60,7 @@ namespace PrivateSchool
         //    do
         //    {
         //        Student s1 = new Student();
-               
+
         //        Console.WriteLine("Student's first name:");
         //        s1.FirstName = Console.ReadLine();
         //        Console.WriteLine("Student's last name:");
@@ -65,7 +73,7 @@ namespace PrivateSchool
         //                Console.WriteLine("Student's date of birth in the following form:\nyear/month/day e.g. 1999/01/01):");
         //                s1.DateOfBirth = Convert.ToDateTime(Console.ReadLine());
         //                isInputValid = true;
-                        
+
         //            }
         //            catch (Exception)
         //            {
@@ -91,7 +99,7 @@ namespace PrivateSchool
         //                isInputValid = false;
         //            } 
         //        } while (isInputValid == false);
-               
+
         //        StudentListOfManualData.Add(s1);
         //        Console.WriteLine("The student is added to the student list.");
 
@@ -107,7 +115,7 @@ namespace PrivateSchool
         //                Console.WriteLine("If you would you like to add another Student, please type the key 'y' followed by 'enter'.");
         //                Console.ForegroundColor = ConsoleColor.White;
         //                input = Console.ReadLine();
-                        
+
 
 
         //                if (input.ToLower() == "y")

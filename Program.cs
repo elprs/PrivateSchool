@@ -13,11 +13,24 @@ namespace PrivateSchool
     {
         static void Main(string[] args)
         {
+            Database db = new Database();
 
+            //List<Course> Courses = db.Courses;
+            //List<Course> Students = db.Students;
 
+            Output.PrintCourses(db.Courses);
+            Output.PrintStudents(db.Students);
+            Output.PrintTrainers(db.Trainers);
 
-
-
+            Output.PrintStudentsPerCourse(db.Students, db.Courses[0]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            Output.PrintStudentsPerCourse(db.Students, db.Courses[1]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            Output.PrintStudentsPerCourse(db.Students, db.Courses[2]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            Output.PrintStudentsPerCourse(db.Students, db.Courses[3]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+        
+            Output.PrintCoursesPerStudent(db.Courses, db.Students[0]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            Output.PrintCoursesPerStudent(db.Courses, db.Students[1]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            Output.PrintCoursesPerStudent(db.Courses, db.Students[2]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            Output.PrintCoursesPerStudent(db.Courses, db.Students[3]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
 
 
 

@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace PrivateSchool
 {/// <summary>
-/// Contains the fields, the constructors and the methods of the child class Trainer
-/// </summary>
-/// 
-//public enum Subject{ CSharp, Java, HTML_CSS, SQL, JavaScript, BootstrapFramework, AngularJSReact, VersionControlGit, architecture, webServersApache, xUnit, UnixCommandLine, UiUXDesign, CloudBasedServices}
+ /// Contains the fields, properties, the constructors and the methods of the child class Trainer
+ /// </summary>
+ /// 
+    //public enum Subject{ CSharp, Java, HTML_CSS, SQL, JavaScript, BootstrapFramework, AngularJSReact, VersionControlGit, architecture, webServersApache, xUnit, UnixCommandLine, UiUXDesign, CloudBasedServices}
 
-class Trainer : Person
+    class Trainer : Person
     {
-        //public Subject Subject;
+       // public Subject Subject;
 
-        //public Trainer()
-        //{
+        public Trainer(){}
+        public Trainer(string firstName) { FirstName = firstName; }
 
-        //}
         //public Trainer(string firstName, string lastName, Subject subject)
         //{
         //    FirstName = firstName;
@@ -57,7 +56,7 @@ class Trainer : Person
         //        t1.FirstName = Console.ReadLine();
         //        Console.WriteLine("Trainer's last name:");
         //        t1.LastName = Console.ReadLine();
-                
+
         //        do
         //        {
         //            try
@@ -75,7 +74,7 @@ class Trainer : Person
         //            }
         //        } while (isInputValid == false);
 
-                
+
         //        TrainerListOfManualData.Add(t1);
         //        Console.WriteLine("The trainer is added to the Trainer list.");
 

@@ -16,19 +16,19 @@ namespace PrivateSchool
         //public string Type { get; set; }
 
         //public DateTime StartDate { get; set; } = new DateTime();
-       
+
         //public DateTime EndDate { get; set; } = new DateTime();
 
-        //public List<Student> CourseStudents = new List<Student>();
+        public List<Student> Students = new List<Student>();
         //public List<Trainer> CourseTrainers = new List<Trainer>();
         //public List<AssignmentProject> CourseAssignmentsProjects = new List<AssignmentProject>();
 
-        //public Course(){}
-        //public Course(string title)
-        //{
-        //    Title = title;
-        //}
-        
+        public Course() { }
+        public Course(string title)
+        {
+            Title = title;
+        }
+
         ////contrusctor that accepts only the string and DateTime parameters
         //public Course(string title, string stream, string type, DateTime startDate, DateTime endDate)
         //{
@@ -70,7 +70,7 @@ namespace PrivateSchool
         //        CourseListOfSyntheticData.Add(c1);
 
         //    }
-           
+
         //    return CourseListOfSyntheticData;
 
         //}
@@ -111,8 +111,8 @@ namespace PrivateSchool
         //                isInputValid = false;
         //            }
         //        } while (isInputValid == false);
-                
-                
+
+
         //        do
         //        {
         //            try
