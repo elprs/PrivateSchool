@@ -15,7 +15,7 @@ namespace PrivateSchool
         {
             Database db = new Database();
 
-            Output.PrintCourses(db.Courses);
+            //Output.PrintCourses(db.Courses);
             Output.PrintStudents(db.Students);
             //Output.PrintTrainers(db.Trainers);
 

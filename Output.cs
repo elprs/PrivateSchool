@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrivateSchool
 {
-    class Output
+    static class Output
     {
 
     //    public List<Course> allCourses = new List<Course>();
@@ -14,7 +14,7 @@ namespace PrivateSchool
     //    public List<Trainer> allTrainers = new List<Trainer>();
     //    public List<AssignmentProject> allAssignmentsProjects = new List<AssignmentProject>();
 
-        public Output() {}
+        static Output() {}
         public static void PrintCourses(List<Course> Courses)
         {
             List<Course> courses = Courses;
@@ -59,7 +59,7 @@ namespace PrivateSchool
 
                 Console.Write(" ------------- ");
                 Console.WriteLine(" ---------------- ");
-                Console.Write("| " + item.FirstName);
+                Console.Write("| " + item.FirstName + "   ");
                 Console.WriteLine("\t| " + item.LastName);
                 Console.Write(" ------------- ");
                 Console.WriteLine(" ---------------- ");
