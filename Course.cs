@@ -22,11 +22,30 @@ namespace PrivateSchool
         public List<Trainer> CourseTrainers = new List<Trainer>();
         public List<AssignmentProject> CourseAssignmentsProjects = new List<AssignmentProject>();
 
-        public Course()
+        public Course(){}
+        public Course(string title)
         {
-
+            Title = title;
+        }
+        
+        //contrusctor that accepts only the string and DateTime parameters
+        public Course(string title, string stream, string type, DateTime startDate, DateTime endDate)
+        {
+            Title = title;
+            Stream = stream;
+            Type = type;
+            StartDate = startDate;
+            EndDate = endDate;
         }
 
+        //constructor that accepts lists
+        public Course(List<Student> courseStudents, List<Trainer> courseTrainers, List<AssignmentProject> courseAssignmentsProjects)
+        {
+            CourseStudents = courseStudents;
+            CourseTrainers = courseTrainers;
+            CourseAssignmentsProjects = courseAssignmentsProjects;
+        }
+        //constructor which accepts parameters for all the properties
         public Course(string title, string stream, string type, DateTime startDate, DateTime endDate, List<Student> courseStudents, List<Trainer> courseTrainers, List<AssignmentProject> courseAssignmentsProjects)
         {
             Title = title;
@@ -37,8 +56,6 @@ namespace PrivateSchool
             CourseStudents = courseStudents;
             CourseTrainers = courseTrainers;
             CourseAssignmentsProjects = courseAssignmentsProjects;
-
-
         }
 
         //creates a list of Courses from Synthetic data
@@ -48,7 +65,7 @@ namespace PrivateSchool
 
             for (int i = 0; i < 9; i++)
             {
-                Course c1 = new Course(SyntheticData.GetSyntheticCourseTitle(), SyntheticData.GetSyntheticCourseStream(), SyntheticData.GetSyntheticCourseType(), SyntheticData.GetSyntheticCourseStartDate(), SyntheticData.GetSyntheticCourseEndDate(), Student.StudentSyntheticData(), Trainer.TrainerSyntheticData(), AssignmentProject.AssignmentProjectSyntheticData() ) ;
+                Course c1 = new Course(SyntheticData.GetSyntheticCourseTitle(), SyntheticData.GetSyntheticCourseStream(), SyntheticData.GetSyntheticCourseType(), SyntheticData.GetSyntheticCourseStartDate(), SyntheticData.GetSyntheticCourseEndDate(), Student.StudentListSyntheticData(), Trainer.TrainerSyntheticData(), AssignmentProject.AssignmentProjectSyntheticData() ) ;
                 CourseListOfSyntheticData.Add(c1);
 
             }
@@ -70,7 +87,7 @@ namespace PrivateSchool
                 Course c1 = new Course();
 
 
-                Console.WriteLine("Course's title:");
+                Console.WriteLine("Course's title: ");
                 c1.Title = Console.ReadLine();
                 Console.WriteLine("Course's stream (Java or CSharp):");
                 c1.Stream = Console.ReadLine();
@@ -131,7 +148,7 @@ namespace PrivateSchool
                 try
                 {
 
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("If you would you like to add another course, please type the key 'y' folloew by 'enter'.");
                     Console.ForegroundColor = ConsoleColor.White;
                     input = Console.ReadLine();

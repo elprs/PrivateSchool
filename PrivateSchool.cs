@@ -104,7 +104,8 @@ namespace PrivateSchool
             do
             {
                 //print menu
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine();
                 Console.WriteLine("\tMenu");
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.White;
@@ -133,8 +134,9 @@ namespace PrivateSchool
                     try
                     {
 
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
-                        Console.WriteLine("Please select an option \nby typing the number followed by the 'enter' key.");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Please select an option \nby typing the number followed by the 'enter' key");
+                        Console.WriteLine("or type any other key followed by 'enter' to get to the main menu.");
                         Console.ForegroundColor = ConsoleColor.White;
                         selection = Convert.ToInt32(Console.ReadLine());
                         isInputValid = true;
@@ -241,7 +243,7 @@ namespace PrivateSchool
                                 isInputValid = true;
                                 if (input == 's')
                                 {
-                                    allStudents = Student.StudentSyntheticData();
+                                    allStudents = Student.StudentListSyntheticData();
                                     Console.WriteLine("The synthetic data is now added to student 's list.");
                                     isInputValid = true;
                                     GetMenuSelection();

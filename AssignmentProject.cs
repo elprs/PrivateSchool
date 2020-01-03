@@ -128,7 +128,7 @@ namespace PrivateSchool
                     try
                     {
 
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine();
                         Console.WriteLine("If you would you like to add another AssignmentProject, please type the key 'y' followed by 'enter'.");
                         Console.ForegroundColor = ConsoleColor.White;

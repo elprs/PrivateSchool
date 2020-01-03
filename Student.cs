@@ -13,10 +13,7 @@ namespace PrivateSchool
         public DateTime DateOfBirth { get; set; }
         public int TuitionFees { get; set; }
 
-        public Student()
-        {
-
-        }
+        public Student(){}
 
         public Student(string firstName, string lastName, DateTime dateOfBirth, int fees)
         {
@@ -26,7 +23,7 @@ namespace PrivateSchool
             TuitionFees = fees;
         }
 
-        public static List<Student> StudentSyntheticData()
+        public static List<Student> StudentListSyntheticData()
         {
             List<Student> StudentListOfSyntheticData = new List<Student>();
 
@@ -106,7 +103,7 @@ namespace PrivateSchool
                     try
                     {
 
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("If you would you like to add another Student, please type the key 'y' followed by 'enter'.");
                         Console.ForegroundColor = ConsoleColor.White;
                         input = Console.ReadLine();

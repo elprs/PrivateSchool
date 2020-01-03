@@ -87,7 +87,7 @@ class Trainer : Person
                     try
                     {
 
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine();
                         Console.WriteLine("If you would you like to add another Trainer, please type the key 'y' followed by 'enter'.");
                         Console.ForegroundColor = ConsoleColor.White;

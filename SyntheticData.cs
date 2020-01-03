@@ -8,21 +8,17 @@ namespace PrivateSchool
 {
     class SyntheticData
     {
-       public static Random ran = new Random();
+       public static Random ran = new Random(123);
         //Course Synthetic Data ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         public static string GetSyntheticCourseTitle()
         {
             List<string> CourseTitles = new List<string>() 
             { 
-                "CB8", 
-             "CB7", 
-             "CB6", 
-             "CB5", 
              "CB4", 
              "CB3", 
              "CB2", 
              "CB1",
-             "CJ1"
+            
             };
             
             return CourseTitles[ran.Next(0, CourseTitles.Count)];
@@ -264,6 +260,26 @@ namespace PrivateSchool
             };
 
             return TrainerSubject[ran.Next(0, TrainerSubject.Count)];
+        }
+
+        //StudentsPersCourse+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        //create a list of the courses which holds the corresponding list of students
+        public List<List<Student>> GetSyntheticStudentsPerCourse(List<Course> courseListOfSyntheticData, List<Student> studentListOfSyntheticData)
+        {
+            List<List<Student>> studentsPerCourses = new List<List<Student>>();
+            List<Course> courseList = courseListOfSyntheticData;
+            List<Student> studentList = studentListOfSyntheticData;
+
+            foreach (var course in courseList)
+            {
+                for (int i = 0; i < courseList.Count; i++)
+                {
+
+                }
+            };
+
+
+            return studentsPerCourses;
         }
 
 
