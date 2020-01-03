@@ -10,136 +10,136 @@ namespace PrivateSchool
     {/// <summary>
     /// Contains the fields, the constructors and the methods of the child class Student
     /// </summary>
-        public DateTime DateOfBirth { get; set; }
-        public int TuitionFees { get; set; }
+        //public DateTime DateOfBirth { get; set; }
+        //public int TuitionFees { get; set; }
 
-        public Student(){}
+        //public Student(){}
 
-        public Student(string firstName, string lastName, DateTime dateOfBirth, int fees)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            DateOfBirth = dateOfBirth;
-            TuitionFees = fees;
-        }
+        //public Student(string firstName, string lastName, DateTime dateOfBirth, int fees)
+        //{
+        //    FirstName = firstName;
+        //    LastName = lastName;
+        //    DateOfBirth = dateOfBirth;
+        //    TuitionFees = fees;
+        //}
 
-        public static List<Student> StudentListSyntheticData()
-        {
-            List<Student> StudentListOfSyntheticData = new List<Student>();
+        //public static List<Student> StudentListSyntheticData()
+        //{
+        //    List<Student> StudentListOfSyntheticData = new List<Student>();
 
-            for (int i = 0; i < 20; i++)
-            {
-                Student s1 = new Student();
+        //    for (int i = 0; i < 20; i++)
+        //    {
+        //        Student s1 = new Student();
 
-                StudentListOfSyntheticData.Add(s1);
-                Console.WriteLine("The student is added to the list.");
+        //        StudentListOfSyntheticData.Add(s1);
+        //        Console.WriteLine("The student is added to the list.");
 
-            }
+        //    }
 
 
-            return StudentListOfSyntheticData;
+        //    return StudentListOfSyntheticData;
 
-        }
+        //}
 
-        public static List<Student> AddStudentManually()
-        {
-            List<Student> StudentListOfManualData = new List<Student>();
-            PrivateSchool privateSchool = new PrivateSchool();
-            bool addMore = true;
-            bool isInputValid;
-            string input = "y";
+        //public static List<Student> AddStudentManually()
+        //{
+        //    List<Student> StudentListOfManualData = new List<Student>();
+        //    PrivateSchool privateSchool = new PrivateSchool();
+        //    bool addMore = true;
+        //    bool isInputValid;
+        //    string input = "y";
 
-            do
-            {
-                Student s1 = new Student();
+        //    do
+        //    {
+        //        Student s1 = new Student();
                
-                Console.WriteLine("Student's first name:");
-                s1.FirstName = Console.ReadLine();
-                Console.WriteLine("Student's last name:");
-                s1.LastName = Console.ReadLine();
+        //        Console.WriteLine("Student's first name:");
+        //        s1.FirstName = Console.ReadLine();
+        //        Console.WriteLine("Student's last name:");
+        //        s1.LastName = Console.ReadLine();
 
-                do
-                {
-                    try
-                    {
-                        Console.WriteLine("Student's date of birth in the following form:\nyear/month/day e.g. 1999/01/01):");
-                        s1.DateOfBirth = Convert.ToDateTime(Console.ReadLine());
-                        isInputValid = true;
+        //        do
+        //        {
+        //            try
+        //            {
+        //                Console.WriteLine("Student's date of birth in the following form:\nyear/month/day e.g. 1999/01/01):");
+        //                s1.DateOfBirth = Convert.ToDateTime(Console.ReadLine());
+        //                isInputValid = true;
                         
-                    }
-                    catch (Exception)
-                    {
-                        Console.WriteLine("Your input was invalid, consult the following example.");
-                        Console.WriteLine();
-                        isInputValid = false;
-                    } 
-                } while (isInputValid == false);
+        //            }
+        //            catch (Exception)
+        //            {
+        //                Console.WriteLine("Your input was invalid, consult the following example.");
+        //                Console.WriteLine();
+        //                isInputValid = false;
+        //            } 
+        //        } while (isInputValid == false);
 
-                do
-                {
-                    try
-                    {
-                        Console.WriteLine("Student's tuition fees:");
-                        s1.TuitionFees = Convert.ToInt32(Console.ReadLine());
-                        isInputValid = true;
+        //        do
+        //        {
+        //            try
+        //            {
+        //                Console.WriteLine("Student's tuition fees:");
+        //                s1.TuitionFees = Convert.ToInt32(Console.ReadLine());
+        //                isInputValid = true;
 
-                    }
-                    catch (Exception)
-                    {
-                        Console.WriteLine("Your input was invalid.");
-                        Console.WriteLine();
-                        isInputValid = false;
-                    } 
-                } while (isInputValid == false);
+        //            }
+        //            catch (Exception)
+        //            {
+        //                Console.WriteLine("Your input was invalid.");
+        //                Console.WriteLine();
+        //                isInputValid = false;
+        //            } 
+        //        } while (isInputValid == false);
                
-                StudentListOfManualData.Add(s1);
-                Console.WriteLine("The student is added to the student list.");
+        //        StudentListOfManualData.Add(s1);
+        //        Console.WriteLine("The student is added to the student list.");
 
 
-                //Let the user choose to add more students
+        //        //Let the user choose to add more students
 
-                do
-                {
-                    try
-                    {
+        //        do
+        //        {
+        //            try
+        //            {
 
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("If you would you like to add another Student, please type the key 'y' followed by 'enter'.");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        input = Console.ReadLine();
+        //                Console.ForegroundColor = ConsoleColor.Cyan;
+        //                Console.WriteLine("If you would you like to add another Student, please type the key 'y' followed by 'enter'.");
+        //                Console.ForegroundColor = ConsoleColor.White;
+        //                input = Console.ReadLine();
                         
 
 
-                        if (input.ToLower() == "y")
-                        {
-                            addMore = true;
-                        }
-                        else
-                        {
-                            addMore = false;
-                            privateSchool.ExecuteMenuSelection(PrivateSchool.GetMenuSelection());
+        //                if (input.ToLower() == "y")
+        //                {
+        //                    addMore = true;
+        //                }
+        //                else
+        //                {
+        //                    addMore = false;
+        //                    privateSchool.ExecuteMenuSelection(PrivateSchool.GetMenuSelection());
 
-                        }
+        //                }
 
-                        isInputValid = true;
+        //                isInputValid = true;
 
-                    }
-                    catch (Exception)
-                    {
-                        Console.WriteLine("Your input was invalid.");
-                        Console.WriteLine();
-                        isInputValid = false;
-                    } 
-                } while (isInputValid == false);
+        //            }
+        //            catch (Exception)
+        //            {
+        //                Console.WriteLine("Your input was invalid.");
+        //                Console.WriteLine();
+        //                isInputValid = false;
+        //            } 
+        //        } while (isInputValid == false);
 
-            }
-            while (addMore);
+        //    }
+        //    while (addMore);
 
 
 
-            return StudentListOfManualData;
+        //    return StudentListOfManualData;
 
-        }
+        //}
 
     }
 }

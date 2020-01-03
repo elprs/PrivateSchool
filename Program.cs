@@ -13,12 +13,20 @@ namespace PrivateSchool
     {
         static void Main(string[] args)
         {
-            PrivateSchool privateSchool = new PrivateSchool();
-            privateSchool.ExecuteMenuSelection(PrivateSchool.GetMenuSelection());
-           
-            
 
-            
+
+
+
+
+
+
+
+            //PrivateSchool privateSchool = new PrivateSchool();
+            //privateSchool.ExecuteMenuSelection(PrivateSchool.GetMenuSelection());
+
+
+
+
 
 
             Console.WriteLine("Press any letter key to exit the program.");

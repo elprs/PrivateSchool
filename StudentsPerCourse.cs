@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace PrivateSchool
 {
-    class StudentsPerCourse : Student
+    class StudentsPerCourse 
     {
-        public Course courseOfStudent;
+        //public Course courseOfStudent;
 
-        public StudentsPerCourse()
-        { }
+        //public StudentsPerCourse()
+        //{ }
 
         
     }

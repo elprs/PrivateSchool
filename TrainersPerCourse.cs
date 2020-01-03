@@ -8,5 +8,6 @@ namespace PrivateSchool
 {
     class TrainersPerCourse
     {
+
     }
 }

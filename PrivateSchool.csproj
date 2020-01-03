@@ -43,16 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssignmentProject.cs" />
-    <Compile Include="AssignmentsProjectsPerCourse.cs" />
-    <Compile Include="AssignmentsProjectsPerStudent.cs" />
+    <Compile Include="Assignment.cs" />
+    <Compile Include="AssignmentsPerCourse.cs" />
+    <Compile Include="AssignmentsPerStudent.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Person.cs" />
-    <Compile Include="PrivateSchool.cs" />
+    <Compile Include="Output.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="StudentsPerCourse.cs" />
-    <Compile Include="SyntheticData.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="Trainer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

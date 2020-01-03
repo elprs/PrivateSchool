@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace PrivateSchool
 {
-    class AssignmentsProjectsPerStudent
+    class AssignmentsPerCourse
     {
+
     }
 }
