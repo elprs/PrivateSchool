@@ -22,17 +22,41 @@ namespace PrivateSchool
             Console.WriteLine();
             Console.WriteLine("The available courses are: ");
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(" -------");
-            Console.WriteLine("| Title  ");
-            Console.WriteLine(" -------");
+            Console.Write(" -------");
+            Console.Write(" --------- ");
+            Console.Write(" ---------- ");
+            Console.Write(" ------------------------- ");
+            Console.WriteLine(" ------------------------ ");
+            Console.Write("| Title  ");
+            Console.Write("| Stream  ");
+            Console.Write(" | Type  ");
+            Console.Write("\t| Start Date  ");
+            Console.WriteLine("\t| End Date  ");
+            Console.Write(" -------");
+            Console.Write(" --------- ");
+            Console.Write(" ---------- ");
+            Console.Write(" ------------------------- ");
+            Console.WriteLine(" ------------------------ ");
             Console.ForegroundColor = ConsoleColor.White;
 
             foreach (var item in courses)
             {
                 
-                Console.WriteLine(" ------- ");
-                Console.WriteLine("|  " + item.Title );
-                Console.WriteLine(" ------- ");
+                Console.Write(" ------- ");
+                Console.Write("--------- ");
+                Console.Write(" ---------- ");
+                Console.Write(" ------------------------- ");
+                Console.WriteLine(" ------------------------ ");
+                Console.Write("|  " + item.Title );
+                Console.Write("   |  " + item.Stream);
+                Console.Write("\t|  " + item.Type );
+                Console.Write("\t|  " + item.StartDate );
+                Console.WriteLine("\t|  " + item.EndDate );
+                Console.Write(" ------- ");
+                Console.Write("--------- ");
+                Console.Write(" ---------- ");
+                Console.Write(" ------------------------- ");
+                Console.WriteLine(" ------------------------ ");
 
             }
 
@@ -47,7 +71,7 @@ namespace PrivateSchool
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(" ------------- ");
             Console.Write(" ---------------- ");
-            Console.Write(" ------------------------- ");
+            Console.Write(" ----------------------- ");
             Console.WriteLine(" ---------------- ");
             Console.Write("|  First Name   ");
             Console.Write("|   Last Name     ");
@@ -55,7 +79,7 @@ namespace PrivateSchool
             Console.WriteLine("    | Fees     ");
             Console.Write(" ------------- ");
             Console.Write(" ---------------- ");
-            Console.Write(" ------------------------- ");
+            Console.Write(" ----------------------- ");
             Console.WriteLine(" ---------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
@@ -64,7 +88,7 @@ namespace PrivateSchool
 
                 Console.Write(" ------------- ");
                 Console.Write(" ---------------- ");
-                Console.Write(" ------------------------ ");
+                Console.Write(" -------------------- ");
                 Console.WriteLine(" ---------------- ");
                 Console.Write("| " + item.FirstName + "   ");
                 Console.Write("\t| " + item.LastName);
@@ -72,7 +96,7 @@ namespace PrivateSchool
                 Console.WriteLine("\t    | " + item.TuitionFees);
                 Console.Write(" ------------- ");
                 Console.Write(" ---------------- ");
-                Console.Write(" ------------------------ ");
+                Console.Write(" --------------------- ");
                 Console.WriteLine(" ---------------- ");
 
             }

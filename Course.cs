@@ -12,33 +12,28 @@ namespace PrivateSchool
     class Course
     {
         public string Title { get; set; }
-        //public string Stream { get; set; }
-        //public string Type { get; set; }
+        public string Stream { get; set; }
+        public string Type { get; set; }
 
-        //public DateTime StartDate { get; set; } = new DateTime();
+        public DateTime StartDate { get; set; } = new DateTime();
 
-        //public DateTime EndDate { get; set; } = new DateTime();
+        public DateTime EndDate { get; set; } = new DateTime();
 
         public List<Student> Students = new List<Student>();
         public List<Trainer> Trainers = new List<Trainer>();
-        //public List<Trainer> CourseTrainers = new List<Trainer>();
-        //public List<AssignmentProject> CourseAssignmentsProjects = new List<AssignmentProject>();
+        
 
         public Course() { }
-        public Course(string title)
+
+
+        public Course(string title, string stream, string type, DateTime startDate, DateTime endDate)
         {
             Title = title;
+            Stream = stream;
+            Type = type;
+            StartDate = startDate;
+            EndDate = endDate;
         }
-
-        ////contrusctor that accepts only the string and DateTime parameters
-        //public Course(string title, string stream, string type, DateTime startDate, DateTime endDate)
-        //{
-        //    Title = title;
-        //    Stream = stream;
-        //    Type = type;
-        //    StartDate = startDate;
-        //    EndDate = endDate;
-        //}
 
         ////constructor that accepts lists
         //public Course(List<Student> courseStudents, List<Trainer> courseTrainers, List<AssignmentProject> courseAssignmentsProjects)

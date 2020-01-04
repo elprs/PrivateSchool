@@ -21,10 +21,10 @@ namespace PrivateSchool
 
         public Database()
         {
-            Course c1 = new Course("CB4");
-            Course c2 = new Course("CB3");
-            Course c3 = new Course("CB2");
-            Course c4 = new Course("CB1");
+            Course c1 = new Course("CB4", "C#", "Part time", new DateTime(2020, 01, 15), new DateTime(2020, 07, 15));
+            Course c2 = new Course("CB3", "Java", "Part time", new DateTime(2020, 01, 15), new DateTime(2020, 07, 15));
+            Course c3 = new Course("CB2", "C#", "Full time", new DateTime(2020, 01, 15), new DateTime(2020, 04, 13));
+            Course c4 = new Course("CB1", "Java", "Full time", new DateTime(2020, 01, 15), new DateTime(2020, 04, 13));
 
             Courses.Add(c1);
             Courses.Add(c2);
@@ -35,7 +35,7 @@ namespace PrivateSchool
 
             Student s1 = new Student("Eleni", "Vasiliou", new DateTime(1992, 12, 13), 2000);
             Student s2 = new Student("Giorgos", "Zinonos", new DateTime(1993, 10, 23), 3000);
-            Student s3 = new Student("Dimitris", "Papadopoulou", new DateTime(1994, 03, 10), 1500);
+            Student s3 = new Student("Dimitris", "Papadopoulos", new DateTime(1994, 03, 10), 1500);
             Student s4 = new Student("Giannis", "Parisi", new DateTime(1998, 03, 30), 2300);
             Student s5 = new Student("Thanasis", "Konstantinou", new DateTime(1999, 01, 03), 2300);
             Student s6 = new Student("Mitsos", "Axileou", new DateTime(1999, 04, 06), 4560);
