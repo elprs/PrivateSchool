@@ -12,25 +12,20 @@ namespace PrivateSchool
         /// Contains the fields, properties, the constructors and the methods of the child class Student
         /// </summary>
 
-        //public DateTime DateOfBirth { get; set; }
-        //public int TuitionFees { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public int TuitionFees { get; set; }
         public List<Course> Courses { get; set; } = new List<Course>();
 
         public Student() { }
 
-        public Student(string firstName, string lastName)
+        public Student(string firstName, string lastName, DateTime dateOfBirth, int fees)
         {
             FirstName = firstName;
             LastName = lastName;
+            DateOfBirth = dateOfBirth;
+            TuitionFees = fees;
         }
 
-        //public Student(string firstName, string lastName, DateTime dateOfBirth, int fees)
-        //{
-        //    FirstName = firstName;
-        //    LastName = lastName;
-        //    DateOfBirth = dateOfBirth;
-        //    TuitionFees = fees;
-        //}
 
         //public static List<Student> StudentListSyntheticData()
         //{

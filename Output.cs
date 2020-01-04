@@ -46,22 +46,33 @@ namespace PrivateSchool
             Console.WriteLine("The Students are: ");
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(" ------------- ");
+            Console.Write(" ---------------- ");
+            Console.Write(" ------------------------- ");
             Console.WriteLine(" ---------------- ");
             Console.Write("|  First Name   ");
-            Console.WriteLine("| Last Name   ");
+            Console.Write("|   Last Name     ");
+            Console.Write("|    Date Of Birth    ");
+            Console.WriteLine("    | Fees     ");
             Console.Write(" ------------- ");
+            Console.Write(" ---------------- ");
+            Console.Write(" ------------------------- ");
             Console.WriteLine(" ---------------- ");
-
             Console.ForegroundColor = ConsoleColor.White;
 
             foreach (var item in students)
             {
 
                 Console.Write(" ------------- ");
+                Console.Write(" ---------------- ");
+                Console.Write(" ------------------------ ");
                 Console.WriteLine(" ---------------- ");
                 Console.Write("| " + item.FirstName + "   ");
-                Console.WriteLine("\t| " + item.LastName);
+                Console.Write("\t| " + item.LastName);
+                Console.Write("\t  | " + item.DateOfBirth);
+                Console.WriteLine("\t    | " + item.TuitionFees);
                 Console.Write(" ------------- ");
+                Console.Write(" ---------------- ");
+                Console.Write(" ------------------------ ");
                 Console.WriteLine(" ---------------- ");
 
             }
@@ -74,17 +85,31 @@ namespace PrivateSchool
             Console.WriteLine();
             Console.WriteLine("The Trainers are: ");
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(" ------------- ");
-            Console.WriteLine("|  First Name   ");
-            Console.WriteLine(" ------------- ");
+            Console.Write(" ------------- ");
+            Console.Write(" ---------------- ");
+            Console.WriteLine(" ---------------- ");
+            Console.Write("|  First Name   ");
+            Console.Write("| Last Name      ");
+            Console.WriteLine(" | Subject   ");
+            Console.Write(" ------------- ");
+            Console.Write(" ---------------- ");
+            Console.WriteLine(" ---------------- ");
+
             Console.ForegroundColor = ConsoleColor.White;
+
 
             foreach (var item in trainers)
             {
 
-                Console.WriteLine(" ------------- ");
-                Console.WriteLine("| " + item.FirstName);
-                Console.WriteLine(" ------------- ");
+                Console.Write(" ------------- ");
+                Console.Write(" ---------------- ");
+                Console.WriteLine(" ---------------- ");
+                Console.Write("| " + item.FirstName + "   ");
+                Console.Write("\t|  " + item.LastName);
+                Console.WriteLine("\t  | " + item.Subject);
+                Console.Write(" ------------- ");
+                Console.Write(" ---------------- ");
+                Console.WriteLine(" ---------------- ");
 
 
             }

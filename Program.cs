@@ -16,8 +16,11 @@ namespace PrivateSchool
             Database db = new Database();
 
             //Output.PrintCourses(db.Courses);
-            Output.PrintStudents(db.Students);
-            //Output.PrintTrainers(db.Trainers);
+           // Output.PrintStudents(db.Students);
+            Output.PrintTrainers(db.Trainers);
+
+            Trainer tr = new Trainer();
+           
 
             //Output.PrintStudentsPerCourse(db.Students, db.Courses[0]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
             //Output.PrintStudentsPerCourse(db.Students, db.Courses[1]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output

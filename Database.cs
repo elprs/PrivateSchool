@@ -12,6 +12,7 @@ namespace PrivateSchool
         /// Reads data, creates synthetic data and saves them in corresponding lists
         /// </summary>
 
+       
         public List<Course> Courses { get; set; } = new List<Course>();
         public List<Student> Students { get; set; } = new List<Student>();
         public List<Trainer> Trainers { get; set; } = new List<Trainer>();
@@ -32,18 +33,18 @@ namespace PrivateSchool
 
 
 
-            Student s1 = new Student("Eleni", "Vasiliou");
-            Student s2 = new Student("Giorgos", "Zinonos");
-            Student s3 = new Student("Dimitris", "Papadopoulou");
-            Student s4 = new Student("Giannis", "Parisi");
-            Student s5 = new Student("Thanasis", "Konstantinou");
-            Student s6 = new Student("Mitsos", "Axileou");
-            Student s7 = new Student("Konstantina", "Xhan");
-            Student s8 = new Student("Xristos", "Leontou");
-            Student s9 = new Student("Taksiarxis", "Antonioy");
-            Student s10 = new Student("Dimitra", "Liraki");
-            Student s11 = new Student("Athina", "Gaitanou");
-            Student s12 = new Student("Periklis", "Perikleous");
+            Student s1 = new Student("Eleni", "Vasiliou", new DateTime(1992, 12, 13), 2000);
+            Student s2 = new Student("Giorgos", "Zinonos", new DateTime(1993, 10, 23), 3000);
+            Student s3 = new Student("Dimitris", "Papadopoulou", new DateTime(1994, 03, 10), 1500);
+            Student s4 = new Student("Giannis", "Parisi", new DateTime(1998, 03, 30), 2300);
+            Student s5 = new Student("Thanasis", "Konstantinou", new DateTime(1999, 01, 03), 2300);
+            Student s6 = new Student("Mitsos", "Axileou", new DateTime(1999, 04, 06), 4560);
+            Student s7 = new Student("Chiou", "Chanidou", new DateTime(2000, 05, 23), 1340);
+            Student s8 = new Student("Xristos", "Leontou", new DateTime(1999, 11, 09), 1570);
+            Student s9 = new Student("Taksiarxis", "Antonioy", new DateTime(1978, 12, 12), 1200);
+            Student s10 = new Student("Dimitra", "Liraki", new DateTime(1972, 08, 21), 6700);
+            Student s11 = new Student("Athina", "Gaitanou", new DateTime(1992, 10, 04), 9500);
+            Student s12 = new Student("Periklis", "Perikleous", new DateTime(1997, 08, 06), 2500);
 
             Students.Add(s1);
             Students.Add(s2);
@@ -60,14 +61,14 @@ namespace PrivateSchool
 
 
 
-            Trainer t1 = new Trainer("Eleni", "Papapetrou");
-            Trainer t2 = new Trainer("Nikos", "Zinonos");
-            Trainer t3 = new Trainer("Hektor", "Papadopoulou");
-            Trainer t4 = new Trainer("Panos", "Petrakis");
-            Trainer t5 = new Trainer("Kostas", "Konstantinou");
-            Trainer t6 = new Trainer("Manos", "Axileou");
-            Trainer t7 = new Trainer("Katia", "Nikou");
-            Trainer t8 = new Trainer("Fillip", "Theoxarous");
+            Trainer t1 = new Trainer("Eleni", "Papapetrou", Subject.AngularJSReact);
+            Trainer t2 = new Trainer("Nikos", "Zinonos", Subject.HTML_CSS);
+            Trainer t3 = new Trainer("Hektor", "Papadopoulou", Subject.SQL);
+            Trainer t4 = new Trainer("Panos", "Petrakis", Subject.JavaScript);
+            Trainer t5 = new Trainer("Kostas", "Konstantinou", Subject.CSharp);
+            Trainer t6 = new Trainer("Manos", "Axileou", Subject.Java);
+            Trainer t7 = new Trainer("Katia", "Nikouli", Subject.Apache);
+            Trainer t8 = new Trainer("Fillip", "Theoxarous", Subject.Bootstrap);
 
             Trainers.Add(t1);
             Trainers.Add(t2);
