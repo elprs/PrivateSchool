@@ -21,6 +21,7 @@ namespace PrivateSchool
 
         public List<Student> Students = new List<Student>();
         public List<Trainer> Trainers = new List<Trainer>();
+        public List<Assignment> Assignments = new List<Assignment>();
         
 
         public Course() { }

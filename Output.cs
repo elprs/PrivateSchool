@@ -8,12 +8,6 @@ namespace PrivateSchool
 {
     static class Output
     {
-
-    //    public List<Course> allCourses = new List<Course>();
-    //    public List<Student> allStudents = new List<Student>();
-    //    public List<Trainer> allTrainers = new List<Trainer>();
-    //    public List<AssignmentProject> allAssignmentsProjects = new List<AssignmentProject>();
-
         static Output() {}
         public static void PrintCourses(List<Course> Courses)
         {
@@ -24,44 +18,43 @@ namespace PrivateSchool
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(" -------");
             Console.Write(" --------- ");
-            Console.Write(" ---------- ");
-            Console.Write(" ------------------------- ");
-            Console.WriteLine(" ------------------------ ");
+            Console.Write(" ------------ ");
+            Console.Write(" ------------------------ ");
+            Console.WriteLine(" ----------------------- ");
             Console.Write("| Title  ");
             Console.Write("| Stream  ");
             Console.Write(" | Type  ");
-            Console.Write("\t| Start Date  ");
-            Console.WriteLine("\t| End Date  ");
+            Console.Write("\t  |    Start Date  ");
+            Console.WriteLine("\t    |    End Date  ");
             Console.Write(" -------");
             Console.Write(" --------- ");
-            Console.Write(" ---------- ");
-            Console.Write(" ------------------------- ");
-            Console.WriteLine(" ------------------------ ");
+            Console.Write(" ------------ ");
+            Console.Write(" ------------------------ ");
+            Console.WriteLine(" ----------------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
             foreach (var item in courses)
             {
                 
-                Console.Write(" ------- ");
-                Console.Write("--------- ");
-                Console.Write(" ---------- ");
-                Console.Write(" ------------------------- ");
-                Console.WriteLine(" ------------------------ ");
-                Console.Write("|  " + item.Title );
-                Console.Write("   |  " + item.Stream);
-                Console.Write("\t|  " + item.Type );
-                Console.Write("\t|  " + item.StartDate );
-                Console.WriteLine("\t|  " + item.EndDate );
-                Console.Write(" ------- ");
-                Console.Write("--------- ");
-                Console.Write(" ---------- ");
-                Console.Write(" ------------------------- ");
-                Console.WriteLine(" ------------------------ ");
+                Console.Write(" -------");
+                Console.Write(" --------- ");
+                Console.Write(" ------------ ");
+                Console.Write(" ------------------------ ");
+                Console.WriteLine(" ----------------------- ");
+                Console.Write("|  " + item.Title);
+                Console.Write("\t  | " + item.Stream);
+                Console.Write("    |  " + item.Type );
+                Console.Write("  |  " + item.StartDate );
+                Console.WriteLine("    | " + item.EndDate );
+                Console.Write(" -------");
+                Console.Write(" --------- ");
+                Console.Write(" ------------ ");
+                Console.Write(" ------------------------ ");
+                Console.WriteLine(" ----------------------- ");
 
             }
 
         }
-
         public static void PrintStudents(List<Student> Students)
         {
             List<Student> students = Students;
@@ -71,7 +64,7 @@ namespace PrivateSchool
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(" ------------- ");
             Console.Write(" ---------------- ");
-            Console.Write(" ----------------------- ");
+            Console.Write(" ------------------------- ");
             Console.WriteLine(" ---------------- ");
             Console.Write("|  First Name   ");
             Console.Write("|   Last Name     ");
@@ -79,7 +72,7 @@ namespace PrivateSchool
             Console.WriteLine("    | Fees     ");
             Console.Write(" ------------- ");
             Console.Write(" ---------------- ");
-            Console.Write(" ----------------------- ");
+            Console.Write(" ------------------------- ");
             Console.WriteLine(" ---------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
@@ -88,7 +81,7 @@ namespace PrivateSchool
 
                 Console.Write(" ------------- ");
                 Console.Write(" ---------------- ");
-                Console.Write(" -------------------- ");
+                Console.Write(" ------------------------ ");
                 Console.WriteLine(" ---------------- ");
                 Console.Write("| " + item.FirstName + "   ");
                 Console.Write("\t| " + item.LastName);
@@ -96,7 +89,7 @@ namespace PrivateSchool
                 Console.WriteLine("\t    | " + item.TuitionFees);
                 Console.Write(" ------------- ");
                 Console.Write(" ---------------- ");
-                Console.Write(" --------------------- ");
+                Console.Write(" ------------------------ ");
                 Console.WriteLine(" ---------------- ");
 
             }
@@ -139,6 +132,54 @@ namespace PrivateSchool
             }
 
         }
+        public static void PrintAssignments(List<Assignment> Assignments)
+        {
+            List<Assignment> assignments = Assignments;
+
+            Console.WriteLine();
+            Console.WriteLine("The available Assignments are: ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(" ---------------- ");
+            Console.Write(" ------------- ");
+            Console.Write(" ------------------------ ");
+            Console.Write(" --------- ");
+            Console.WriteLine(" ---------- ");
+            Console.Write("| Title        ");
+            Console.Write("   | Description  ");
+            Console.Write(" |  Submision Date  ");
+            Console.Write("\t    |Oral Mark");
+            Console.WriteLine(" | Total Mark");
+            Console.Write(" ---------------- ");
+            Console.Write(" ------------- ");
+            Console.Write(" ------------------------ ");
+            Console.Write(" --------- ");
+            Console.WriteLine(" ---------- ");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            foreach (var item in assignments)
+            {
+
+                Console.Write(" ---------------- ");
+                Console.Write(" ------------- ");
+                Console.Write(" ------------------------ ");
+                Console.Write(" --------- ");
+                Console.WriteLine(" ---------- ");
+                Console.Write("|  " + item.Title);
+                Console.Write("\t  | " + item.Description);
+                Console.Write("    |  " + item.SubDateTime);
+                Console.Write("    |  " + item.OralMark);
+                Console.WriteLine("    | " + item.TotalMark);
+                Console.Write(" ---------------- ");
+                Console.Write(" ------------- ");
+                Console.Write(" ------------------------ ");
+                Console.Write(" --------- ");
+                Console.WriteLine(" ---------- ");
+
+            }
+
+        }
+
+
         public static void PrintStudentsPerCourse(List<Student> Students, Course course )
         {
             List<Student> students = Students;
@@ -153,30 +194,6 @@ namespace PrivateSchool
             Console.ForegroundColor = ConsoleColor.White;
 
             foreach (var item in course1.Students)
-            {
-
-                Console.WriteLine(" ------------- ");
-                Console.WriteLine("| " + item.FirstName);
-                Console.WriteLine(" ------------- ");
-
-
-            }
-
-        }
-        public static void PrintTrainersPerCourse(List<Trainer> Trainers, Course course)
-        {
-            List<Trainer> trainers = Trainers;
-            Course course1 = course;
-
-            Console.WriteLine();
-            Console.WriteLine("The Trainers of the course {0} are: ", course1.Title);
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(" ------------- ");
-            Console.WriteLine("|  " + course1.Title + "   ");
-            Console.WriteLine(" ------------- ");
-            Console.ForegroundColor = ConsoleColor.White;
-
-            foreach (var item in course1.Trainers)
             {
 
                 Console.WriteLine(" ------------- ");
@@ -211,7 +228,30 @@ namespace PrivateSchool
             }
 
         }
+        public static void PrintTrainersPerCourse(List<Trainer> Trainers, Course course)
+        {
+            List<Trainer> trainers = Trainers;
+            Course course1 = course;
 
+            Console.WriteLine();
+            Console.WriteLine("The Trainers of the course {0} are: ", course1.Title);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(" ------------- ");
+            Console.WriteLine("|  " + course1.Title + "   ");
+            Console.WriteLine(" ------------- ");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            foreach (var item in course1.Trainers)
+            {
+
+                Console.WriteLine(" ------------- ");
+                Console.WriteLine("| " + item.FirstName);
+                Console.WriteLine(" ------------- ");
+
+
+            }
+
+        }
         public static void PrintCoursesPerTrainer(List<Course> Courses, Trainer Trainer)
         {
             List<Course> courses = Courses;
@@ -236,84 +276,81 @@ namespace PrivateSchool
             }
 
         }
+        public static void PrintAssignmentsPerStudent(List<Assignment> Assignments, Student student)
+        {
+            List<Assignment> assignments = Assignments;
+            Student student1 = student;
 
-        //    //printing methods+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        //    //needs fixing, test
-        //    public void PrintCourses(List<Course> courseList)
-        //    {
+            Console.WriteLine();
+            Console.WriteLine("The Assignments of the student {0} are: ", student1.FirstName);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(" ------------- ");
+            Console.WriteLine("|  " + student1.FirstName + "   ");
+            Console.WriteLine(" ------------- ");
+            Console.ForegroundColor = ConsoleColor.White;
 
-        //        foreach (var course in courseList)
-        //        {
-        //            Console.WriteLine("Title : {0}", course.Title);
-        //            Console.WriteLine("Stream : {0}", course.Stream);
-        //            Console.WriteLine("Type : {0}", course.Type);
-        //            Console.WriteLine("StartDate : {0}", Convert.ToString(course.StartDate));
-        //            Console.WriteLine("EndDate : {0}", Convert.ToString(course.EndDate));
+            foreach (var item in student1.Assignments)
+            {
 
-        //            Console.ForegroundColor = ConsoleColor.Green;
-        //            Console.WriteLine("The list of students is: ");
-        //            Output.PrintStudentData(course.CourseStudents);
-
-
-        //            Console.ForegroundColor = ConsoleColor.Red;
-        //            Console.WriteLine("The list of trainers is: ");
-        //            Output.PrintTrainerData(course.CourseTrainers);
-
-        //            Console.ForegroundColor = ConsoleColor.Blue;
-        //            Console.WriteLine("The list of assignments/projects is: ");
-        //            Output.PrintAssignementProjectData(course.CourseAssignmentsProjects);
-        //            Console.ForegroundColor = ConsoleColor.White;
-        //        }
-
-        //    }
-
-        //    public static void PrintAssignementProjectData(List<AssignmentProject> assignmentProjectList)
-        //    {
-
-        //        foreach (var item in assignmentProjectList)
-        //        {
-        //            Console.WriteLine("Title : {0}", item.Title);
-        //            Console.WriteLine("Description : {0}", item.Description);
-        //            Console.WriteLine("SubDateTime : {0}", Convert.ToString(item.SubDateTime));
-        //            Console.WriteLine("OralMark : {0}", Convert.ToString(item.OralMark));
-        //            Console.WriteLine("TotalMark : {0}", Convert.ToString(item.TotalMark));
+                Console.WriteLine(" --------------- ");
+                Console.WriteLine("| " + item.Title);
+                Console.WriteLine(" --------------- ");
 
 
-        //        }
-        //    }
+            }
 
-        //    public static void PrintPersonData(List<Person> personList)
-        //    {
-        //        foreach (var item in personList)
-        //        {
-        //            Console.WriteLine("First Name : {0}", item.FirstName);
-        //            Console.WriteLine("Last Name : {0}", item.LastName);
-        //        }
-        //    }
-        //    public static void PrintTrainerData(List<Trainer> trainerList)
-        //    {
+        }
+        public static void PrintStudentsPerAssignment(List<Student> Students, Assignment Assignment)
+        {
+            List<Student> students = Students;
+            Assignment Assignment1 = Assignment;
 
-        //        foreach (var item in trainerList)
-        //        {
-        //            Console.WriteLine("First Name : {0}", item.FirstName);
-        //            Console.WriteLine("Last Name : {0}", item.LastName);
-        //            Console.WriteLine("Subject : {0}", Convert.ToString(item.Subject));
+            Console.WriteLine();
+            Console.WriteLine("The students of the Assignment {0} are: ", Assignment1.Title);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(" --------------- ");
+            Console.WriteLine("|  " + Assignment1.Title + "   ");
+            Console.WriteLine(" --------------- ");
+            Console.ForegroundColor = ConsoleColor.White;
 
-        //        }
-        //    }
+            foreach (var item in Assignment1.Students)
+            {
 
-        //    public static void PrintStudentData(List<Student> studentList)
-        //    {
-        //        Console.WriteLine("Student count is: {0}", studentList.Count);
-        //        foreach (var item in studentList)
-        //        {
-        //            Console.WriteLine("First name : {0}", item.FirstName);
-        //            Console.WriteLine("Last name : {0}", item.LastName);
-        //            Console.WriteLine("Date of Birth : {0}", Convert.ToString(item.DateOfBirth));
-        //            Console.WriteLine("Tuition fees : {0}", Convert.ToString(item.TuitionFees));
+                Console.WriteLine(" ------------- ");
+                Console.WriteLine("| " + item.FirstName);
+                Console.WriteLine(" ------------- ");
 
-        //        }
-        //    }
+
+            }
+
+        }
+        public static void PrintAssignmentsPerCourse(List<Assignment> Assignments, Course course)
+        {
+
+            Console.WriteLine();
+            Console.WriteLine("The Assignments of the course {0} are: ", course.Title);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(" ------------- ");
+            Console.WriteLine("|  " + course.Title + "   ");
+            Console.WriteLine(" ------------- ");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            foreach (var item in course.Assignments)
+            {
+
+                Console.WriteLine(" ------------- ");
+                Console.WriteLine("| " + item.Title);
+                Console.WriteLine(" ------------- ");
+
+
+            }
+
+        }
+
+
+
+
+
 
         //    //MenuMethods+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         //    public static int GetMenuSelection()

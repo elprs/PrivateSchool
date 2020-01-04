@@ -10,23 +10,26 @@ namespace PrivateSchool
 /// </summary>
     class Assignment
     {
-        //public string Title { get; set; }
-        //public string Description { get; set; }
-        //public DateTime SubDateTime { get; set; }
-        //public double OralMark { get; set; }
-        //public double TotalMark { get; set; }
+        
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public DateTime SubDateTime { get; set; }
+        public double OralMark { get; set; } // παραδοχη max  oral mark: 50.0
+        public double TotalMark { get; set; } //παραδοχη max  total mark: 100.0
 
-        //public AssignmentProject()
-        //{ }
+        public List<Student> Students = new List<Student>();
+        public Assignment()
+        {
 
-        //public AssignmentProject(string title, string description, DateTime subDateTime, double oralMark, double totalMark)
-        //{
-        //    Title = title;
-        //    Description = description;
-        //    SubDateTime = subDateTime;
-        //    OralMark = oralMark;
-        //    TotalMark = totalMark;
-        //}
+        }
+        public Assignment(string title, string description, DateTime subDateTime, double oralMark, double totalMark)
+        {
+            Title = title;
+            Description = description;
+            SubDateTime = subDateTime;
+            OralMark = oralMark;
+            TotalMark = totalMark;
+        }
 
         //public static List<AssignmentProject> AssignmentProjectSyntheticData()
         //{
@@ -39,7 +42,7 @@ namespace PrivateSchool
         //        AssignmentProjectListOfSyntheticData.Add(ap1);
         //        Console.WriteLine("The assignment/project is now added to the corresponding list.");
         //    }
-            
+
         //    return AssignmentProjectListOfSyntheticData;
 
         //}

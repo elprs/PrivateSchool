@@ -16,14 +16,16 @@ namespace PrivateSchool
         public List<Course> Courses { get; set; } = new List<Course>();
         public List<Student> Students { get; set; } = new List<Student>();
         public List<Trainer> Trainers { get; set; } = new List<Trainer>();
+        public List<Assignment> Assignments { get; set; } = new List<Assignment>();
         public List<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
         public List<TrainerCourse> TrainerCourses { get; set; } = new List<TrainerCourse>();
+        public List<StudentAssignment> StudentAssignments { get; set; } = new List<StudentAssignment>();
 
         public Database()
         {
-            Course c1 = new Course("CB4", "C#", "Part time", new DateTime(2020, 01, 15), new DateTime(2020, 07, 15));
+            Course c1 = new Course("CB4", "C # ", "Part time", new DateTime(2020, 01, 15), new DateTime(2020, 07, 15));
             Course c2 = new Course("CB3", "Java", "Part time", new DateTime(2020, 01, 15), new DateTime(2020, 07, 15));
-            Course c3 = new Course("CB2", "C#", "Full time", new DateTime(2020, 01, 15), new DateTime(2020, 04, 13));
+            Course c3 = new Course("CB2", "C # ", "Full time", new DateTime(2020, 01, 15), new DateTime(2020, 04, 13));
             Course c4 = new Course("CB1", "Java", "Full time", new DateTime(2020, 01, 15), new DateTime(2020, 04, 13));
 
             Courses.Add(c1);
@@ -45,6 +47,9 @@ namespace PrivateSchool
             Student s10 = new Student("Dimitra", "Liraki", new DateTime(1972, 08, 21), 6700);
             Student s11 = new Student("Athina", "Gaitanou", new DateTime(1992, 10, 04), 9500);
             Student s12 = new Student("Periklis", "Perikleous", new DateTime(1997, 08, 06), 2500);
+            Student s13 = new Student("Periklis", "Perikleous", new DateTime(2000, 02, 04), 2500);
+            Student s14 = new Student("Periklis", "Perikleous", new DateTime(2001, 08, 12), 2500);
+            Student s15 = new Student("Periklis", "Perikleous", new DateTime(2002, 03, 06), 2500);
 
             Students.Add(s1);
             Students.Add(s2);
@@ -58,6 +63,9 @@ namespace PrivateSchool
             Students.Add(s10);
             Students.Add(s11);
             Students.Add(s12);
+            Students.Add(s13);
+            Students.Add(s14);
+            Students.Add(s15);
 
 
 
@@ -78,6 +86,36 @@ namespace PrivateSchool
             Trainers.Add(t6);
             Trainers.Add(t7);
             Trainers.Add(t8);
+                                  
+            //Παραδοχη: καθε assignment anikei se 1 mathiti, alla ta 2 projects (ap1, ap2) anikoun kai se perissoterous
+            Assignment a1 = new Assignment("Assignment 1", "Individual", new DateTime(2020, 02, 1), 32.2, 62.4);
+            Assignment a2 = new Assignment("Assignment 2", "Individual", new DateTime(2020, 02, 1), 40.6, 95.4);
+            Assignment a3 = new Assignment("Assignment 3", "Individual", new DateTime(2020, 02, 1), 25.9, 85.5);
+            Assignment a4 = new Assignment("Assignment 4", "Individual", new DateTime(2020, 02, 1), 32.7, 99.4);
+            Assignment a5 = new Assignment("Assignment 5", "Individual", new DateTime(2020, 02, 10), 49.9, 94.3);
+            Assignment a6 = new Assignment("Assignment 6", "Individual", new DateTime(2020, 02, 10), 45.8, 98.3);
+            Assignment a7 = new Assignment("Assignment 7", "Individual", new DateTime(2020, 02, 10), 32.41, 92.2);
+            Assignment a8 = new Assignment("Assignment 8", "Individual", new DateTime(2020, 02, 10), 49.7, 98.3);
+            Assignment a9 = new Assignment("Assignment 9", "Individual", new DateTime(2020, 02, 18), 44.6, 98.3);
+            Assignment a10 = new Assignment("Assignment 10", "Individual", new DateTime(2020, 02, 20), 49.1, 98.6);
+            Assignment a11 = new Assignment("Assignment 11", "Individual", new DateTime(2020, 02, 20), 49.4, 93.7);
+            Assignment a12 = new Assignment("Assignment 12", "Individual", new DateTime(2020, 02, 20), 49.6, 94.6);
+            Assignment a13 = new Assignment("Assignment 13", "Individual", new DateTime(2020, 02, 25), 49.8, 99.7);
+            Assignment a14 = new Assignment("Assignment 14", "Individual", new DateTime(2020, 02, 28), 49.9, 98.8);
+            Assignment a15 = new Assignment("Assignment 15", "Individual", new DateTime(2020, 02, 28), 49.1, 99.9);
+
+            Assignment ap1 = new Assignment("Project 1", "Team proj.", new DateTime(2020, 03, 01), 12.2, 98.2);
+            Assignment ap2 = new Assignment("Project 1", "Individual.", new DateTime(2020, 06, 01), 12.2, 89.2);
+            
+
+
+            Assignments.Add(a1);
+            Assignments.Add(a2);
+            Assignments.Add(a3);
+            Assignments.Add(a4);
+            Assignments.Add(a5);
+            Assignments.Add(a6);
+            Assignments.Add(a7);
 
             StudentCourse sc1 = new StudentCourse(s1, c1);
             StudentCourse sc2 = new StudentCourse(s2, c2);
@@ -139,208 +177,78 @@ namespace PrivateSchool
             TrainerCourses.Add(tc10);
             TrainerCourses.Add(tc11);
 
+            StudentAssignment sa1 = new StudentAssignment(s1, a1);
+            StudentAssignment sa2 = new StudentAssignment(s2, a2);
+            StudentAssignment sa3 = new StudentAssignment(s3, a3);
+            StudentAssignment sa4 = new StudentAssignment(s4, a4);
+            StudentAssignment sa5 = new StudentAssignment(s5, a5);
+            StudentAssignment sa6 = new StudentAssignment(s6, a6);
+            StudentAssignment sa7 = new StudentAssignment(s7, a7);
+            StudentAssignment sa8 = new StudentAssignment(s8, a1);            
+            StudentAssignment sa9 = new StudentAssignment(s9, a9);
+            StudentAssignment sa10 = new StudentAssignment(s10, a10);
+            StudentAssignment sa11 = new StudentAssignment(s11, a11);
+            StudentAssignment sa12 = new StudentAssignment(s12, a12);
+            StudentAssignment sa13 = new StudentAssignment(s13, a13);
+            StudentAssignment sa14 = new StudentAssignment(s14, a14);
+            StudentAssignment sa15 = new StudentAssignment(s15, a15);
+
+            StudentAssignment sa16 = new StudentAssignment(s1, ap1);
+            StudentAssignment sa17 = new StudentAssignment(s2, ap1);
+            StudentAssignment sa18 = new StudentAssignment(s3, ap1);
+            StudentAssignment sa19 = new StudentAssignment(s4, ap1);
+            StudentAssignment sa20 = new StudentAssignment(s5, ap1);
+            StudentAssignment sa21 = new StudentAssignment(s6, ap1);
+            StudentAssignment sa22 = new StudentAssignment(s7, ap1);
+            StudentAssignment sa23 = new StudentAssignment(s8, ap1);
+            StudentAssignment sa24 = new StudentAssignment(s9, ap1);
+            StudentAssignment sa25 = new StudentAssignment(s10, ap1);
+            StudentAssignment sa26 = new StudentAssignment(s11, ap1);
+            StudentAssignment sa27 = new StudentAssignment(s12, ap1);
+            StudentAssignment sa28 = new StudentAssignment(s13, ap1);
+            StudentAssignment sa29 = new StudentAssignment(s14, ap1);
+            StudentAssignment sa30 = new StudentAssignment(s15, ap1);
+
+            StudentAssignment sa31 = new StudentAssignment(s14, ap2);
+            StudentAssignment sa32 = new StudentAssignment(s15, ap2);
+
+
+
+            StudentAssignments.Add(sa1);
+            StudentAssignments.Add(sa2);
+            StudentAssignments.Add(sa3);
+            StudentAssignments.Add(sa4);
+            StudentAssignments.Add(sa5);
+            StudentAssignments.Add(sa6);
+            StudentAssignments.Add(sa7);
+            StudentAssignments.Add(sa8);
+            StudentAssignments.Add(sa9);
+            StudentAssignments.Add(sa10);
+            StudentAssignments.Add(sa11);
+            StudentAssignments.Add(sa12);
+            StudentAssignments.Add(sa13);
+            StudentAssignments.Add(sa14);
+            StudentAssignments.Add(sa15);
+            StudentAssignments.Add(sa16);
+            StudentAssignments.Add(sa17);
+            StudentAssignments.Add(sa18);
+            StudentAssignments.Add(sa19);
+            StudentAssignments.Add(sa20);
+            StudentAssignments.Add(sa21);
+            StudentAssignments.Add(sa22);
+            StudentAssignments.Add(sa23);
+            StudentAssignments.Add(sa24);
+            StudentAssignments.Add(sa25);
+            StudentAssignments.Add(sa26);
+            StudentAssignments.Add(sa27);
+            StudentAssignments.Add(sa28);
+            StudentAssignments.Add(sa29);
+            StudentAssignments.Add(sa30);
+            StudentAssignments.Add(sa31);
+            StudentAssignments.Add(sa32);
+
         }
-        // //Course Synthetic Data ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-        // public static string GetSyntheticCourseStream()
-        // {
-        //     List<string> CourseStream = new List<string>()
-        //     {
-        //         "Java", 
-        //         "C#"
-        //     };
-
-        //     return CourseStream[ran.Next(0, CourseStream.Count)];
-        // }
-
-        // public static string GetSyntheticCourseType()
-        // {
-        //     List<string> CourseType = new List<string>()
-        //     {
-        //         "Full Time",
-        //         "Part Time"
-        //     };
-
-        //     return CourseType[ran.Next(0, CourseType.Count)];
-        // }
-
-        // public static DateTime GetSyntheticCourseStartDate()
-        // {
-        //     List<DateTime> CourseStartDate = new List<DateTime>()
-        //     { 
-        //         new DateTime(2019, 11, 12),
-        //         new DateTime(2019, 09, 10),
-        //         new DateTime(2020, 02, 12)
-
-        //     };
-
-
-        //     return CourseStartDate[ran.Next(0, CourseStartDate.Count)];
-        // }
-
-        // public static DateTime GetSyntheticCourseEndDate()
-        // {
-        //     List<DateTime> CourseEndDate = new List<DateTime>()
-        //     {
-        //         new DateTime(2020, 05, 30),
-        //         new DateTime(2020, 02, 19),
-        //         new DateTime(2020, 08, 30)
-
-        //     };
-
-
-        //     return CourseEndDate[ran.Next(0, CourseEndDate.Count)];
-        // }
-
-        // //Assignment Project Synthetic Data++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        // public static string GetSyntheticAssignmentProjectTitle()
-        // {
-        //     List<string> AssignmentProjectTitles = new List<string>()
-        //     {
-        //      "Assignment 1",
-        //      "Assignment 2",
-        //      "Assignment 3",
-        //      "Assignment 4",
-        //      "Assignment 5",
-        //      "Project 1",
-        //      "Project 2",
-
-        //     };
-
-        //     return AssignmentProjectTitles[ran.Next(0, AssignmentProjectTitles.Count)];
-        // }
-
-        // public static string GetSyntheticAssignmentProjectDescription()
-        // {
-        //     List<string> AssignmentProjectDescription = new List<string>()
-        //     {
-        //         "Individual",
-        //         "Team"
-        //     };
-
-        //     return AssignmentProjectDescription[ran.Next(0, AssignmentProjectDescription.Count)];
-        // }
-
-        // public static double GetSyntheticAssignmentProjectOralMark()
-        // {
-        //     List<double> AssignmentProjectOralMark = new List<double>()
-        //     {
-        //         32.2,
-        //         40.6,
-        //         25.9,
-        //         32.7,
-        //         50.0,
-        //         12.2,
-        //         30.6,
-        //         45.9,
-        //         12.7,
-        //         30.0
-        //     };
-
-        //     return AssignmentProjectOralMark[ran.Next(0, AssignmentProjectOralMark.Count)];
-        // }
-
-        // public static double GetSyntheticAssignmentProjectTotalMark()
-        // {
-        //     List<double> AssignmentProjectTotalMark = new List<double>()
-        //     {
-        //         33.2 + GetSyntheticAssignmentProjectOralMark(),
-        //         47.6 + GetSyntheticAssignmentProjectOralMark(),
-        //         20.9 + GetSyntheticAssignmentProjectOralMark(),
-        //         39.7 + GetSyntheticAssignmentProjectOralMark(),
-        //         50.0 + GetSyntheticAssignmentProjectOralMark(),
-        //         13.2 + GetSyntheticAssignmentProjectOralMark(),
-        //         27.6 + GetSyntheticAssignmentProjectOralMark(),
-        //         30.9 + GetSyntheticAssignmentProjectOralMark(),
-        //         49.7 + GetSyntheticAssignmentProjectOralMark(),
-        //         20.0 + GetSyntheticAssignmentProjectOralMark()
-        //     };
-
-        //     return AssignmentProjectTotalMark[ran.Next(0, AssignmentProjectTotalMark.Count)];
-        // }
-
-        // public static DateTime GetSyntheticAssignmentProjectSubDateTime()
-        // {
-        //     List<DateTime> AssignmentProjectSubDateTime = new List<DateTime>()
-        //     {
-        //         new DateTime(2020, 01, 10, 8, 00, 00),
-        //         new DateTime(2020, 02, 20, 9, 00, 00),
-        //         new DateTime(2020, 03, 30, 8, 00, 00),
-        //         new DateTime(2020, 04, 3, 9, 00, 00),
-        //         new DateTime(2020, 05, 4, 8, 00, 00),
-        //         new DateTime(2020, 06, 10, 8, 00, 00),
-
-
-        //     };
-
-        //     return AssignmentProjectSubDateTime[ran.Next(0, AssignmentProjectSubDateTime.Count)];
-        // }
-
-
-
-
-        // //Student Synthetic Data++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-        // public static DateTime GetSyntheticStudentDateOfBirth()
-        // {
-        //     List<DateTime> StudentDateOfBirth = new List<DateTime>()
-        //     {
-        //         new DateTime(1989, 01, 10),
-        //         new DateTime(1972, 02, 21),
-        //         new DateTime(1990, 03, 30),
-        //         new DateTime(1994, 04, 3),
-        //         new DateTime(1988, 05, 4),
-        //         new DateTime(1982, 06, 1),
-        //         new DateTime(1989, 11, 10)
-
-
-        //     };
-
-
-        //     return StudentDateOfBirth[ran.Next(0, StudentDateOfBirth.Count)];
-        // }
-
-        // public static int GetSyntheticStudentFees()
-        // {
-        //     List<int> StudentFees = new List<int>();
-
-        //         for(int i = 2000; i < 2600; i += 100)
-        //     {
-        //         StudentFees.Add(i);
-        //     }
-
-        //     return StudentFees[ran.Next(0, StudentFees.Count)];
-        // }
-
-        // //Trainer Synthetic Data++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-        // public static Subject GetSyntheticTrainerSubject()
-        // {
-        //     List<Subject> TrainerSubject = new List<Subject>()
-        //     {
-        //         Subject.AngularJSReact,
-        //         Subject.architecture,
-        //         Subject.BootstrapFramework,
-        //         Subject.CloudBasedServices,
-        //         Subject.CSharp,
-        //         Subject.HTML_CSS,
-        //         Subject.Java,
-        //         Subject.JavaScript,
-        //         Subject.SQL,
-        //         Subject.UiUXDesign,
-        //         Subject.UnixCommandLine,
-        //         Subject.VersionControlGit,
-        //         Subject.webServersApache,
-        //         Subject.xUnit
-
-        //     };
-
-        //     return TrainerSubject[ran.Next(0, TrainerSubject.Count)];
-        // }
-
-
-
+        
 
     }
 }
