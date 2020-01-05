@@ -20,15 +20,20 @@ namespace PrivateSchool
             Trainer tr1 = new Trainer();
             Assignment as1 = new Assignment();
             Course c1 = new Course();
+            DateTime dt = new DateTime();
 
-            //Lists Of entities
-            List<Course> Courses = new List<Course>();
-            List<Student> Students  = new List<Student>();
-            List<Trainer> Trainers = new List<Trainer>();
-            List<Assignment> Assignments = new List<Assignment>();
+            Output.ProceedWithSelection(Output.PrintMenuGetUserSelection());
 
-            Output.PrintAssignmentsPerStudent(db.Students[0]);
-            Output.PrintStudentsWithMultipleCourses(db.Students);
+            //int a = Output.WeekOfYear(new DateTime(2020, 02, 09));
+            //Console.WriteLine(a);
+            ////Lists Of entities
+            //List<Course> Courses = new List<Course>();
+            //List<Student> Students  = new List<Student>();
+            //List<Trainer> Trainers = new List<Trainer>();
+            //List<Assignment> Assignments = new List<Assignment>();
+
+            //Output.PrintAssignmentsPerStudent(db.Students[0]);
+            //Output.PrintStudentsWithMultipleCourses(db.Students);
           
            // Output.PrintStudentsPerAssignment(db.Assignments[0]);
 

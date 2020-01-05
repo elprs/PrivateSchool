@@ -20,6 +20,7 @@ namespace PrivateSchool
         public List<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
         public List<TrainerCourse> TrainerCourses { get; set; } = new List<TrainerCourse>();
         public List<AssignmentsPerCourse> CourseAssignments { get; set; } = new List<AssignmentsPerCourse>();
+        public List<DateTime> SubmissionDates { get; set; } = new List<DateTime>();
 
         public Database()
         {
@@ -86,36 +87,51 @@ namespace PrivateSchool
             Trainers.Add(t6);
             Trainers.Add(t7);
             Trainers.Add(t8);
-                                  
+
+      
+
             //Παραδοχη: καθε assignment anikei se 1 mathiti, alla ta 2 projects (ap1, ap2) anikoun kai se perissoterous
-            Assignment a1 = new Assignment("Assignment 1", "Individual", new DateTime(2020, 02, 1), 32.2, 62.4);
-            Assignment a2 = new Assignment("Assignment 2", "Individual", new DateTime(2020, 02, 1), 40.6, 95.4);
-            Assignment a3 = new Assignment("Assignment 3", "Individual", new DateTime(2020, 02, 1), 25.9, 85.5);
-            Assignment a4 = new Assignment("Assignment 4", "Individual", new DateTime(2020, 02, 1), 32.7, 99.4);
-            Assignment a5 = new Assignment("Assignment 5", "Individual", new DateTime(2020, 02, 10), 49.9, 94.3);
-            Assignment a6 = new Assignment("Assignment 6", "Individual", new DateTime(2020, 02, 10), 45.8, 98.3);
-            Assignment a7 = new Assignment("Assignment 7", "Individual", new DateTime(2020, 02, 10), 32.41, 92.2);
-            Assignment a8 = new Assignment("Assignment 8", "Individual", new DateTime(2020, 02, 10), 49.7, 98.3);
-            Assignment a9 = new Assignment("Assignment 9", "Individual", new DateTime(2020, 02, 18), 44.6, 98.3);
-            Assignment a10 = new Assignment("Assignment 10", "Individual", new DateTime(2020, 02, 20), 49.1, 98.6);
-            Assignment a11 = new Assignment("Assignment 11", "Individual", new DateTime(2020, 02, 20), 49.4, 93.7);
-            Assignment a12 = new Assignment("Assignment 12", "Individual", new DateTime(2020, 02, 20), 49.6, 94.6);
-            Assignment a13 = new Assignment("Assignment 13", "Individual", new DateTime(2020, 02, 25), 49.8, 99.7);
-            Assignment a14 = new Assignment("Assignment 14", "Individual", new DateTime(2020, 02, 28), 49.9, 98.8);
-            Assignment a15 = new Assignment("Assignment 15", "Individual", new DateTime(2020, 02, 28), 49.1, 99.9);
+            Assignment a1 = new Assignment("Assignment 1", " Individual", new DateTime(2020, 02, 1), 32.2, 62.4);
+            Assignment a2 = new Assignment("Assignment 2", " Individual", new DateTime(2020, 02, 1), 40.6, 95.4);
+            Assignment a3 = new Assignment("Assignment 3", " Individual", new DateTime(2020, 02, 1), 25.9, 85.5);
+            Assignment a4 = new Assignment("Assignment 4", " Individual", new DateTime(2020, 02, 1), 32.7, 99.4);
+            Assignment a5 = new Assignment("Assignment 5", " Individual", new DateTime(2020, 02, 08), 49.9, 94.3);
+            Assignment a6 = new Assignment("Assignment 6", " Individual", new DateTime(2020, 02, 08), 45.8, 98.3);
+            Assignment a7 = new Assignment("Assignment 7", " Individual", new DateTime(2020, 02, 08), 32.41, 92.2);
+            Assignment a8 = new Assignment("Assignment 8", " Individual", new DateTime(2020, 02, 08), 49.7, 98.3);
+            Assignment a9 = new Assignment("Assignment 9", " Individual", new DateTime(2020, 02, 15), 44.6, 98.3);
+            Assignment a10 = new Assignment("Assignment 10", "Individual", new DateTime(2020, 02, 15), 49.1, 98.6);
+            Assignment a11 = new Assignment("Assignment 11", "Individual", new DateTime(2020, 02, 15), 49.4, 93.7);
+            Assignment a12 = new Assignment("Assignment 12", "Individual", new DateTime(2020, 02, 15), 49.6, 94.6);
+            Assignment a13 = new Assignment("Assignment 13", "Individual", new DateTime(2020, 02, 22), 49.8, 99.7);
+            Assignment a14 = new Assignment("Assignment 14", "Individual", new DateTime(2020, 02, 22), 49.9, 98.8);
+            Assignment a15 = new Assignment("Assignment 15", "Individual", new DateTime(2020, 02, 22), 49.1, 99.9);
 
-            Assignment ap1 = new Assignment("Project 1", "Team proj.", new DateTime(2020, 03, 01), 12.2, 98.2);
-            Assignment ap2 = new Assignment("Project 1", "Individual.", new DateTime(2020, 06, 01), 12.2, 89.2);
+            Assignment ap1 = new Assignment("Project 1    ", "Team proj.", new DateTime(2020, 02, 29), 12.2, 98.2);
+            Assignment ap2 = new Assignment("Project 1    ", "Individual.", new DateTime(2020, 06, 06), 12.2, 89.2);
             
-
-
             Assignments.Add(a1);
             Assignments.Add(a2);
             Assignments.Add(a3);
             Assignments.Add(a4);
             Assignments.Add(a5);
             Assignments.Add(a6);
-            Assignments.Add(a7);
+            Assignments.Add(a7); 
+            Assignments.Add(a8);
+            Assignments.Add(a9);
+            Assignments.Add(a10);
+            Assignments.Add(a11);
+            Assignments.Add(a12);
+            Assignments.Add(a13);
+            Assignments.Add(a14);
+            Assignments.Add(a15);
+            Assignments.Add(ap1);
+            Assignments.Add(ap2);
+
+            foreach (Assignment assignment in Assignments)
+            {
+                SubmissionDates.Add(assignment.SubDateTime);
+            }
 
             StudentCourse sc1 = new StudentCourse(s1, c1);
             StudentCourse sc2 = new StudentCourse(s2, c2);
@@ -229,4 +245,5 @@ namespace PrivateSchool
         
 
     }
+
 }
