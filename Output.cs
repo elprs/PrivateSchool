@@ -182,18 +182,16 @@ namespace PrivateSchool
 
         public static void PrintStudentsPerCourse(List<Student> Students, Course course )
         {
-            List<Student> students = Students;
-            Course course1 = course;
 
             Console.WriteLine();
-            Console.WriteLine("The students of the course {0} are: ", course1.Title);
+            Console.WriteLine("The students of the course {0} are: ", course.Title);
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(" ------------- ");
-            Console.WriteLine("|  " + course1.Title + "   ");
+            Console.WriteLine("|  " + course.Title + "   ");
             Console.WriteLine(" ------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in course1.Students)
+            foreach (var item in course.Students)
             {
 
                 Console.WriteLine(" ------------- ");

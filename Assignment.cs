@@ -18,10 +18,8 @@ namespace PrivateSchool
         public double TotalMark { get; set; } //παραδοχη max  total mark: 100.0
 
         public List<Student> Students = new List<Student>();
-        public Assignment()
-        {
+        public Course Course { get; set; } = new Course();
 
-        }
         public Assignment(string title, string description, DateTime subDateTime, double oralMark, double totalMark)
         {
             Title = title;

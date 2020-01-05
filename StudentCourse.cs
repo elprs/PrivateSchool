@@ -17,8 +17,7 @@ namespace PrivateSchool
         {
             this.student = student;
             this.course = course;
-            student.Courses.Add(course);
-            course.Students.Add(student);
+            
         }
 
 
