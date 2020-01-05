@@ -26,32 +26,34 @@ namespace PrivateSchool
             // Output.PrintStudents(db.Students);
             // Output.PrintTrainers(db.Trainers);
 
+
+            Output.PrintAssignmentsPerCourse( db.Courses[1]);
+            Output.PrintCoursePerAssignment(db.Assignments[0]);
+
+            //????    Output.PrintStudentsPerCourse(db.Students, db.Courses[0]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
             //Output.PrintAssignmentsPerCourse(db.Courses[0].Assignments, db.Courses[0]); // EDOOOOO PSAKSE POIA LISTA EINAI POIA
+            //Output.PrintStudentsPerCourse( db.Courses[1]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            //Output.PrintStudentsPerCourse( db.Courses[2]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            //Output.PrintStudentsPerCourse( db.Courses[3]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
 
+            //Output.PrintTrainersPerCourse( db.Courses[0]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            //Output.PrintTrainersPerCourse( db.Courses[1]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            //Output.PrintTrainersPerCourse( db.Courses[2]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            //Output.PrintTrainersPerCourse( db.Courses[3]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
 
-            Output.PrintStudentsPerCourse(db.Students, db.Courses[0]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
-            //Output.PrintStudentsPerCourse(db.Students, db.Courses[1]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
-            //Output.PrintStudentsPerCourse(db.Students, db.Courses[2]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
-            //Output.PrintStudentsPerCourse(db.Students, db.Courses[3]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            //Output.PrintCoursesPerStudent( db.Students[0]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            //Output.PrintCoursesPerStudent( db.Students[1]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            //Output.PrintCoursesPerStudent( db.Students[2]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            //Output.PrintCoursesPerStudent( db.Students[3]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
 
-            //Output.PrintTrainersPerCourse(db.Trainers, db.Courses[0]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
-            //Output.PrintTrainersPerCourse(db.Trainers, db.Courses[1]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
-            //Output.PrintTrainersPerCourse(db.Trainers, db.Courses[2]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
-            //Output.PrintTrainersPerCourse(db.Trainers, db.Courses[3]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            //Output.PrintCoursesPerTrainer( db.Trainers[0]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            //Output.PrintCoursesPerTrainer( db.Trainers[1]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            //Output.PrintCoursesPerTrainer( db.Trainers[2]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
+            //Output.PrintCoursesPerTrainer( db.Trainers[3]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
 
-            //Output.PrintCoursesPerStudent(db.Courses, db.Students[0]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
-            //Output.PrintCoursesPerStudent(db.Courses, db.Students[1]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
-            //Output.PrintCoursesPerStudent(db.Courses, db.Students[2]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
-            //Output.PrintCoursesPerStudent(db.Courses, db.Students[3]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
-
-            //Output.PrintCoursesPerTrainer(db.Courses, db.Trainers[0]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
-            //Output.PrintCoursesPerTrainer(db.Courses, db.Trainers[1]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
-            //Output.PrintCoursesPerTrainer(db.Courses, db.Trainers[2]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
-            //Output.PrintCoursesPerTrainer(db.Courses, db.Trainers[3]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
-
-            //Output.PrintAssignmentsPerStudent(db.Assignments, db.Students[0]);
+            //Output.PrintAssignmentsPerStudent(db.Students[0]);
             //...
-            //Output.PrintStudentsPerAssignment(db.Students, db.Assignments[0]);
+            //Output.PrintStudentsPerAssignment(db.Assignments[0]);
             //...
 
 

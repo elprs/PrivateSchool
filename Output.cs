@@ -8,7 +8,7 @@ namespace PrivateSchool
 {
     static class Output
     {
-        static Output() {}
+        static Output() { }
         public static void PrintCourses(List<Course> Courses)
         {
             List<Course> courses = Courses;
@@ -35,7 +35,7 @@ namespace PrivateSchool
 
             foreach (var item in courses)
             {
-                
+
                 Console.Write(" -------");
                 Console.Write(" --------- ");
                 Console.Write(" ------------ ");
@@ -43,9 +43,9 @@ namespace PrivateSchool
                 Console.WriteLine(" ----------------------- ");
                 Console.Write("|  " + item.Title);
                 Console.Write("\t  | " + item.Stream);
-                Console.Write("    |  " + item.Type );
-                Console.Write("  |  " + item.StartDate );
-                Console.WriteLine("    | " + item.EndDate );
+                Console.Write("    |  " + item.Type);
+                Console.Write("  |  " + item.StartDate);
+                Console.WriteLine("    | " + item.EndDate);
                 Console.Write(" -------");
                 Console.Write(" --------- ");
                 Console.Write(" ------------ ");
@@ -180,9 +180,8 @@ namespace PrivateSchool
         }
 
 
-        public static void PrintStudentsPerCourse(List<Student> Students, Course course )
+        public static void PrintStudentsPerCourse( Course course)
         {
-
             Console.WriteLine();
             Console.WriteLine("The students of the course {0} are: ", course.Title);
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -202,20 +201,19 @@ namespace PrivateSchool
             }
 
         }
-        public static void PrintCoursesPerStudent(List<Course> Courses, Student student)
+        public static void PrintCoursesPerStudent( Student student)
         {
-            List<Course> courses = Courses;
-            Student student1 = student;
+         
 
             Console.WriteLine();
-            Console.WriteLine("The courses of the student {0} are: ", student1.FirstName);
+            Console.WriteLine("The courses of the student {0} are: ", student.FirstName);
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(" ------------- ");
-            Console.WriteLine("|  " + student1.FirstName + "   ");
+            Console.WriteLine("|  " + student.FirstName + "   ");
             Console.WriteLine(" ------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in student1.Courses)
+            foreach (var item in student.Courses)
             {
 
                 Console.WriteLine(" ------------- ");
@@ -226,20 +224,17 @@ namespace PrivateSchool
             }
 
         }
-        public static void PrintTrainersPerCourse(List<Trainer> Trainers, Course course)
+        public static void PrintTrainersPerCourse( Course course)
         {
-            List<Trainer> trainers = Trainers;
-            Course course1 = course;
-
             Console.WriteLine();
-            Console.WriteLine("The Trainers of the course {0} are: ", course1.Title);
+            Console.WriteLine("The Trainers of the course {0} are: ", course.Title);
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(" ------------- ");
-            Console.WriteLine("|  " + course1.Title + "   ");
+            Console.WriteLine("|  " + course.Title + "   ");
             Console.WriteLine(" ------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in course1.Trainers)
+            foreach (var item in course.Trainers)
             {
 
                 Console.WriteLine(" ------------- ");
@@ -250,20 +245,18 @@ namespace PrivateSchool
             }
 
         }
-        public static void PrintCoursesPerTrainer(List<Course> Courses, Trainer Trainer)
+        public static void PrintCoursesPerTrainer( Trainer Trainer)
         {
-            List<Course> courses = Courses;
-            Trainer Trainer1 = Trainer;
 
             Console.WriteLine();
-            Console.WriteLine("The courses of the Trainer {0} are: ", Trainer1.FirstName);
+            Console.WriteLine("The courses of the Trainer {0} are: ", Trainer.FirstName);
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(" ------------- ");
-            Console.WriteLine("|  " + Trainer1.FirstName + "   ");
+            Console.WriteLine("|  " + Trainer.FirstName + "   ");
             Console.WriteLine(" ------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in Trainer1.Courses)
+            foreach (var item in Trainer.Courses)
             {
 
                 Console.WriteLine(" ------------- ");
@@ -274,20 +267,18 @@ namespace PrivateSchool
             }
 
         }
-        public static void PrintAssignmentsPerStudent(List<Assignment> Assignments, Student student)
+        public static void PrintAssignmentsPerStudent( Student student)
         {
-            List<Assignment> assignments = Assignments;
-            Student student1 = student;
 
             Console.WriteLine();
-            Console.WriteLine("The Assignments of the student {0} are: ", student1.FirstName);
+            Console.WriteLine("The Assignments of the student {0} are: ", student.FirstName);
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(" ------------- ");
-            Console.WriteLine("|  " + student1.FirstName + "   ");
+            Console.WriteLine("|  " + student.FirstName + "   ");
             Console.WriteLine(" ------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in student1.Assignments)
+            foreach (var item in student.Assignments)
             {
 
                 Console.WriteLine(" --------------- ");
@@ -298,20 +289,17 @@ namespace PrivateSchool
             }
 
         }
-        public static void PrintStudentsPerAssignment(List<Student> Students, Assignment Assignment)
+        public static void PrintStudentsPerAssignment( Assignment Assignment)
         {
-            List<Student> students = Students;
-            Assignment Assignment1 = Assignment;
-
             Console.WriteLine();
-            Console.WriteLine("The students of the Assignment {0} are: ", Assignment1.Title);
+            Console.WriteLine("The students of the Assignment {0} are: ", Assignment.Title);
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(" --------------- ");
-            Console.WriteLine("|  " + Assignment1.Title + "   ");
+            Console.WriteLine("|  " + Assignment.Title + "   ");
             Console.WriteLine(" --------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in Assignment1.Students)
+            foreach (var item in Assignment.Students)
             {
 
                 Console.WriteLine(" ------------- ");
@@ -322,7 +310,7 @@ namespace PrivateSchool
             }
 
         }
-        public static void PrintAssignmentsPerCourse(List<Assignment> Assignments, Course course)
+        public static void PrintAssignmentsPerCourse( Course course)
         {
 
             Console.WriteLine();
@@ -344,265 +332,285 @@ namespace PrivateSchool
             }
 
         }
+        public static void PrintCoursePerAssignment( Assignment Assignment)
+        {
+            Console.WriteLine();
+            Console.WriteLine("The Course of the Assignment {0} are: ", Assignment.Title);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(" --------------- ");
+            Console.WriteLine("|  " + Assignment.Title + "   ");
+            Console.WriteLine(" --------------- ");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            foreach (var item in Assignment.Courses)
+            {
+
+                Console.WriteLine(" ------------- ");
+                Console.WriteLine("| " + item.Title);
+                Console.WriteLine(" ------------- ");
+
+
+            }
 
 
 
 
 
 
-        //    //MenuMethods+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        //    public static int GetMenuSelection()
-        //    {
-        //        //initialised for test
-        //        int selection = -1;
-        //        bool isInputValid;
+            //    //MenuMethods+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            //    public static int GetMenuSelection()
+            //    {
+            //        //initialised for test
+            //        int selection = -1;
+            //        bool isInputValid;
 
-        //        do
-        //        {
-        //            //print menu
-        //            Console.ForegroundColor = ConsoleColor.Cyan;
-        //            Console.WriteLine();
-        //            Console.WriteLine("\tMenu");
-        //            Console.WriteLine();
-        //            Console.ForegroundColor = ConsoleColor.White;
-        //            Console.WriteLine("0. Input courses");
-        //            Console.WriteLine("1. Input trainer");
-        //            Console.WriteLine("2. Input students");
-        //            Console.WriteLine("3. Input assignments/projects");
-        //            Console.WriteLine("4. Output students");
-        //            Console.WriteLine("5. Output trainers");
-        //            Console.WriteLine("6. Output assignments/projects");
-        //            Console.WriteLine("7. Output courses");
-        //            Console.WriteLine("8. Output students per course");
-        //            Console.WriteLine("9. Output trainers per course");
-        //            Console.WriteLine("10. Output assignments/projects per course");
-        //            Console.WriteLine("11. Output assignments/projects per student");
-        //            Console.WriteLine("12. Output students per more courses");
-        //            Console.WriteLine("13. Exit the program");
-
-
+            //        do
+            //        {
+            //            //print menu
+            //            Console.ForegroundColor = ConsoleColor.Cyan;
+            //            Console.WriteLine();
+            //            Console.WriteLine("\tMenu");
+            //            Console.WriteLine();
+            //            Console.ForegroundColor = ConsoleColor.White;
+            //            Console.WriteLine("0. Input courses");
+            //            Console.WriteLine("1. Input trainer");
+            //            Console.WriteLine("2. Input students");
+            //            Console.WriteLine("3. Input assignments/projects");
+            //            Console.WriteLine("4. Output students");
+            //            Console.WriteLine("5. Output trainers");
+            //            Console.WriteLine("6. Output assignments/projects");
+            //            Console.WriteLine("7. Output courses");
+            //            Console.WriteLine("8. Output students per course");
+            //            Console.WriteLine("9. Output trainers per course");
+            //            Console.WriteLine("10. Output assignments/projects per course");
+            //            Console.WriteLine("11. Output assignments/projects per student");
+            //            Console.WriteLine("12. Output students per more courses");
+            //            Console.WriteLine("13. Exit the program");
 
 
 
-        //            do
-        //            {
-        //                //Get selection from user
-        //                try
-        //                {
-
-        //                    Console.ForegroundColor = ConsoleColor.Cyan;
-        //                    Console.WriteLine("Please select an option \nby typing the number followed by the 'enter' key");
-        //                    Console.WriteLine("or type any other key followed by 'enter' to get to the main menu.");
-        //                    Console.ForegroundColor = ConsoleColor.White;
-        //                    selection = Convert.ToInt32(Console.ReadLine());
-        //                    isInputValid = true;
 
 
-        //                }
-        //                catch (Exception)
-        //                {
-        //                    Console.WriteLine("Your input was invalid.");
-        //                    Console.WriteLine();
-        //                    isInputValid = false;
-        //                }
+            //            do
+            //            {
+            //                //Get selection from user
+            //                try
+            //                {
 
-        //            }
-        //            while (isInputValid == false);
-
-
-
-        //        } while (!(selection >= 0 && selection <= 13));
+            //                    Console.ForegroundColor = ConsoleColor.Cyan;
+            //                    Console.WriteLine("Please select an option \nby typing the number followed by the 'enter' key");
+            //                    Console.WriteLine("or type any other key followed by 'enter' to get to the main menu.");
+            //                    Console.ForegroundColor = ConsoleColor.White;
+            //                    selection = Convert.ToInt32(Console.ReadLine());
+            //                    isInputValid = true;
 
 
-        //        return selection;
-        //    }
+            //                }
+            //                catch (Exception)
+            //                {
+            //                    Console.WriteLine("Your input was invalid.");
+            //                    Console.WriteLine();
+            //                    isInputValid = false;
+            //                }
 
-
-        //    public void ExecuteMenuSelection(int inputedSelection)
-        //    {
-        //        //according to the user's selection, runs the appropriate methods
-        //        int selection = inputedSelection;
-        //        bool isInputValid;
-        //        char input = 's';
-        //        bool keepGoing = true;
+            //            }
+            //            while (isInputValid == false);
 
 
 
-        //        do
-        //        {
-        //            switch (selection)
-        //            {
-        //                case 0:
-
-        //                    //                inserts a course to the list
+            //        } while (!(selection >= 0 && selection <= 13));
 
 
-        //                    //                Course c1 = Menu.GetCourse();
-        //                    //                privateSchool.allCourses.Add(c1);
-        //                    //                Console.WriteLine("A course in now added to the course list");
-
-        //                    //            //........here you need to give an option to see all the menu again
-        //                    break;//endCase0
-
-        //                case 1:
-        //                    Console.WriteLine();
-
-        //                    Console.WriteLine("Press 's' followed by enter to insert synthetic data.");
-        //                    Console.WriteLine("Press 'm' followed by enter to insert manually your data.");
-        //                    do
-        //                    {
-        //                        try
-        //                        {
-
-        //                            input = Convert.ToChar(Console.ReadLine());
-        //                            isInputValid = true;
-        //                            if (input == 's')
-        //                            {
-        //                                allTrainers = Trainer.TrainerSyntheticData();
-        //                                Console.WriteLine("The synthetic data is now added to Trainer 's list.");
-        //                                isInputValid = true;
-        //                                GetMenuSelection();
-        //                            }
-        //                            else if (input == 'm')
-        //                            {
-        //                                allTrainers = Trainer.AddTrainerManually();
-        //                                Console.WriteLine("Your data is now added to Trainer 's list.");
-        //                                isInputValid = true;
-        //                                GetMenuSelection();
-
-        //                            }
+            //        return selection;
+            //    }
 
 
-        //                        }
-        //                        catch (Exception)
-        //                        {
-        //                            Console.WriteLine("Your input is invalid.");
-        //                            isInputValid = false;
-        //                        }
-
-        //                    }
-        //                    while (isInputValid == false);
-        //                    break;//endCase:1
-
-        //                case 2:
-
-        //                    Console.WriteLine();
-
-        //                    Console.WriteLine("Press 's' followed by enter to insert synthetic data.");
-        //                    Console.WriteLine("Press 'm' followed by enter to insert manually your data.");
-        //                    do
-        //                    {
-        //                        try
-        //                        {
-
-        //                            input = Convert.ToChar(Console.ReadLine());
-        //                            isInputValid = true;
-        //                            if (input == 's')
-        //                            {
-        //                                allStudents = Student.StudentListSyntheticData();
-        //                                Console.WriteLine("The synthetic data is now added to student 's list.");
-        //                                isInputValid = true;
-        //                                GetMenuSelection();
-        //                            }
-        //                            else if (input == 'm')
-        //                            {
-        //                                allStudents = Student.AddStudentManually();
-        //                                Console.WriteLine("Your data is now added to student 's list.");
-        //                                isInputValid = true;
-        //                                GetMenuSelection();
-
-        //                            }
-
-
-        //                        }
-        //                        catch (Exception)
-        //                        {
-        //                            Console.WriteLine("Your input is invalid.");
-        //                            isInputValid = false;
-        //                        }
-
-        //                    }
-        //                    while (isInputValid == false);
-        //                    break;//endCase:2
-
-        //                case 3:
-
-        //                    Console.WriteLine();
-
-        //                    Console.WriteLine("Press 's' followed by enter to insert synthetic data.");
-        //                    Console.WriteLine("Press 'm' followed by enter to insert manually your data.");
-        //                    do
-        //                    {
-        //                        try
-        //                        {
-
-        //                            input = Convert.ToChar(Console.ReadLine());
-        //                            isInputValid = true;
-        //                            if (input == 's')
-        //                            {
-        //                                allAssignmentsProjects = AssignmentProject.AssignmentProjectSyntheticData();
-        //                                Console.WriteLine("The synthetic data is now added to AssignmentProject 's list.");
-        //                                isInputValid = true;
-        //                                GetMenuSelection();
-        //                            }
-        //                            else if (input == 'm')
-        //                            {
-        //                                allAssignmentsProjects = AssignmentProject.AddAssignmentProjectManually();
-        //                                Console.WriteLine("Your data is now added to AssignmentProject 's list.");
-        //                                isInputValid = true;
-        //                                GetMenuSelection();
-
-        //                            }
-
-
-        //                        }
-        //                        catch (Exception)
-        //                        {
-        //                            Console.WriteLine("Your input is invalid.");
-        //                            isInputValid = false;
-        //                        }
-
-        //                    }
-        //                    while (isInputValid == false);
-        //                    break;//endCase:3
-
-        //                //        case 4:
-        //                //            //to see all the students.
-        //                //            break;
-        //                //        case 5:
-        //                //            //to see all the trainers.
-        //                //            break;
-        //                //        case 6:
-        //                //            //to see all the assignments / projects.
-        //                //            break;
-        //                //        case 7:
-        //                //            //to see all the courses.
-        //                //            break;
-        //                //        case 8:
-        //                //            //to see the students per course.
-        //                //            break;
-        //                //        case 9:
-        //                //            //to see the trainers per course.
-        //                //            break;
-        //                //        case 10:
-        //                //            //to see the assignments/ projects per course.
-        //                //            break;
-        //                //        case 11:
-        //                //            //to see the assignments/ projects per student
-        //                //            break;
-        //                //        case 12:
-        //                //            //to see the students with more courses.
-        //                //            break;
-        //                //        //exit");
-        //                default:
-        //                    break;
-
-
-        //            }
-        //        } while (keepGoing);
-        //    }
+            //    public void ExecuteMenuSelection(int inputedSelection)
+            //    {
+            //        //according to the user's selection, runs the appropriate methods
+            //        int selection = inputedSelection;
+            //        bool isInputValid;
+            //        char input = 's';
+            //        bool keepGoing = true;
 
 
 
+            //        do
+            //        {
+            //            switch (selection)
+            //            {
+            //                case 0:
+
+            //                    //                inserts a course to the list
+
+
+            //                    //                Course c1 = Menu.GetCourse();
+            //                    //                privateSchool.allCourses.Add(c1);
+            //                    //                Console.WriteLine("A course in now added to the course list");
+
+            //                    //            //........here you need to give an option to see all the menu again
+            //                    break;//endCase0
+
+            //                case 1:
+            //                    Console.WriteLine();
+
+            //                    Console.WriteLine("Press 's' followed by enter to insert synthetic data.");
+            //                    Console.WriteLine("Press 'm' followed by enter to insert manually your data.");
+            //                    do
+            //                    {
+            //                        try
+            //                        {
+
+            //                            input = Convert.ToChar(Console.ReadLine());
+            //                            isInputValid = true;
+            //                            if (input == 's')
+            //                            {
+            //                                allTrainers = Trainer.TrainerSyntheticData();
+            //                                Console.WriteLine("The synthetic data is now added to Trainer 's list.");
+            //                                isInputValid = true;
+            //                                GetMenuSelection();
+            //                            }
+            //                            else if (input == 'm')
+            //                            {
+            //                                allTrainers = Trainer.AddTrainerManually();
+            //                                Console.WriteLine("Your data is now added to Trainer 's list.");
+            //                                isInputValid = true;
+            //                                GetMenuSelection();
+
+            //                            }
+
+
+            //                        }
+            //                        catch (Exception)
+            //                        {
+            //                            Console.WriteLine("Your input is invalid.");
+            //                            isInputValid = false;
+            //                        }
+
+            //                    }
+            //                    while (isInputValid == false);
+            //                    break;//endCase:1
+
+            //                case 2:
+
+            //                    Console.WriteLine();
+
+            //                    Console.WriteLine("Press 's' followed by enter to insert synthetic data.");
+            //                    Console.WriteLine("Press 'm' followed by enter to insert manually your data.");
+            //                    do
+            //                    {
+            //                        try
+            //                        {
+
+            //                            input = Convert.ToChar(Console.ReadLine());
+            //                            isInputValid = true;
+            //                            if (input == 's')
+            //                            {
+            //                                allStudents = Student.StudentListSyntheticData();
+            //                                Console.WriteLine("The synthetic data is now added to student 's list.");
+            //                                isInputValid = true;
+            //                                GetMenuSelection();
+            //                            }
+            //                            else if (input == 'm')
+            //                            {
+            //                                allStudents = Student.AddStudentManually();
+            //                                Console.WriteLine("Your data is now added to student 's list.");
+            //                                isInputValid = true;
+            //                                GetMenuSelection();
+
+            //                            }
+
+
+            //                        }
+            //                        catch (Exception)
+            //                        {
+            //                            Console.WriteLine("Your input is invalid.");
+            //                            isInputValid = false;
+            //                        }
+
+            //                    }
+            //                    while (isInputValid == false);
+            //                    break;//endCase:2
+
+            //                case 3:
+
+            //                    Console.WriteLine();
+
+            //                    Console.WriteLine("Press 's' followed by enter to insert synthetic data.");
+            //                    Console.WriteLine("Press 'm' followed by enter to insert manually your data.");
+            //                    do
+            //                    {
+            //                        try
+            //                        {
+
+            //                            input = Convert.ToChar(Console.ReadLine());
+            //                            isInputValid = true;
+            //                            if (input == 's')
+            //                            {
+            //                                allAssignmentsProjects = AssignmentProject.AssignmentProjectSyntheticData();
+            //                                Console.WriteLine("The synthetic data is now added to AssignmentProject 's list.");
+            //                                isInputValid = true;
+            //                                GetMenuSelection();
+            //                            }
+            //                            else if (input == 'm')
+            //                            {
+            //                                allAssignmentsProjects = AssignmentProject.AddAssignmentProjectManually();
+            //                                Console.WriteLine("Your data is now added to AssignmentProject 's list.");
+            //                                isInputValid = true;
+            //                                GetMenuSelection();
+
+            //                            }
+
+
+            //                        }
+            //                        catch (Exception)
+            //                        {
+            //                            Console.WriteLine("Your input is invalid.");
+            //                            isInputValid = false;
+            //                        }
+
+            //                    }
+            //                    while (isInputValid == false);
+            //                    break;//endCase:3
+
+            //                //        case 4:
+            //                //            //to see all the students.
+            //                //            break;
+            //                //        case 5:
+            //                //            //to see all the trainers.
+            //                //            break;
+            //                //        case 6:
+            //                //            //to see all the assignments / projects.
+            //                //            break;
+            //                //        case 7:
+            //                //            //to see all the courses.
+            //                //            break;
+            //                //        case 8:
+            //                //            //to see the students per course.
+            //                //            break;
+            //                //        case 9:
+            //                //            //to see the trainers per course.
+            //                //            break;
+            //                //        case 10:
+            //                //            //to see the assignments/ projects per course.
+            //                //            break;
+            //                //        case 11:
+            //                //            //to see the assignments/ projects per student
+            //                //            break;
+            //                //        case 12:
+            //                //            //to see the students with more courses.
+            //                //            break;
+            //                //        //exit");
+            //                default:
+            //                    break;
+
+
+            //            }
+            //        } while (keepGoing);
+            //    }
+
+
+
+        }
     }
 }

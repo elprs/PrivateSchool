@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace PrivateSchool
 {
     /// <summary>
-    /// Many to Many data association.
+    /// Every course has assignments, every student has courses, thus every student has assignments
     /// </summary>
     class StudentAssignment
     {
