@@ -38,7 +38,7 @@ namespace PrivateSchool
             Console.WriteLine(" ----------------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in courses)
+            foreach (var course in courses)
             {
 
                 Console.Write(" -------");
@@ -46,11 +46,11 @@ namespace PrivateSchool
                 Console.Write(" ------------ ");
                 Console.Write(" ------------------------ ");
                 Console.WriteLine(" ----------------------- ");
-                Console.Write("|  " + item.Title);
-                Console.Write("\t  | " + item.Stream);
-                Console.Write("    |  " + item.Type);
-                Console.Write("  |  " + item.StartDate);
-                Console.WriteLine("    | " + item.EndDate);
+                Console.Write("|  " + course.Title);
+                Console.Write("\t  | " + course.Stream);
+                Console.Write("    |  " + course.Type);
+                Console.Write("  |  " + course.StartDate);
+                Console.WriteLine("    | " + course.EndDate);
                 Console.Write(" -------");
                 Console.Write(" --------- ");
                 Console.Write(" ------------ ");
@@ -81,17 +81,17 @@ namespace PrivateSchool
             Console.WriteLine(" ---------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in students)
+            foreach (var student in students)
             {
 
                 Console.Write(" ------------- ");
                 Console.Write(" ---------------- ");
                 Console.Write(" ------------------------ ");
                 Console.WriteLine(" ---------------- ");
-                Console.Write("| " + item.FirstName + "   ");
-                Console.Write("\t| " + item.LastName);
-                Console.Write("\t  | " + item.DateOfBirth);
-                Console.WriteLine("\t    | " + item.TuitionFees);
+                Console.Write("| " + student.FirstName + "   ");
+                Console.Write("\t| " + student.LastName);
+                Console.Write("\t  | " + student.DateOfBirth);
+                Console.WriteLine("\t    | " + student.TuitionFees);
                 Console.Write(" ------------- ");
                 Console.Write(" ---------------- ");
                 Console.Write(" ------------------------ ");
@@ -120,15 +120,15 @@ namespace PrivateSchool
             Console.ForegroundColor = ConsoleColor.White;
 
 
-            foreach (var item in trainers)
+            foreach (var trainer in trainers)
             {
 
                 Console.Write(" ------------- ");
                 Console.Write(" ---------------- ");
                 Console.WriteLine(" ---------------- ");
-                Console.Write("| " + item.FirstName + "   ");
-                Console.Write("\t|  " + item.LastName);
-                Console.WriteLine("\t  | " + item.Subject);
+                Console.Write("| " + trainer.FirstName + "   ");
+                Console.Write("\t|  " + trainer.LastName);
+                Console.WriteLine("\t  | " + trainer.Subject);
                 Console.Write(" ------------- ");
                 Console.Write(" ---------------- ");
                 Console.WriteLine(" ---------------- ");
@@ -161,7 +161,7 @@ namespace PrivateSchool
             Console.WriteLine(" ---------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in assignments)
+            foreach (var assignment in assignments)
             {
 
                 Console.Write(" ---------------- ");
@@ -169,11 +169,11 @@ namespace PrivateSchool
                 Console.Write(" ------------------------ ");
                 Console.Write(" --------- ");
                 Console.WriteLine(" ---------- ");
-                Console.Write("|  " + item.Title);
-                Console.Write("  | " + item.Description);
-                Console.Write("    |  " + item.SubDateTime);
-                Console.Write("    |  " + item.OralMark);
-                Console.WriteLine("    | " + item.TotalMark);
+                Console.Write("|  " + assignment.Title);
+                Console.Write("  | " + assignment.Description);
+                Console.Write("    |  " + assignment.SubDateTime);
+                Console.Write("    |  " + assignment.OralMark);
+                Console.WriteLine("    | " + assignment.TotalMark);
                 Console.Write(" ---------------- ");
                 Console.Write(" ------------- ");
                 Console.Write(" ------------------------ ");
@@ -195,11 +195,11 @@ namespace PrivateSchool
             Console.WriteLine(" ------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in course.Students)
+            foreach (var student in course.Students)
             {
 
                 Console.WriteLine(" ------------- ");
-                Console.WriteLine("| " + item.FirstName);
+                Console.WriteLine("| " + student.FirstName);
                 Console.WriteLine(" ------------- ");
 
 
@@ -218,11 +218,11 @@ namespace PrivateSchool
             Console.WriteLine(" ------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in student.Courses)
+            foreach (var course in student.Courses)
             {
 
                 Console.WriteLine(" ------------- ");
-                Console.WriteLine("| " + item.Title);
+                Console.WriteLine("| " + course.Title);
                 Console.WriteLine(" ------------- ");
 
 
@@ -239,11 +239,11 @@ namespace PrivateSchool
             Console.WriteLine(" ------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in course.Trainers)
+            foreach (var trainer in course.Trainers)
             {
 
                 Console.WriteLine(" ------------- ");
-                Console.WriteLine("| " + item.FirstName);
+                Console.WriteLine("| " + trainer.FirstName);
                 Console.WriteLine(" ------------- ");
 
 
@@ -261,11 +261,11 @@ namespace PrivateSchool
             Console.WriteLine(" ------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in Trainer.Courses)
+            foreach (var course in Trainer.Courses)
             {
 
                 Console.WriteLine(" ------------- ");
-                Console.WriteLine("| " + item.Title);
+                Console.WriteLine("| " + course.Title);
                 Console.WriteLine(" ------------- ");
 
 
@@ -285,16 +285,16 @@ namespace PrivateSchool
             Console.WriteLine(" ------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in Assignments)
+            foreach (var assignment in Assignments)
             {
 
                 Console.WriteLine(" --------------- ");
-                Console.WriteLine("| " + item.Title);
+                Console.WriteLine("| " + assignment.Title);
                 Console.WriteLine(" --------------- ");
 
             }
 
-        }//nice
+        }
         public static void PrintStudentsWithMultipleCourses(List<Student> Students)
         {
             Console.WriteLine();
@@ -307,7 +307,7 @@ namespace PrivateSchool
                     Console.WriteLine("The student {0} {1} has {2} courses.", student.FirstName, student.LastName, a);
                 }
             }
-        }//nice
+        }
         public static void PrintStudentsPerAssignment(Assignment Assignment)
         {
             Console.WriteLine();
@@ -318,11 +318,11 @@ namespace PrivateSchool
             Console.WriteLine(" --------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in Assignment.Students)
+            foreach (var student in Assignment.Students)
             {
 
                 Console.WriteLine(" ------------- ");
-                Console.WriteLine("| " + item.FirstName);
+                Console.WriteLine("| " + student.FirstName);
                 Console.WriteLine(" ------------- ");
 
 
@@ -340,11 +340,11 @@ namespace PrivateSchool
             Console.WriteLine(" ------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in course.Assignments)
+            foreach (var assignemt in course.Assignments)
             {
 
                 Console.WriteLine(" ------------- ");
-                Console.WriteLine("| " + item.Title);
+                Console.WriteLine("| " + assignemt.Title);
                 Console.WriteLine(" ------------- ");
 
 
@@ -361,11 +361,11 @@ namespace PrivateSchool
             Console.WriteLine(" --------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in Assignment.Courses)
+            foreach (var course in Assignment.Courses)
             {
 
                 Console.WriteLine(" ------------- ");
-                Console.WriteLine("| " + item.Title);
+                Console.WriteLine("| " + course.Title);
                 Console.WriteLine(" ------------- ");
 
 
@@ -687,9 +687,9 @@ namespace PrivateSchool
         {
             List<int> submissionWeeks = new List<int>();
 
-            foreach (var item in SubDates)
+            foreach (DateTime submissionDate in SubDates)
             {
-                submissionWeeks.Add(WeekOfYear(item));
+                submissionWeeks.Add(WeekOfYear(submissionDate));
             }
             return submissionWeeks;
         }
@@ -719,16 +719,19 @@ namespace PrivateSchool
             Console.WriteLine("Press 0 to insert a course");
             Console.WriteLine("Press 1 to insert a trainer");
             Console.WriteLine("Press 2 to insert a student");
-            Console.WriteLine("Press 3 to insert an assignment/project");
-            Console.WriteLine("Press 4 to print all the students");
-            Console.WriteLine("Press 5 to see all the trainers");
-            Console.WriteLine("Press 6 to see all the assignments");
-            Console.WriteLine("Press 7 to see all the courses");
-            Console.WriteLine("Press 8 to see the students per course");
-            Console.WriteLine("Press 9 to see the trainers per course");
-            Console.WriteLine("Press 10 to see the assignments per course");
-            Console.WriteLine("Press 11 to see the assignments per student");
-            Console.WriteLine("Press 12 to see the students with more courses");
+            Console.WriteLine("Press 3 to insert an assignment");
+            Console.WriteLine();
+            Console.WriteLine("Press 4 to output all the students");
+            Console.WriteLine("Press 5 to output all the trainers");
+            Console.WriteLine("Press 6 to output all the assignments");
+            Console.WriteLine("Press 7 to output all the courses");
+            Console.WriteLine();
+            Console.WriteLine("Press 8 to output the students per course");
+            Console.WriteLine("Press 9 to output the trainers per course");
+            Console.WriteLine("Press 10 to output the assignments per course");
+            Console.WriteLine();
+            Console.WriteLine("Press 11 to output the assignments per student");
+            Console.WriteLine("Press 12 to output the students with more courses");
             Console.WriteLine("Press 13 exit");
             Console.WriteLine();
             Console.WriteLine("According to what you want to proceed with,\nplease press a number followed by the enter key");
@@ -737,7 +740,7 @@ namespace PrivateSchool
 
             return selection;
         }
-        public static bool ProceedWithSelection(int selection)
+        public static bool ProceedWithSelection(int selection) ///needs change of void and bool type
         {
             Database db = new Database();
             bool goToMenu = false;
@@ -754,7 +757,7 @@ namespace PrivateSchool
 
                 case 3:
                     break;
-
+                   
                 case 4:
                     PrintStudents(db.Students);
                     ProceedWithSelection(PrintMenuGetUserSelection());
@@ -768,28 +771,18 @@ namespace PrivateSchool
                     ProceedWithSelection(PrintMenuGetUserSelection());
                     break;
                 case 7:
-                    PrintCourses(db.Courses);
-                    ProceedWithSelection(PrintMenuGetUserSelection());
+                    PrintCourses(db.Courses);ProceedWithSelection(PrintMenuGetUserSelection());
                     break;
                 case 8:
-                    for (int i = 0; i < db.Courses.Count; i++)
-                    {
-                        PrintStudentsPerCourse(db.Courses[i]);
-                    }
+                    for (int i = 0; i < db.Courses.Count; i++){PrintStudentsPerCourse(db.Courses[i]);}
                     ProceedWithSelection(PrintMenuGetUserSelection());
                     break;
                 case 9:
-                    for (int i = 0; i < db.Courses.Count; i++)
-                    {
-                        PrintTrainersPerCourse(db.Courses[i]);
-                    }
+                    for (int i = 0; i < db.Courses.Count; i++){PrintTrainersPerCourse(db.Courses[i]);}
                     ProceedWithSelection(PrintMenuGetUserSelection());
                     break;
                 case 10:
-                    for (int i = 0; i < db.Courses.Count; i++)
-                    {
-                        PrintAssignmentsPerCourse(db.Courses[i]);
-                    }
+                    for (int i = 0; i < db.Courses.Count; i++){PrintAssignmentsPerCourse(db.Courses[i]);}
                     ProceedWithSelection(PrintMenuGetUserSelection());
                     break;
 

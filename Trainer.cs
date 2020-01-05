@@ -26,24 +26,6 @@ namespace PrivateSchool
 
         }
 
-    
-
-       
-        //public static List<Trainer> TrainerSyntheticData()
-        //{
-        //    List<Trainer> TrainerListOfSyntheticData = new List<Trainer>();
-        //    for (int i = 0; i < 10; i++)
-        //    {
-        //        Trainer t1 = new Trainer(Database.GetSyntheticPersonFirstName(), Database.GetSyntheticPersonLastName(), Database.GetSyntheticTrainerSubject());
-        //        TrainerListOfSyntheticData.Add(t1);
-        //        Console.WriteLine("The trainer is added to the list.");
-
-
-        //    }
-
-        //    return TrainerListOfSyntheticData;
-
-        //}
 
         //public static List<Trainer> AddTrainerManually()
         //{

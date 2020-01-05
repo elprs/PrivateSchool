@@ -16,30 +16,11 @@ namespace PrivateSchool
         public Person()
         { }
 
-        //public Person(string firstName, string lastName)
-        //{
-        //    FirstName = firstName;
-        //    LastName = lastName;
-        //}
-
-
-        //public List<Person> PersonSyntheticData()
-        //{
-        //    List<Person> PersonListOfSyntheticData = new List<Person>();
-
-        //    for (int i = 0; i < 40; i++)
-        //    {
-        //        Person p1 = new Person(Database.GetSyntheticPersonFirstName(), Database.GetSyntheticPersonLastName() );
-        //        PersonListOfSyntheticData.Add(p1);
-
-        //    }
-
-
-        //    return PersonListOfSyntheticData;
-
-        //}
-
-
+        public Person(string firstName, string lastName)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
 
     }
 }

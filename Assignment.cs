@@ -33,19 +33,7 @@ namespace PrivateSchool
             TotalMark = totalMark;
         }
 
-        //public static List<AssignmentProject> AssignmentProjectSyntheticData()
-        //{
-        //    List<AssignmentProject> AssignmentProjectListOfSyntheticData = new List<AssignmentProject>();
-
-        //    for (int i = 0; i < 9; i++)
-        //    {
-        //        AssignmentProject ap1 = new AssignmentProject(Database.GetSyntheticAssignmentProjectTitle(), Database.GetSyntheticAssignmentProjectDescription(), Database.GetSyntheticAssignmentProjectSubDateTime(), Database.GetSyntheticAssignmentProjectOralMark(), Database.GetSyntheticAssignmentProjectTotalMark());
-
-        //        AssignmentProjectListOfSyntheticData.Add(ap1);
-        //        Console.WriteLine("The assignment/project is now added to the corresponding list.");
-        //    }
-
-        //    return AssignmentProjectListOfSyntheticData;
+       
 
         //}
         //public static List<AssignmentProject> AddAssignmentProjectManually()

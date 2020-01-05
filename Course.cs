@@ -36,41 +36,8 @@ namespace PrivateSchool
             EndDate = endDate;
         }
 
-        ////constructor that accepts lists
-        //public Course(List<Student> courseStudents, List<Trainer> courseTrainers, List<AssignmentProject> courseAssignmentsProjects)
-        //{
-        //    CourseStudents = courseStudents;
-        //    CourseTrainers = courseTrainers;
-        //    CourseAssignmentsProjects = courseAssignmentsProjects;
-        //}
-        ////constructor which accepts parameters for all the properties
-        //public Course(string title, string stream, string type, DateTime startDate, DateTime endDate, List<Student> courseStudents, List<Trainer> courseTrainers, List<AssignmentProject> courseAssignmentsProjects)
-        //{
-        //    Title = title;
-        //    Stream = stream;
-        //    Type = type;
-        //    StartDate = startDate;
-        //    EndDate = endDate;
-        //    CourseStudents = courseStudents;
-        //    CourseTrainers = courseTrainers;
-        //    CourseAssignmentsProjects = courseAssignmentsProjects;
-        //}
+        
 
-        ////creates a list of Courses from Synthetic data
-        //public List<Course> CourseSyntheticData()
-        //{
-        //    List<Course> CourseListOfSyntheticData = new List<Course>();
-
-        //    for (int i = 0; i < 9; i++)
-        //    {
-        //        Course c1 = new Course(Database.GetSyntheticCourseTitle(), Database.GetSyntheticCourseStream(), Database.GetSyntheticCourseType(), Database.GetSyntheticCourseStartDate(), Database.GetSyntheticCourseEndDate(), Student.StudentListSyntheticData(), Trainer.TrainerSyntheticData(), AssignmentProject.AssignmentProjectSyntheticData() ) ;
-        //        CourseListOfSyntheticData.Add(c1);
-
-        //    }
-
-        //    return CourseListOfSyntheticData;
-
-        //}
 
         //public static List<Course> AddCourseManually()
         //{
@@ -132,7 +99,7 @@ namespace PrivateSchool
 
 
         //        //  List<Student> courseStudents, List<Trainer> courseTrainers, List<AssignmentProject> courseAssignmentsProjects
-        //        //??????????????????Should course have this connection with the other 3 classes??
+        //        //??????????????????Should course have this connection with the other 3 classes??YES!ISSHOULD and i DOES nOw!
 
 
 
