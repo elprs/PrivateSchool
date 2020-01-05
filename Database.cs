@@ -19,7 +19,6 @@ namespace PrivateSchool
         public List<Assignment> Assignments { get; set; } = new List<Assignment>();
         public List<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
         public List<TrainerCourse> TrainerCourses { get; set; } = new List<TrainerCourse>();
-        public List<StudentAssignment> StudentAssignments { get; set; } = new List<StudentAssignment>();
         public List<AssignmentsPerCourse> CourseAssignments { get; set; } = new List<AssignmentsPerCourse>();
 
         public Database()
@@ -178,75 +177,6 @@ namespace PrivateSchool
             TrainerCourses.Add(tc10);
             TrainerCourses.Add(tc11);
 
-            StudentAssignment sa1 = new StudentAssignment(s1, a1);
-            StudentAssignment sa2 = new StudentAssignment(s2, a2);
-            StudentAssignment sa3 = new StudentAssignment(s3, a3);
-            StudentAssignment sa4 = new StudentAssignment(s4, a4);
-            StudentAssignment sa5 = new StudentAssignment(s5, a5);
-            StudentAssignment sa6 = new StudentAssignment(s6, a6);
-            StudentAssignment sa7 = new StudentAssignment(s7, a7);
-            StudentAssignment sa8 = new StudentAssignment(s8, a1);            
-            StudentAssignment sa9 = new StudentAssignment(s9, a9);
-            StudentAssignment sa10 = new StudentAssignment(s10, a10);
-            StudentAssignment sa11 = new StudentAssignment(s11, a11);
-            StudentAssignment sa12 = new StudentAssignment(s12, a12);
-            StudentAssignment sa13 = new StudentAssignment(s13, a13);
-            StudentAssignment sa14 = new StudentAssignment(s14, a14);
-            StudentAssignment sa15 = new StudentAssignment(s15, a15);
-
-            StudentAssignment sa16 = new StudentAssignment(s1, ap1);
-            StudentAssignment sa17 = new StudentAssignment(s2, ap1);
-            StudentAssignment sa18 = new StudentAssignment(s3, ap1);
-            StudentAssignment sa19 = new StudentAssignment(s4, ap1);
-            StudentAssignment sa20 = new StudentAssignment(s5, ap1);
-            StudentAssignment sa21 = new StudentAssignment(s6, ap1);
-            StudentAssignment sa22 = new StudentAssignment(s7, ap1);
-            StudentAssignment sa23 = new StudentAssignment(s8, ap1);
-            StudentAssignment sa24 = new StudentAssignment(s9, ap1);
-            StudentAssignment sa25 = new StudentAssignment(s10, ap1);
-            StudentAssignment sa26 = new StudentAssignment(s11, ap1);
-            StudentAssignment sa27 = new StudentAssignment(s12, ap1);
-            StudentAssignment sa28 = new StudentAssignment(s13, ap1);
-            StudentAssignment sa29 = new StudentAssignment(s14, ap1);
-            StudentAssignment sa30 = new StudentAssignment(s15, ap1);
-
-            StudentAssignment sa31 = new StudentAssignment(s14, ap2);
-            StudentAssignment sa32 = new StudentAssignment(s15, ap2);
-
-
-
-            StudentAssignments.Add(sa1);
-            StudentAssignments.Add(sa2);
-            StudentAssignments.Add(sa3);
-            StudentAssignments.Add(sa4);
-            StudentAssignments.Add(sa5);
-            StudentAssignments.Add(sa6);
-            StudentAssignments.Add(sa7);
-            StudentAssignments.Add(sa8);
-            StudentAssignments.Add(sa9);
-            StudentAssignments.Add(sa10);
-            StudentAssignments.Add(sa11);
-            StudentAssignments.Add(sa12);
-            StudentAssignments.Add(sa13);
-            StudentAssignments.Add(sa14);
-            StudentAssignments.Add(sa15);
-            StudentAssignments.Add(sa16);
-            StudentAssignments.Add(sa17);
-            StudentAssignments.Add(sa18);
-            StudentAssignments.Add(sa19);
-            StudentAssignments.Add(sa20);
-            StudentAssignments.Add(sa21);
-            StudentAssignments.Add(sa22);
-            StudentAssignments.Add(sa23);
-            StudentAssignments.Add(sa24);
-            StudentAssignments.Add(sa25);
-            StudentAssignments.Add(sa26);
-            StudentAssignments.Add(sa27);
-            StudentAssignments.Add(sa28);
-            StudentAssignments.Add(sa29);
-            StudentAssignments.Add(sa30);
-            StudentAssignments.Add(sa31);
-            StudentAssignments.Add(sa32);
 
 
             AssignmentsPerCourse ac1 = new AssignmentsPerCourse(a1, c1);

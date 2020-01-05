@@ -15,11 +15,22 @@ namespace PrivateSchool
         {
             Database db = new Database();
 
-
+            //Objects of entities
             Student st1 = new Student();
             Trainer tr1 = new Trainer();
-           // Assignment as1 = new Assignment();
+            Assignment as1 = new Assignment();
             Course c1 = new Course();
+
+            //Lists Of entities
+            List<Course> Courses = new List<Course>();
+            List<Student> Students  = new List<Student>();
+            List<Trainer> Trainers = new List<Trainer>();
+            List<Assignment> Assignments = new List<Assignment>();
+
+            Output.PrintAssignmentsPerStudent(db.Students[0]);
+            Output.PrintStudentsWithMultipleCourses(db.Students);
+          
+           // Output.PrintStudentsPerAssignment(db.Assignments[0]);
 
             //Output.PrintCourses(db.Courses);
             //Output.PrintAssignments(db.Assignments);
@@ -27,8 +38,8 @@ namespace PrivateSchool
             // Output.PrintTrainers(db.Trainers);
 
 
-            Output.PrintAssignmentsPerCourse( db.Courses[1]);
-            Output.PrintCoursePerAssignment(db.Assignments[0]);
+            //Output.PrintAssignmentsPerCourse( db.Courses[1]);
+            //Output.PrintCoursePerAssignment(db.Assignments[0]);
 
             //????    Output.PrintStudentsPerCourse(db.Students, db.Courses[0]); //idea! find a method to do the foreach for 0 to Courses.Count.do it in Output
             //Output.PrintAssignmentsPerCourse(db.Courses[0].Assignments, db.Courses[0]); // EDOOOOO PSAKSE POIA LISTA EINAI POIA

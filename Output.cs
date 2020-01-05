@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace PrivateSchool
 {
     static class Output
     {
         static Output() { }
+
+        //Printing Domain's information
         public static void PrintCourses(List<Course> Courses)
         {
             List<Course> courses = Courses;
@@ -179,8 +182,8 @@ namespace PrivateSchool
 
         }
 
-
-        public static void PrintStudentsPerCourse( Course course)
+        //Printing helper-classes' information
+        public static void PrintStudentsPerCourse(Course course)
         {
             Console.WriteLine();
             Console.WriteLine("The students of the course {0} are: ", course.Title);
@@ -201,9 +204,9 @@ namespace PrivateSchool
             }
 
         }
-        public static void PrintCoursesPerStudent( Student student)
+        public static void PrintCoursesPerStudent(Student student)
         {
-         
+
 
             Console.WriteLine();
             Console.WriteLine("The courses of the student {0} are: ", student.FirstName);
@@ -224,7 +227,7 @@ namespace PrivateSchool
             }
 
         }
-        public static void PrintTrainersPerCourse( Course course)
+        public static void PrintTrainersPerCourse(Course course)
         {
             Console.WriteLine();
             Console.WriteLine("The Trainers of the course {0} are: ", course.Title);
@@ -245,7 +248,7 @@ namespace PrivateSchool
             }
 
         }
-        public static void PrintCoursesPerTrainer( Trainer Trainer)
+        public static void PrintCoursesPerTrainer(Trainer Trainer)
         {
 
             Console.WriteLine();
@@ -267,8 +270,10 @@ namespace PrivateSchool
             }
 
         }
-        public static void PrintAssignmentsPerStudent( Student student)
+        public static void PrintAssignmentsPerStudent(Student student)
         {
+            //takes courses per student and returns the associated assignments
+            List<Assignment> Assignments = AssignmentsPerStudent(CoursesPerStudent(student));
 
             Console.WriteLine();
             Console.WriteLine("The Assignments of the student {0} are: ", student.FirstName);
@@ -278,18 +283,30 @@ namespace PrivateSchool
             Console.WriteLine(" ------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var item in student.Assignments)
+            foreach (var item in Assignments)
             {
 
                 Console.WriteLine(" --------------- ");
                 Console.WriteLine("| " + item.Title);
                 Console.WriteLine(" --------------- ");
 
-
             }
 
-        }
-        public static void PrintStudentsPerAssignment( Assignment Assignment)
+        }//nice
+        public static void PrintStudentsWithMultipleCourses(List<Student> Students)
+        {
+            Console.WriteLine();
+            foreach (var student in Students)
+            {
+                int a = NumberOfCoursesPerStudent(student);
+
+                if (a > 1)
+                {
+                    Console.WriteLine("The student {0} {1} has {2} courses.", student.FirstName, student.LastName, a); 
+                }
+            }
+        }//nice
+        public static void PrintStudentsPerAssignment(Assignment Assignment)
         {
             Console.WriteLine();
             Console.WriteLine("The students of the Assignment {0} are: ", Assignment.Title);
@@ -310,7 +327,7 @@ namespace PrivateSchool
             }
 
         }
-        public static void PrintAssignmentsPerCourse( Course course)
+        public static void PrintAssignmentsPerCourse(Course course)
         {
 
             Console.WriteLine();
@@ -332,7 +349,7 @@ namespace PrivateSchool
             }
 
         }
-        public static void PrintCoursePerAssignment( Assignment Assignment)
+        public static void PrintCoursePerAssignment(Assignment Assignment)
         {
             Console.WriteLine();
             Console.WriteLine("The Course of the Assignment {0} are: ", Assignment.Title);
@@ -612,5 +629,64 @@ namespace PrivateSchool
 
 
         }
+
+        //Return methods
+        public static List<Course> CoursesPerStudent(Student student)
+        {
+            List<Course> CoursesPerStudent = new List<Course>();
+
+
+            foreach (var course in student.Courses)
+            {
+                CoursesPerStudent.Add(course);
+            }
+
+            return CoursesPerStudent;
+        }
+        public static List<Assignment> AssignmentsPerStudent(List<Course> CoursesPerStudent)
+        {
+            List<Assignment> assignmentsPerStudent = new List<Assignment>();
+
+            foreach (var course in CoursesPerStudent)
+            {
+                assignmentsPerStudent.AddRange(course.Assignments); // concatenates every list of assignment to the assignmentPerStudent List
+            }
+
+            return assignmentsPerStudent;
+        }
+        public static int NumberOfCoursesPerStudent(Student student)
+        {
+            int count = 0;
+
+
+            foreach (var course in student.Courses)
+            {
+                count += 1;
+            }
+
+            return count;
+
+
+
+        }
+        public static List<Assignment> SubDateThisWeek(DateTime dateTime)
+        {
+            List<Assignment> Assignments = new List<Assignment>();
+
+            foreach (var assignment in Assignments)
+            {
+                if (assignment.SubDateTime == dateTime)
+                {
+
+                }
+                Assignments.Add(Assignment);
+            }
+
+            return Assignments;
+        }
+        ew DateTime(2020, 01, 15), new DateTime(2020, 07, 15));
+        ew DateTime(2020, 01, 15), new DateTime(2020, 07, 15));
+        ew DateTime(2020, 01, 15), new DateTime(2020, 04, 13));
+        ew DateTime(2020, 01, 15), new DateTime(2020, 04, 13));
     }
 }

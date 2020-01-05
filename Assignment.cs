@@ -19,6 +19,11 @@ namespace PrivateSchool
 
         public List<Student> Students = new List<Student>();
         public List<Course> Courses { get; set; } = new List<Course>();
+
+        public Assignment()
+        {
+
+        }
         public Assignment(string title, string description, DateTime subDateTime, double oralMark, double totalMark)
         {
             Title = title;
