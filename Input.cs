@@ -14,7 +14,10 @@ namespace PrivateSchool
         {
             Database db = new Database();
             db.Courses.AddRange(GetUserCourses());
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Your course(s) are now added to the database.");
+            Console.ForegroundColor = ConsoleColor.White;
+
         }
 
         //return methods
@@ -22,32 +25,36 @@ namespace PrivateSchool
         {
             Course course = new Course();
             List<Course> userCourses = new List<Course>();
-            bool repeat = false;
 
+            bool willRepeat = false;
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Add a course");
+            Console.ForegroundColor = ConsoleColor.White;
+
             do
             {
                 Console.WriteLine("Add a title"); course.Title = Console.ReadLine();
                 Console.WriteLine("Add a stream"); course.Stream = Console.ReadLine();
                 Console.WriteLine("Add type"); course.Type = Console.ReadLine();
 
-                Console.WriteLine("AddCoursesToDb starting date");
-                course.StartDate = RepeatUntilDateInputValid(Console.ReadLine());
-                Console.WriteLine("AddCoursesToDb end date");
-                course.EndDate = RepeatUntilDateInputValid(Console.ReadLine());
+                Console.WriteLine("Add starting date");
+                course.StartDate = RepeatUntilDateIsValid();
+                Console.WriteLine("Add end date");
+                course.EndDate = RepeatUntilDateIsValid();
 
                 userCourses.Add(course);
-                repeat = RepeatProcess();
+                willRepeat = RepeatAboveProcess();
 
-            } while (repeat);
+            } while (willRepeat);
 
             return userCourses;
         }
-        public static bool RepeatProcess()
+        public static bool RepeatAboveProcess()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Would you like to repeat the action?");
-            Console.WriteLine("Please type yes or eny key to go to the main menu.");
+            Console.WriteLine("Would you like to insert more?");
+            Console.WriteLine("Please type yes or if no type any key.");
             Console.ForegroundColor = ConsoleColor.White;
 
             string answer = Console.ReadLine();
@@ -62,9 +69,9 @@ namespace PrivateSchool
             }
         }
         
-        public static DateTime RepeatUntilDateInputValid(string userInput)
+        public static DateTime RepeatUntilDateIsValid()
         {
-            DateTime userDate;
+            DateTime userDate = new DateTime(2020, 02, 02);
             bool isInputValid;
             do
             {
@@ -74,8 +81,14 @@ namespace PrivateSchool
                     Console.WriteLine("Insert a date in the following format:");
                     Console.WriteLine("Day/Month/Year e.g. 01/02/2020");
                     Console.ForegroundColor = ConsoleColor.White;
-                    userDate = Convert.ToDateTime(userInput);
+                    userDate = Convert.ToDateTime(Console.ReadLine());
                     isInputValid = true;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Your input was invalid, consult the following example.");
+                    Console.WriteLine();
+                    isInputValid = false;
                 }
                 catch (Exception)
                 {
@@ -86,29 +99,20 @@ namespace PrivateSchool
             } while (isInputValid == false);
 
             return userDate;
+
         }
-        ////creates a course with synthetic data or allows the user to insert his
-        //public static Course GetCourse()
-        //{
-        //    Course c1 = new Course();
 
-        //    Console.WriteLine("Please insert the title of the course");
-        //    c1.Title = Console.ReadLine();
+        public static void AddStudentsToDb()
+        {
+            Database db = new Database();
+            db.Students.AddRange(GetUserStudents());
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Your Student(s) are now added to the database.");
+            Console.ForegroundColor = ConsoleColor.White;
 
-        //    return c1;
-        //}
-
-        ////creates a trainer with synthetic data or allows the user to insert it.
-        //public static Trainer GetTrainer()
-        //{
-        //    Trainer t1 = new Trainer();
-
-        //    Console.WriteLine("Please insert the first name of the trainer");
-        //    t1.FirstName = Console.ReadLine();
+        }
 
 
 
-        //    return t1;
-        //}
     }
 }
