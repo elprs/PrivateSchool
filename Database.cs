@@ -42,14 +42,14 @@ namespace PrivateSchool
             Student s4 = new Student("Giannis", "Parisi", new DateTime(1998, 03, 30), 2300);
             Student s5 = new Student("Thanasis", "Konstantinou", new DateTime(1999, 01, 03), 2300);
             Student s6 = new Student("Mitsos", "Axileou", new DateTime(1999, 04, 06), 4560);
-            Student s7 = new Student("Chiou", "Chanidou", new DateTime(2000, 05, 23), 1340);
+            Student s7 = new Student("Thomas", "Chanidou", new DateTime(2000, 05, 23), 1340);
             Student s8 = new Student("Xristos", "Leontou", new DateTime(1999, 11, 09), 1570);
             Student s9 = new Student("Taksiarxis", "Antonioy", new DateTime(1978, 12, 12), 1200);
             Student s10 = new Student("Dimitra", "Liraki", new DateTime(1972, 08, 21), 6700);
             Student s11 = new Student("Athina", "Gaitanou", new DateTime(1992, 10, 04), 9500);
-            Student s12 = new Student("Periklis", "Perikleous", new DateTime(1997, 08, 06), 2500);
-            Student s13 = new Student("Periklis", "Perikleous", new DateTime(2000, 02, 04), 2500);
-            Student s14 = new Student("Periklis", "Perikleous", new DateTime(2001, 08, 12), 2500);
+            Student s12 = new Student("Orfeas", "Menakis", new DateTime(1997, 08, 06), 2500);
+            Student s13 = new Student("Garifalia", "Toufeksi", new DateTime(2000, 02, 04), 2500);
+            Student s14 = new Student("Apostolis", "Perikleous", new DateTime(2001, 08, 12), 2500);
             Student s15 = new Student("Periklis", "Perikleous", new DateTime(2002, 03, 06), 2500);
 
             Students.Add(s1);
@@ -92,20 +92,20 @@ namespace PrivateSchool
 
             //Παραδοχη: καθε assignment anikei se 1 mathiti, alla ta 2 projects (ap1, ap2) anikoun kai se perissoterous
             Assignment a1 = new Assignment("Assignment 1", " Individual", new DateTime(2020, 02, 1), 32.2, 62.4);
-            Assignment a2 = new Assignment("Assignment 2", " Individual", new DateTime(2020, 02, 1), 40.6, 95.4);
-            Assignment a3 = new Assignment("Assignment 3", " Individual", new DateTime(2020, 02, 1), 25.9, 85.5);
-            Assignment a4 = new Assignment("Assignment 4", " Individual", new DateTime(2020, 02, 1), 32.7, 99.4);
-            Assignment a5 = new Assignment("Assignment 5", " Individual", new DateTime(2020, 02, 08), 49.9, 94.3);
-            Assignment a6 = new Assignment("Assignment 6", " Individual", new DateTime(2020, 02, 08), 45.8, 98.3);
-            Assignment a7 = new Assignment("Assignment 7", " Individual", new DateTime(2020, 02, 08), 32.41, 92.2);
-            Assignment a8 = new Assignment("Assignment 8", " Individual", new DateTime(2020, 02, 08), 49.7, 98.3);
-            Assignment a9 = new Assignment("Assignment 9", " Individual", new DateTime(2020, 02, 15), 44.6, 98.3);
-            Assignment a10 = new Assignment("Assignment 10", "Individual", new DateTime(2020, 02, 15), 49.1, 98.6);
-            Assignment a11 = new Assignment("Assignment 11", "Individual", new DateTime(2020, 02, 15), 49.4, 93.7);
-            Assignment a12 = new Assignment("Assignment 12", "Individual", new DateTime(2020, 02, 15), 49.6, 94.6);
-            Assignment a13 = new Assignment("Assignment 13", "Individual", new DateTime(2020, 02, 22), 49.8, 99.7);
-            Assignment a14 = new Assignment("Assignment 14", "Individual", new DateTime(2020, 02, 22), 49.9, 98.8);
-            Assignment a15 = new Assignment("Assignment 15", "Individual", new DateTime(2020, 02, 22), 49.1, 99.9);
+            Assignment a2 = new Assignment("Assignment 2", " Individual", new DateTime(2020, 02, 7), 40.6, 95.4);
+            Assignment a3 = new Assignment("Assignment 3", " Individual", new DateTime(2020, 02, 14), 25.9, 85.5);
+            Assignment a4 = new Assignment("Assignment 4", " Individual", new DateTime(2020, 02, 21), 32.7, 99.4);
+            Assignment a5 = new Assignment("Assignment 5", " Individual", new DateTime(2020, 02, 28), 49.9, 94.3);
+            Assignment a6 = new Assignment("Assignment 6", " Individual", new DateTime(2020, 03, 21), 45.8, 98.3);
+            Assignment a7 = new Assignment("Assignment 7", " Individual", new DateTime(2020, 03, 28), 32.41, 92.2);
+            Assignment a8 = new Assignment("Assignment 8", " Individual", new DateTime(2020, 03, 08), 49.7, 98.3);
+            Assignment a9 = new Assignment("Assignment 9", " Individual", new DateTime(2020, 04, 15), 44.6, 98.3);
+            Assignment a10 = new Assignment("Assignment 10", "Individual", new DateTime(2020, 05, 15), 49.1, 98.6);
+            Assignment a11 = new Assignment("Assignment 11", "Individual", new DateTime(2020, 04, 07), 49.4, 93.7);
+            Assignment a12 = new Assignment("Assignment 12", "Individual", new DateTime(2020, 04, 01), 49.6, 94.6);
+            Assignment a13 = new Assignment("Assignment 13", "Individual", new DateTime(2020, 05, 02), 49.8, 99.7);
+            Assignment a14 = new Assignment("Assignment 14", "Individual", new DateTime(2020, 04, 28), 49.9, 98.8);
+            Assignment a15 = new Assignment("Assignment 15", "Individual", new DateTime(2020, 05, 28), 49.1, 99.9);
 
             Assignment ap1 = new Assignment("Project 1    ", "Team proj.", new DateTime(2020, 02, 29), 12.2, 98.2);
             Assignment ap2 = new Assignment("Project 1    ", "Individual.", new DateTime(2020, 06, 06), 12.2, 89.2);
@@ -145,10 +145,13 @@ namespace PrivateSchool
             StudentCourse sc10 = new StudentCourse(s10, c2);
             StudentCourse sc11 = new StudentCourse(s11, c3);
             StudentCourse sc12 = new StudentCourse(s12, c4);
+            StudentCourse sc13 = new StudentCourse(s13, c2);
+            StudentCourse sc14 = new StudentCourse(s14, c3);
+            StudentCourse sc15 = new StudentCourse(s15, c4);
 
-            StudentCourse sc13 = new StudentCourse(s12, c3);
-            StudentCourse sc14 = new StudentCourse(s1, c2);
-            StudentCourse sc15 = new StudentCourse(s1, c3);
+            StudentCourse sc16 = new StudentCourse(s12, c3);
+            StudentCourse sc17 = new StudentCourse(s1, c2);
+            StudentCourse sc18 = new StudentCourse(s1, c3);
 
             StudentCourses.Add(sc1);
             StudentCourses.Add(sc2);
@@ -165,6 +168,9 @@ namespace PrivateSchool
             StudentCourses.Add(sc13);
             StudentCourses.Add(sc14);
             StudentCourses.Add(sc15);
+            StudentCourses.Add(sc16);
+            StudentCourses.Add(sc17);
+            StudentCourses.Add(sc18);
 
             TrainerCourse tc1 = new TrainerCourse(t1, c1);
             TrainerCourse tc2 = new TrainerCourse(t2, c2);

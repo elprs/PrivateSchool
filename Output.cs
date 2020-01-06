@@ -278,11 +278,11 @@ namespace PrivateSchool
             List<Assignment> Assignments = AssignmentsPerStudent(CoursesPerStudent(student));
 
             Console.WriteLine();
-            Console.WriteLine("The Assignments of the student {0} are: ", student.FirstName);
+            Console.WriteLine("The Assignments of the student are: ");
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(" ------------- ");
-            Console.WriteLine("|  " + student.FirstName + "   ");
-            Console.WriteLine(" ------------- ");
+            Console.WriteLine(" --------------------- ");
+            Console.WriteLine("| " + student.FirstName + " " + student.LastName);
+            Console.WriteLine(" --------------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
             foreach (var assignment in Assignments)
@@ -635,6 +635,7 @@ namespace PrivateSchool
         {
             int userWeekOfYear = GetWeekOfYearFromUserDate();
             Database db = new Database();
+            Console.WriteLine();
             Console.WriteLine("The students who need to submit an assignment the week of the given date are:");
             foreach (StudentCourse sc in db.StudentCourses)
             {
@@ -650,7 +651,9 @@ namespace PrivateSchool
             {
                 if (WeekOfYear(ac.assignment.SubDateTime) == userWeekOfYear)//Dates converted to week 
                 {
-                    Console.Write(sc.student.FirstName);
+                    
+                    Console.WriteLine(" -------------------------- ");
+                    Console.Write("| " + sc.student.FirstName);
                     Console.WriteLine(" " + sc.student.LastName);
                 }
             }
@@ -717,9 +720,11 @@ namespace PrivateSchool
             {
                 try
                 {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Insert a date in the following format:");
                     Console.WriteLine("Day/Month/Year e.g. 01/02/2020");
                     Console.WriteLine("TIP: The SubDates of the DataBase is between 01/02/2020 and 06/06/2020");
+                    Console.ForegroundColor = ConsoleColor.White;
                     DateTime userDate = Convert.ToDateTime(Console.ReadLine());
                     weekOfYear = WeekOfYear(userDate);
                     isInputValid = true;
@@ -738,8 +743,12 @@ namespace PrivateSchool
         //shows the menu to the user and gets his corresponding selection
         public static int PrintMenuGetUserSelection()
         {
+            int selection = 42;
+
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("     Main menu");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
             Console.WriteLine("Press 0 to insert a course");
             Console.WriteLine("Press 1 to insert a trainer");
@@ -760,17 +769,26 @@ namespace PrivateSchool
             Console.WriteLine("Press 13 to output the students who need to submit close to a date");
             Console.WriteLine("Press 14 exit");
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("According to what you want to proceed with,\nplease press a number followed by the enter key");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine();
 
-            int selection = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                selection = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid Input. Please insert a number from the menu");
+            }
 
             return selection;
         }
-        public static bool ProceedWithSelection(int selection) ///needs change of void and bool type
+        public static void ProceedWithMenuSelection(int selection)
         {
             Database db = new Database();
-            bool goToMenu = false;
-
+           
             switch (selection)
             {
                 case 0:
@@ -786,46 +804,45 @@ namespace PrivateSchool
 
                 case 4:
                     PrintStudents(db.Students);
-                    ProceedWithSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
                     break;
                 case 5:
                     PrintTrainers(db.Trainers);
-                    ProceedWithSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
                     break;
                 case 6:
                     PrintAssignments(db.Assignments);
-                    ProceedWithSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
                     break;
                 case 7:
-                    PrintCourses(db.Courses); ProceedWithSelection(PrintMenuGetUserSelection());
+                    PrintCourses(db.Courses); ProceedWithMenuSelection(PrintMenuGetUserSelection());
                     break;
                 case 8:
                     for (int i = 0; i < db.Courses.Count; i++) { PrintStudentsPerCourse(db.Courses[i]); }
-                    ProceedWithSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
                     break;
                 case 9:
                     for (int i = 0; i < db.Courses.Count; i++) { PrintTrainersPerCourse(db.Courses[i]); }
-                    ProceedWithSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
                     break;
                 case 10:
                     for (int i = 0; i < db.Courses.Count; i++) { PrintAssignmentsPerCourse(db.Courses[i]); }
-                    ProceedWithSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
                     break;
-
                 case 11:
+                    for (int i = 0; i < db.Students.Count; i++){PrintAssignmentsPerStudent(db.Students[i]);}
+                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
                     break;
-
                 case 13:
                     FindStudentsWhoNeedToSubmit();
-                    ProceedWithSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
                     break;
                 case 14:
                     break;
                 default:
+                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
                     break;
             }
-
-            return goToMenu;
         }
     }
 }
