@@ -13,11 +13,12 @@ namespace PrivateSchool
     {
         static void Main(string[] args)
         {
+
+            //Output.ProceedWithMenuSelection(Output.PrintMenuGetUserSelection());
+
+
            
-            Output.ProceedWithMenuSelection(Output.PrintMenuGetUserSelection());
-
-            
-
+            Input.AddCoursesToDb();
 
             Console.WriteLine("Press any letter key to exit the program.");
             Console.ReadKey();

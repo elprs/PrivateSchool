@@ -633,7 +633,7 @@ namespace PrivateSchool
         }
         public static void FindStudentsWhoNeedToSubmit()
         {
-            int userWeekOfYear = GetWeekOfYearFromUserDate();
+            int userWeekOfYear = GetWeekOfYearFromUsersDate();
             Database db = new Database();
             Console.WriteLine();
             Console.WriteLine("The students who need to submit an assignment the week of the given date are:");
@@ -712,10 +712,11 @@ namespace PrivateSchool
             weekNum = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(dateTime, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
             return weekNum;
         }
-        public static int GetWeekOfYearFromUserDate()
+        public static int GetWeekOfYearFromUsersDate()
         {
-            bool isInputValid;
             int weekOfYear = 0;
+            bool isInputValid;
+           
             do
             {
                 try
