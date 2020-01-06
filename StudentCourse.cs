@@ -13,18 +13,13 @@ namespace PrivateSchool
         public Student student;
         public Course course;
         public StudentCourse()
-        {
-
-        }
+        {}
         public StudentCourse(Student student, Course course)
         {
             this.student = student;
             this.course = course;
             student.Courses.Add(course);
-            course.Students.Add(student);
-            
+            course.Students.Add(student); 
         }
-
-
     }
 }

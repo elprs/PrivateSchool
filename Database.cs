@@ -131,7 +131,7 @@ namespace PrivateSchool
             foreach (Assignment assignment in Assignments)
             {
                 SubmissionDates.Add(assignment.SubDateTime);
-            }
+            } // "Αχρείαστη να' ναι."
 
             StudentCourse sc1 = new StudentCourse(s1, c1);
             StudentCourse sc2 = new StudentCourse(s2, c2);
@@ -248,8 +248,5 @@ namespace PrivateSchool
             CourseAssignments.Add(apc5);
             CourseAssignments.Add(apc6);
         }
-        
-
     }
-
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrivateSchool
 {/// <summary>
-/// AProgram that handles a Private School's Data
+/// A Program that handles a Private School's Data
 /// Eleni Parisi, January 2020
 /// </summary>
     class Program

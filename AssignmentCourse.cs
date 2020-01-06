@@ -14,9 +14,7 @@ namespace PrivateSchool
         public Assignment assignment;
 
         public AssignmentCourse()
-        {
-
-        }
+        {}
         public AssignmentCourse(Assignment assignment, Course course)
         {
             this.assignment = assignment;

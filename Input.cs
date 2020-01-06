@@ -420,6 +420,7 @@ namespace PrivateSchool
             Console.WriteLine("Press 12 to output the students with more courses");
             Console.WriteLine("Press 13 to output the students who need to submit close to a date");
             Console.WriteLine("Press 14 exit");
+            Console.WriteLine("Press 42 for gratitude.");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("According to what you want to proceed with,\nplease press a number followed by the enter key");

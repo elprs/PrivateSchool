@@ -657,6 +657,10 @@ namespace PrivateSchool
                 }
             }
         }
+        public static void ExpressGratitude()
+        {
+            Console.WriteLine("Thank you, Daskale.");
+        }
 
         //Return methods
         public static List<Course> CoursesPerStudent(Student student)
@@ -801,6 +805,10 @@ namespace PrivateSchool
                     ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 case 14:
+                    break;
+                case 42:
+                    ExpressGratitude();
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 default:
                     ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
