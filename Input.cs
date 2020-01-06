@@ -10,6 +10,7 @@ namespace PrivateSchool
 /// </summary>
     static class Input
     {
+        //Methods about courses
         public static List<Course> GetCoursesFromUser()
         {
             Course course = new Course();
@@ -39,15 +40,16 @@ namespace PrivateSchool
 
             return userCourses;
         }
-        public static void AddCoursesToDb()
+        public static void AddCoursesToDb(Database db)
         {
-            Database db = new Database();
             db.Courses.AddRange(GetCoursesFromUser());
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Your course(s) are now added to the database.");
             Console.ForegroundColor = ConsoleColor.White;
-
         }
+
+        
+        //General purpose methods
         public static bool RepeatAboveProcess()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -100,47 +102,40 @@ namespace PrivateSchool
             return userDate;
 
         }
-        ///////////////////////////////////////////////////////////////////////////////
-        /// 
-
-        public static List<Student> GetStudentsFromUser()
+        public static int RepeatUntilDoubleNumberIsValid()
         {
-            Student Student = new Student();
-            List<Student> userStudents = new List<Student>();
-
-            bool willRepeat = false;
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Add a Student");
-            Console.ForegroundColor = ConsoleColor.White;
-
+            int userNumber = 0;
+            bool isInputValid;
             do
             {
-                Console.WriteLine("Add a first name"); Student.FirstName = Console.ReadLine();
-                Console.WriteLine("Add a last name"); Student.LastName = Console.ReadLine();
+                try
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Insert an decimal number");
+                    Console.WriteLine("TIP: min oral mark: 0.0");
+                    Console.WriteLine("TIP: max oral mark: 50.0");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    userNumber = Convert.ToInt32(Console.ReadLine());
+                    isInputValid = true;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Your input was invalid, consult the following form.");
+                    Console.WriteLine();
+                    isInputValid = false;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Your input was invalid, consult the following form.");
+                    Console.WriteLine();
+                    isInputValid = false;
+                }
+            } while (isInputValid == false);
 
-                Console.WriteLine("Add date of birth"); 
-                Student.DateOfBirth = RepeatUntilDateIsValid();
-                Console.WriteLine("Add student's fees"); 
-                Student.TuitionFees = RepeatUntilNumberIsValid();
+            return userNumber;
 
-                userStudents.Add(Student);
-                willRepeat = RepeatAboveProcess();
-
-            } while (willRepeat);
-
-            return userStudents;
         }
-        public static void AddStudentsToDb()
-        {
-            Database db = new Database();
-            db.Students.AddRange(GetStudentsFromUser());
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Your Student(s) are now added to the database.");
-            Console.ForegroundColor = ConsoleColor.White;
-
-        }
-        public static int RepeatUntilNumberIsValid()
+        public static int RepeatUntilIntegerIsValid()
         {
             int userNumber = 0;
             bool isInputValid;
@@ -173,8 +168,46 @@ namespace PrivateSchool
 
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///
+
+        //Methods about Students
+        public static List<Student> GetStudentsFromUser()
+        {
+            Student Student = new Student();
+            List<Student> userStudents = new List<Student>();
+
+            bool willRepeat = false;
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Add a Student");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            do
+            {
+                Console.WriteLine("Add a first name"); Student.FirstName = Console.ReadLine();
+                Console.WriteLine("Add a last name"); Student.LastName = Console.ReadLine();
+
+                Console.WriteLine("Add date of birth");
+                Student.DateOfBirth = RepeatUntilDateIsValid();
+                Console.WriteLine("Add student's fees");
+                Student.TuitionFees = RepeatUntilIntegerIsValid();
+
+                userStudents.Add(Student);
+                willRepeat = RepeatAboveProcess();
+
+            } while (willRepeat);
+
+            return userStudents;
+        }
+        public static void AddStudentsToDb(Database db)
+        {
+            db.Students.AddRange(GetStudentsFromUser());
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Your Student(s) are now added to the database.");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+       
+
+        //Methods about assignments
         public static List<Assignment> GetAssignmentsFromUser()
         {
             Assignment assignment = new Assignment();
@@ -203,57 +236,22 @@ namespace PrivateSchool
 
             return userAssignments;
         }
-        public static void AddAssignmentsToDb()
+        public static void AddAssignmentsToDb(Database db)
         {
-            Database db = new Database();
             db.Assignments.AddRange(GetAssignmentsFromUser());
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Your assignment(s) are now added to the database.");
             Console.ForegroundColor = ConsoleColor.White;
-
         }
-        public static int RepeatUntilDoubleNumberIsValid()
-        {
-            int userNumber = 0;
-            bool isInputValid;
-            do
-            {
-                try
-                {
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Insert an decimal number");
-                    Console.WriteLine( "TIP: min oral mark: 0.0"); 
-                    Console.WriteLine( "TIP: max oral mark: 50.0"); 
-                    Console.ForegroundColor = ConsoleColor.White;
-                    userNumber = Convert.ToInt32(Console.ReadLine());
-                    isInputValid = true;
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Your input was invalid, consult the following form.");
-                    Console.WriteLine();
-                    isInputValid = false;
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Your input was invalid, consult the following form.");
-                    Console.WriteLine();
-                    isInputValid = false;
-                }
-            } while (isInputValid == false);
+       
 
-            return userNumber;
-
-        }
-
-        ///////////////////////////////////////////////////////////////////////////////////////////////////
-        ///
+        //Methods about trainers
         public static List<Trainer> GetTrainersFromUser()
         {
-            Trainer Trainer = new Trainer();
+            Trainer t1 = new Trainer();
             List<Trainer> userTrainers = new List<Trainer>();
 
-            bool willRepeat = false;
+            bool willRepeat;
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Add a Trainer");
@@ -261,30 +259,20 @@ namespace PrivateSchool
 
             do
             {
-                Console.WriteLine("Add a first name"); Trainer.FirstName = Console.ReadLine();
-                Console.WriteLine("Add a last name"); Trainer.LastName = Console.ReadLine();
-                
-                Console.WriteLine("Add subject by typing it as shown is the following list :");
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                //Console.WriteLine("CSharp , Java , HTML_CSS , SQL , JavaScript , "); //Create method to take user input as numbers and return the selection
-                //Console.WriteLine("Bootstrap, AngularJSReact, VersionControlGit, ");
-                //Console.WriteLine("architecture, Apache, xUnit, UnixCommandLine, ");
-                //Console.WriteLine("UiUXDesign, CloudBasedServices");
-                //Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Add a first name"); t1.FirstName = Console.ReadLine();
+                Console.WriteLine("Add a last name"); t1.LastName = Console.ReadLine();
 
-                //Trainer.Subject = Convert.
-                
+                SelectSubjectForTrainer(t1);
 
-                userTrainers.Add(Trainer);
+                userTrainers.Add(t1);
                 willRepeat = RepeatAboveProcess();
 
             } while (willRepeat);
 
             return userTrainers;
         }
-        public static void AddTrainersToDb()
+        public static void AddTrainersToDb(Database db)
         {
-            Database db = new Database();
             db.Trainers.AddRange(GetTrainersFromUser());
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Your Trainer(s) are now added to the database.");
@@ -323,7 +311,88 @@ namespace PrivateSchool
             return userNumber;
 
         }
+        public static int SelectSubjectForTrainer(Trainer trainer)
+        {
+            int selection = 0;
 
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Add subject by typing its number shown at the following list :");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.WriteLine(" 0 CSharp");
+            Console.WriteLine(" 1 Java");
+            Console.WriteLine(" 2 HTML_CSS");
+            Console.WriteLine(" 3 SQL");
+            Console.WriteLine();
+            Console.WriteLine(" 4 JavaScript");
+            Console.WriteLine(" 5 Bootstrap ");
+            Console.WriteLine(" 6 AngularJSReact");
+            Console.WriteLine(" 7 VersionControlGit");
+            Console.WriteLine();
+            Console.WriteLine(" 8 Architecture");
+            Console.WriteLine(" 9 Apache");
+            Console.WriteLine(" 10 xUnit");
+            Console.WriteLine();
+            Console.WriteLine(" 11 UnixCommandLine");
+            Console.WriteLine(" 12 UiUXDesign");
+            Console.WriteLine(" 13 CloudBasedServices");
+
+            selection = RepeatUntilIntegerIsValid();
+
+            switch (selection)
+            {
+                case 0:
+                    trainer.Subject = Subject.CSharp;
+                    break;
+                case 1:
+                    trainer.Subject = Subject.Java;
+                    break;
+                case 2:
+                    trainer.Subject = Subject.HTML_CSS;
+                    break;
+                case 3:
+                    trainer.Subject = Subject.SQL;
+                    break;
+                case 4:
+                    trainer.Subject = Subject.JavaScript;
+                    break;
+                case 5:
+                    trainer.Subject = Subject.Bootstrap;
+                    break;
+                case 6:
+                    trainer.Subject = Subject.AngularJSReact;
+                    break;
+                case 8:
+                    trainer.Subject = Subject.VersionControlGit;
+                    break;
+                case 9:
+                    trainer.Subject = Subject.architecture;
+                    break;
+                case 10:
+                    trainer.Subject = Subject.Apache;
+                    break;
+                case 11:
+                    trainer.Subject = Subject.xUnit;
+                    break;
+                case 13:
+                    trainer.Subject = Subject.UnixCommandLine;
+                    break;
+                case 14:
+                    trainer.Subject = Subject.UiUXDesign;
+                    break;
+                case 15:
+                    trainer.Subject = Subject.CloudBasedServices;
+                    break;
+                default:
+                    trainer.Subject = Subject.CSharp;
+                    break;
+            }
+
+            return selection;
+
+        }
+
+        // Menu method
         public static int PrintMenuGetUserSelection()
         {
             int selection = 42;
@@ -368,5 +437,6 @@ namespace PrivateSchool
 
             return selection;
         }
+
     }
 }

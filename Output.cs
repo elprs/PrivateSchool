@@ -10,10 +10,9 @@ namespace PrivateSchool
 {
     static class Output
     {
-
         static Output() { }
 
-        //Printing Domain's information
+        //Printing domain entities' information
         public static void PrintCourses(List<Course> Courses)
         {
             List<Course> courses = Courses;
@@ -184,7 +183,7 @@ namespace PrivateSchool
 
         }
 
-        //Printing addredated-classes' information
+        //Printing aggregated-classes' information
         public static void PrintStudentsPerCourse(Course course)
         {
             Console.WriteLine();
@@ -659,8 +658,6 @@ namespace PrivateSchool
             }
         }
 
-
-
         //Return methods
         public static List<Course> CoursesPerStudent(Student student)
         {
@@ -741,68 +738,72 @@ namespace PrivateSchool
             return weekOfYear;
         } 
        
-        //shows the menu to the user and gets his corresponding selection
-        
-        public static void ProceedWithMenuSelection(int selection)
+        //Main menu method
+        public static void ProceedWithMenuSelection(int selection, Database db)
         {
-            Database db = new Database();
            
             switch (selection)
             {
                 case 0:
-                    Input.AddCoursesToDb();
-                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
+                    Input.AddCoursesToDb(db);
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 case 1:
+                    Input.AddTrainersToDb(db);
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
-
                 case 2:
-                    Input.AddStudentsToDb();
-                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
+                    Input.AddStudentsToDb(db);
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 case 3:
-                    Input.AddAssignmentsToDb();
-                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
+                    Input.AddAssignmentsToDb(db);
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 case 4:
                     PrintStudents(db.Students);
-                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 case 5:
                     PrintTrainers(db.Trainers);
-                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 case 6:
                     PrintAssignments(db.Assignments);
-                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 case 7:
-                    PrintCourses(db.Courses); ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
+                    PrintCourses(db.Courses); 
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 case 8:
-                    for (int i = 0; i < db.Courses.Count; i++) { PrintStudentsPerCourse(db.Courses[i]); }
-                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
+                    for (int i = 0; i < db.Courses.Count; i++) 
+                    { PrintStudentsPerCourse(db.Courses[i]);}
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 case 9:
-                    for (int i = 0; i < db.Courses.Count; i++) { PrintTrainersPerCourse(db.Courses[i]); }
-                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
+                    for (int i = 0; i < db.Courses.Count; i++) 
+                    { PrintTrainersPerCourse(db.Courses[i]); }
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 case 10:
-                    for (int i = 0; i < db.Courses.Count; i++) { PrintAssignmentsPerCourse(db.Courses[i]); }
-                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
+                    for (int i = 0; i < db.Courses.Count; i++) 
+                    { PrintAssignmentsPerCourse(db.Courses[i]); }
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 case 11:
-                    for (int i = 0; i < db.Students.Count; i++){PrintAssignmentsPerStudent(db.Students[i]);}
-                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
+                    for (int i = 0; i < db.Students.Count; i++)
+                    {PrintAssignmentsPerStudent(db.Students[i]);}
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 case 13:
                     FindStudentsWhoNeedToSubmit();
-                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 case 14:
                     break;
                 default:
-                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
             }
         }
