@@ -12,7 +12,10 @@ namespace PrivateSchool
     {
         public Student student;
         public Course course;
+        public StudentCourse()
+        {
 
+        }
         public StudentCourse(Student student, Course course)
         {
             this.student = student;

@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assignment.cs" />
-    <Compile Include="AssignmentsPerCourse.cs" />
+    <Compile Include="AssignmentCourse.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Output.cs" />

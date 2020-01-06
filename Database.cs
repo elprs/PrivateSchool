@@ -19,7 +19,7 @@ namespace PrivateSchool
         public List<Assignment> Assignments { get; set; } = new List<Assignment>();
         public List<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
         public List<TrainerCourse> TrainerCourses { get; set; } = new List<TrainerCourse>();
-        public List<AssignmentsPerCourse> CourseAssignments { get; set; } = new List<AssignmentsPerCourse>();
+        public List<AssignmentCourse> CourseAssignments { get; set; } = new List<AssignmentCourse>();
         public List<DateTime> SubmissionDates { get; set; } = new List<DateTime>();
 
         public Database()
@@ -195,29 +195,29 @@ namespace PrivateSchool
 
 
 
-            AssignmentsPerCourse ac1 = new AssignmentsPerCourse(a1, c1);
-            AssignmentsPerCourse ac2 = new AssignmentsPerCourse(a2, c1);
-            AssignmentsPerCourse ac3 = new AssignmentsPerCourse(a3, c1);
-            AssignmentsPerCourse ac4 = new AssignmentsPerCourse(a4, c1);
-            AssignmentsPerCourse ac5 = new AssignmentsPerCourse(a5, c2);
-            AssignmentsPerCourse ac6 = new AssignmentsPerCourse(a6, c2);
-            AssignmentsPerCourse ac7 = new AssignmentsPerCourse(a7, c2);
-            AssignmentsPerCourse ac8 = new AssignmentsPerCourse(a8, c2);
-            AssignmentsPerCourse ac9 = new AssignmentsPerCourse(a9, c3);
-            AssignmentsPerCourse ac10 = new AssignmentsPerCourse(a10, c3);
-            AssignmentsPerCourse ac11 = new AssignmentsPerCourse(a11, c3);
-            AssignmentsPerCourse ac12 = new AssignmentsPerCourse(a12, c4);           
-            AssignmentsPerCourse ac13 = new AssignmentsPerCourse(a13, c4);
-            AssignmentsPerCourse ac14 = new AssignmentsPerCourse(a14, c4);
-            AssignmentsPerCourse ac15 = new AssignmentsPerCourse(a15, c4);
+            AssignmentCourse ac1 = new AssignmentCourse(a1, c1);
+            AssignmentCourse ac2 = new AssignmentCourse(a2, c1);
+            AssignmentCourse ac3 = new AssignmentCourse(a3, c1);
+            AssignmentCourse ac4 = new AssignmentCourse(a4, c1);
+            AssignmentCourse ac5 = new AssignmentCourse(a5, c2);
+            AssignmentCourse ac6 = new AssignmentCourse(a6, c2);
+            AssignmentCourse ac7 = new AssignmentCourse(a7, c2);
+            AssignmentCourse ac8 = new AssignmentCourse(a8, c2);
+            AssignmentCourse ac9 = new AssignmentCourse(a9, c3);
+            AssignmentCourse ac10 = new AssignmentCourse(a10, c3);
+            AssignmentCourse ac11 = new AssignmentCourse(a11, c3);
+            AssignmentCourse ac12 = new AssignmentCourse(a12, c4);           
+            AssignmentCourse ac13 = new AssignmentCourse(a13, c4);
+            AssignmentCourse ac14 = new AssignmentCourse(a14, c4);
+            AssignmentCourse ac15 = new AssignmentCourse(a15, c4);
 
-            AssignmentsPerCourse apc1 = new AssignmentsPerCourse(ap1, c1);
-            AssignmentsPerCourse apc2 = new AssignmentsPerCourse(ap1, c2);
-            AssignmentsPerCourse apc3 = new AssignmentsPerCourse(ap1, c3);
-            AssignmentsPerCourse apc4 = new AssignmentsPerCourse(ap1, c4);
+            AssignmentCourse apc1 = new AssignmentCourse(ap1, c1);
+            AssignmentCourse apc2 = new AssignmentCourse(ap1, c2);
+            AssignmentCourse apc3 = new AssignmentCourse(ap1, c3);
+            AssignmentCourse apc4 = new AssignmentCourse(ap1, c4);
 
-            AssignmentsPerCourse apc5 = new AssignmentsPerCourse(ap2, c3);
-            AssignmentsPerCourse apc6 = new AssignmentsPerCourse(ap2, c4);
+            AssignmentCourse apc5 = new AssignmentCourse(ap2, c3);
+            AssignmentCourse apc6 = new AssignmentCourse(ap2, c4);
 
 
             CourseAssignments.Add(ac1);

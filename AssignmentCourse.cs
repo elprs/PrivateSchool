@@ -8,12 +8,16 @@ namespace PrivateSchool
 {/// <summary>
 /// One course to many assignments
 /// </summary>
-    class AssignmentsPerCourse
+    class AssignmentCourse
     {
         public Course course;
         public Assignment assignment;
 
-        public AssignmentsPerCourse(Assignment assignment, Course course)
+        public AssignmentCourse()
+        {
+
+        }
+        public AssignmentCourse(Assignment assignment, Course course)
         {
             this.assignment = assignment;
             this.course = course;

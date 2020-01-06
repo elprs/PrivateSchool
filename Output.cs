@@ -10,7 +10,7 @@ namespace PrivateSchool
 {
     static class Output
     {
-        
+
         static Output() { }
 
         //Printing Domain's information
@@ -184,7 +184,7 @@ namespace PrivateSchool
 
         }
 
-        //Printing helper-classes' information
+        //Printing addredated-classes' information
         public static void PrintStudentsPerCourse(Course course)
         {
             Console.WriteLine();
@@ -631,6 +631,33 @@ namespace PrivateSchool
 
 
         }
+        public static void FindStudentsWhoNeedToSubmit()
+        {
+            int userWeekOfYear = GetWeekOfYearFromUserDate();
+            Database db = new Database();
+            Console.WriteLine("The students who need to submit an assignment the week of the given date are:");
+            foreach (StudentCourse sc in db.StudentCourses)
+            {
+                foreach (AssignmentCourse ac in db.CourseAssignments)
+                {
+                    MakeStudentSubmissionList(sc, ac, userWeekOfYear);
+                }
+            }
+        }
+        public static void MakeStudentSubmissionList(StudentCourse sc, AssignmentCourse ac, int userWeekOfYear)
+        {
+            if (sc.course == ac.course)
+            {
+                if (WeekOfYear(ac.assignment.SubDateTime) == userWeekOfYear)//Dates converted to week 
+                {
+                    Console.Write(sc.student.FirstName);
+                    Console.WriteLine(" " + sc.student.LastName);
+                }
+            }
+        }
+
+
+
         //Return methods
         public static List<Course> CoursesPerStudent(Student student)
         {
@@ -654,8 +681,7 @@ namespace PrivateSchool
             }
 
             return assignmentsPerStudent;
-        } 
-
+        }
         public static int NumberOfCoursesPerStudent(Student student)
         {
             int count = 0;
@@ -680,36 +706,35 @@ namespace PrivateSchool
                 dateTime = dateTime.AddDays(3);
             }
             // Return the week of our adjusted day
-            weekNum =  CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(dateTime, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+            weekNum = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(dateTime, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
             return weekNum;
         }
-        public static List<int> SubmissionWeeks(List<DateTime> SubDates)
+        public static int GetWeekOfYearFromUserDate()
         {
-            List<int> submissionWeeks = new List<int>();
-
-            foreach (DateTime submissionDate in SubDates)
+            bool isInputValid;
+            int weekOfYear = 0;
+            do
             {
-                submissionWeeks.Add(WeekOfYear(submissionDate));
-            }
-            return submissionWeeks;
-        }
-        public static bool CompareSubDatesWithUserDate(List<int> SubmissionWeeks, int weekOfYear)
-        {
-            bool isInSubWeek = false;
-            foreach (int item in SubmissionWeeks)
-            {
-                if (item == weekOfYear)
+                try
                 {
-                    isInSubWeek = true;
+                    Console.WriteLine("Insert a date in the following format:");
+                    Console.WriteLine("Day/Month/Year e.g. 01/02/2020");
+                    Console.WriteLine("TIP: The SubDates of the DataBase is between 01/02/2020 and 06/06/2020");
+                    DateTime userDate = Convert.ToDateTime(Console.ReadLine());
+                    weekOfYear = WeekOfYear(userDate);
+                    isInputValid = true;
                 }
-                else
+                catch (Exception)
                 {
-                    isInSubWeek = false;
-                }
-            }
-            return isInSubWeek;
-        }
-
+                    Console.WriteLine("Your input was invalid, consult the following example.");
+                    Console.WriteLine();
+                    isInputValid = false;
+                } 
+            } while (isInputValid == false);
+          
+            return weekOfYear;
+        } 
+       
         //shows the menu to the user and gets his corresponding selection
         public static int PrintMenuGetUserSelection()
         {
@@ -732,7 +757,8 @@ namespace PrivateSchool
             Console.WriteLine();
             Console.WriteLine("Press 11 to output the assignments per student");
             Console.WriteLine("Press 12 to output the students with more courses");
-            Console.WriteLine("Press 13 exit");
+            Console.WriteLine("Press 13 to output the students who need to submit close to a date");
+            Console.WriteLine("Press 14 exit");
             Console.WriteLine();
             Console.WriteLine("According to what you want to proceed with,\nplease press a number followed by the enter key");
 
@@ -757,7 +783,7 @@ namespace PrivateSchool
 
                 case 3:
                     break;
-                   
+
                 case 4:
                     PrintStudents(db.Students);
                     ProceedWithSelection(PrintMenuGetUserSelection());
@@ -771,27 +797,30 @@ namespace PrivateSchool
                     ProceedWithSelection(PrintMenuGetUserSelection());
                     break;
                 case 7:
-                    PrintCourses(db.Courses);ProceedWithSelection(PrintMenuGetUserSelection());
+                    PrintCourses(db.Courses); ProceedWithSelection(PrintMenuGetUserSelection());
                     break;
                 case 8:
-                    for (int i = 0; i < db.Courses.Count; i++){PrintStudentsPerCourse(db.Courses[i]);}
+                    for (int i = 0; i < db.Courses.Count; i++) { PrintStudentsPerCourse(db.Courses[i]); }
                     ProceedWithSelection(PrintMenuGetUserSelection());
                     break;
                 case 9:
-                    for (int i = 0; i < db.Courses.Count; i++){PrintTrainersPerCourse(db.Courses[i]);}
+                    for (int i = 0; i < db.Courses.Count; i++) { PrintTrainersPerCourse(db.Courses[i]); }
                     ProceedWithSelection(PrintMenuGetUserSelection());
                     break;
                 case 10:
-                    for (int i = 0; i < db.Courses.Count; i++){PrintAssignmentsPerCourse(db.Courses[i]);}
+                    for (int i = 0; i < db.Courses.Count; i++) { PrintAssignmentsPerCourse(db.Courses[i]); }
                     ProceedWithSelection(PrintMenuGetUserSelection());
                     break;
 
                 case 11:
                     break;
 
-                case 13: 
+                case 13:
+                    FindStudentsWhoNeedToSubmit();
+                    ProceedWithSelection(PrintMenuGetUserSelection());
                     break;
-
+                case 14:
+                    break;
                 default:
                     break;
             }
