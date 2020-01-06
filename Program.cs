@@ -19,6 +19,8 @@ namespace PrivateSchool
 
            
             Input.AddCoursesToDb();
+            Input.AddStudentsToDb();
+
 
             Console.WriteLine("Press any letter key to exit the program.");
             Console.ReadKey();

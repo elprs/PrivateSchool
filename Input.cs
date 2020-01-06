@@ -10,18 +10,7 @@ namespace PrivateSchool
 /// </summary>
     static class Input
     {
-        public static void AddCoursesToDb()
-        {
-            Database db = new Database();
-            db.Courses.AddRange(GetUserCourses());
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Your course(s) are now added to the database.");
-            Console.ForegroundColor = ConsoleColor.White;
-
-        }
-
-        //return methods
-        public static List<Course> GetUserCourses()
+        public static List<Course> GetCoursesFromUser()
         {
             Course course = new Course();
             List<Course> userCourses = new List<Course>();
@@ -50,6 +39,15 @@ namespace PrivateSchool
 
             return userCourses;
         }
+        public static void AddCoursesToDb()
+        {
+            Database db = new Database();
+            db.Courses.AddRange(GetCoursesFromUser());
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Your course(s) are now added to the database.");
+            Console.ForegroundColor = ConsoleColor.White;
+
+        }
         public static bool RepeatAboveProcess()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -68,7 +66,6 @@ namespace PrivateSchool
                 return false;
             }
         }
-        
         public static DateTime RepeatUntilDateIsValid()
         {
             DateTime userDate = new DateTime(2020, 02, 02);
@@ -101,18 +98,80 @@ namespace PrivateSchool
             return userDate;
 
         }
+        /// <summary>
+        /// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// </summary>
+        /// 
 
+        public static List<Student> GetStudentsFromUser()
+        {
+            Student Student = new Student();
+            List<Student> userStudents = new List<Student>();
+
+            bool willRepeat = false;
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Add a Student");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            do
+            {
+                Console.WriteLine("Add a first name"); Student.FirstName = Console.ReadLine();
+                Console.WriteLine("Add a last name"); Student.LastName = Console.ReadLine();
+
+                Console.WriteLine("Add date of birth"); 
+                Student.DateOfBirth = RepeatUntilDateIsValid();
+                Console.WriteLine("Add student's fees"); 
+                Student.TuitionFees = RepeatUntilNumberIsValid();
+
+                userStudents.Add(Student);
+                willRepeat = RepeatAboveProcess();
+
+            } while (willRepeat);
+
+            return userStudents;
+        }
         public static void AddStudentsToDb()
         {
             Database db = new Database();
-            db.Students.AddRange(GetUserStudents());
+            db.Students.AddRange(GetStudentsFromUser());
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Your Student(s) are now added to the database.");
             Console.ForegroundColor = ConsoleColor.White;
 
         }
+        public static int RepeatUntilNumberIsValid()
+        {
+            int userNumber = 0;
+            bool isInputValid;
+            do
+            {
+                try
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Insert an integer number");
+                    Console.WriteLine("e.g. 200");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    userNumber = Convert.ToInt32(Console.ReadLine());
+                    isInputValid = true;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Your input was invalid, consult the following example.");
+                    Console.WriteLine();
+                    isInputValid = false;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Your input was invalid, consult the following example.");
+                    Console.WriteLine();
+                    isInputValid = false;
+                }
+            } while (isInputValid == false);
 
+            return userNumber;
 
+        }
 
     }
 }
