@@ -742,50 +742,7 @@ namespace PrivateSchool
         } 
        
         //shows the menu to the user and gets his corresponding selection
-        public static int PrintMenuGetUserSelection()
-        {
-            int selection = 42;
-
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("     Main menu");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine();
-            Console.WriteLine("Press 0 to insert a course");
-            Console.WriteLine("Press 1 to insert a trainer");
-            Console.WriteLine("Press 2 to insert a student");
-            Console.WriteLine("Press 3 to insert an assignment");
-            Console.WriteLine();
-            Console.WriteLine("Press 4 to output all the students");
-            Console.WriteLine("Press 5 to output all the trainers");
-            Console.WriteLine("Press 6 to output all the assignments");
-            Console.WriteLine("Press 7 to output all the courses");
-            Console.WriteLine();
-            Console.WriteLine("Press 8 to output the students per course");
-            Console.WriteLine("Press 9 to output the trainers per course");
-            Console.WriteLine("Press 10 to output the assignments per course");
-            Console.WriteLine();
-            Console.WriteLine("Press 11 to output the assignments per student");
-            Console.WriteLine("Press 12 to output the students with more courses");
-            Console.WriteLine("Press 13 to output the students who need to submit close to a date");
-            Console.WriteLine("Press 14 exit");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("According to what you want to proceed with,\nplease press a number followed by the enter key");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine();
-
-            try
-            {
-                selection = Convert.ToInt32(Console.ReadLine());
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Invalid Input. Please insert a number from the menu");
-            }
-
-            return selection;
-        }
+        
         public static void ProceedWithMenuSelection(int selection)
         {
             Database db = new Database();
@@ -793,55 +750,59 @@ namespace PrivateSchool
             switch (selection)
             {
                 case 0:
+                    Input.AddCoursesToDb();
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
                     break;
                 case 1:
                     break;
 
                 case 2:
+                    Input.AddStudentsToDb();
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
                     break;
-
                 case 3:
+                    Input.AddAssignmentsToDb();
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
                     break;
-
                 case 4:
                     PrintStudents(db.Students);
-                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
                     break;
                 case 5:
                     PrintTrainers(db.Trainers);
-                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
                     break;
                 case 6:
                     PrintAssignments(db.Assignments);
-                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
                     break;
                 case 7:
-                    PrintCourses(db.Courses); ProceedWithMenuSelection(PrintMenuGetUserSelection());
+                    PrintCourses(db.Courses); ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
                     break;
                 case 8:
                     for (int i = 0; i < db.Courses.Count; i++) { PrintStudentsPerCourse(db.Courses[i]); }
-                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
                     break;
                 case 9:
                     for (int i = 0; i < db.Courses.Count; i++) { PrintTrainersPerCourse(db.Courses[i]); }
-                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
                     break;
                 case 10:
                     for (int i = 0; i < db.Courses.Count; i++) { PrintAssignmentsPerCourse(db.Courses[i]); }
-                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
                     break;
                 case 11:
                     for (int i = 0; i < db.Students.Count; i++){PrintAssignmentsPerStudent(db.Students[i]);}
-                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
                     break;
                 case 13:
                     FindStudentsWhoNeedToSubmit();
-                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
                     break;
                 case 14:
                     break;
                 default:
-                    ProceedWithMenuSelection(PrintMenuGetUserSelection());
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection());
                     break;
             }
         }

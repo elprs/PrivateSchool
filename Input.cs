@@ -51,8 +51,10 @@ namespace PrivateSchool
         public static bool RepeatAboveProcess()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine();
             Console.WriteLine("Would you like to insert more?");
-            Console.WriteLine("Please type yes or if no type any key.");
+            Console.WriteLine("Please type 'yes' followed by enter ");
+            Console.WriteLine("or type any key.");
             Console.ForegroundColor = ConsoleColor.White;
 
             string answer = Console.ReadLine();
@@ -98,9 +100,7 @@ namespace PrivateSchool
             return userDate;
 
         }
-        /// <summary>
-        /// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// </summary>
+        ///////////////////////////////////////////////////////////////////////////////
         /// 
 
         public static List<Student> GetStudentsFromUser()
@@ -173,5 +173,200 @@ namespace PrivateSchool
 
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///
+        public static List<Assignment> GetAssignmentsFromUser()
+        {
+            Assignment assignment = new Assignment();
+            List<Assignment> userAssignments = new List<Assignment>();
+
+            bool willRepeat = false;
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Add an Assignment");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            do
+            {
+                Console.WriteLine("Add a title"); assignment.Title = Console.ReadLine();
+                Console.WriteLine("Add a description"); assignment.Description = Console.ReadLine();
+
+                Console.WriteLine("Add a submission date");
+                assignment.SubDateTime = RepeatUntilDateIsValid();
+                Console.WriteLine("Add Assignment's oral mark");
+                assignment.OralMark = RepeatUntilDoubleNumberIsValid();
+
+                userAssignments.Add(assignment);
+                willRepeat = RepeatAboveProcess();
+
+            } while (willRepeat);
+
+            return userAssignments;
+        }
+        public static void AddAssignmentsToDb()
+        {
+            Database db = new Database();
+            db.Assignments.AddRange(GetAssignmentsFromUser());
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Your assignment(s) are now added to the database.");
+            Console.ForegroundColor = ConsoleColor.White;
+
+        }
+        public static int RepeatUntilDoubleNumberIsValid()
+        {
+            int userNumber = 0;
+            bool isInputValid;
+            do
+            {
+                try
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Insert an decimal number");
+                    Console.WriteLine( "TIP: min oral mark: 0.0"); 
+                    Console.WriteLine( "TIP: max oral mark: 50.0"); 
+                    Console.ForegroundColor = ConsoleColor.White;
+                    userNumber = Convert.ToInt32(Console.ReadLine());
+                    isInputValid = true;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Your input was invalid, consult the following form.");
+                    Console.WriteLine();
+                    isInputValid = false;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Your input was invalid, consult the following form.");
+                    Console.WriteLine();
+                    isInputValid = false;
+                }
+            } while (isInputValid == false);
+
+            return userNumber;
+
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+        ///
+        public static List<Trainer> GetTrainersFromUser()
+        {
+            Trainer Trainer = new Trainer();
+            List<Trainer> userTrainers = new List<Trainer>();
+
+            bool willRepeat = false;
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Add a Trainer");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            do
+            {
+                Console.WriteLine("Add a first name"); Trainer.FirstName = Console.ReadLine();
+                Console.WriteLine("Add a last name"); Trainer.LastName = Console.ReadLine();
+                
+                Console.WriteLine("Add subject by typing it as shown is the following list :");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                //Console.WriteLine("CSharp , Java , HTML_CSS , SQL , JavaScript , "); //Create method to take user input as numbers and return the selection
+                //Console.WriteLine("Bootstrap, AngularJSReact, VersionControlGit, ");
+                //Console.WriteLine("architecture, Apache, xUnit, UnixCommandLine, ");
+                //Console.WriteLine("UiUXDesign, CloudBasedServices");
+                //Console.ForegroundColor = ConsoleColor.White;
+
+                //Trainer.Subject = Convert.
+                
+
+                userTrainers.Add(Trainer);
+                willRepeat = RepeatAboveProcess();
+
+            } while (willRepeat);
+
+            return userTrainers;
+        }
+        public static void AddTrainersToDb()
+        {
+            Database db = new Database();
+            db.Trainers.AddRange(GetTrainersFromUser());
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Your Trainer(s) are now added to the database.");
+            Console.ForegroundColor = ConsoleColor.White;
+
+        }
+        public static int RepeatUntilSelectionIsValid()
+        {
+            int userNumber = 0;
+            bool isInputValid;
+            do
+            {//Check if switch can be used her"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                try
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Insert an integer number");
+                    Console.WriteLine("e.g. 200");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    userNumber = Convert.ToInt32(Console.ReadLine());
+                    isInputValid = true;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Your input was invalid, consult the following example.");
+                    Console.WriteLine();
+                    isInputValid = false;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Your input was invalid, consult the following example.");
+                    Console.WriteLine();
+                    isInputValid = false;
+                }
+            } while (isInputValid == false);
+
+            return userNumber;
+
+        }
+
+        public static int PrintMenuGetUserSelection()
+        {
+            int selection = 42;
+
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("     Main menu");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine();
+            Console.WriteLine("Press 0 to insert a course");
+            Console.WriteLine("Press 1 to insert a trainer");
+            Console.WriteLine("Press 2 to insert a student");
+            Console.WriteLine("Press 3 to insert an assignment");
+            Console.WriteLine();
+            Console.WriteLine("Press 4 to output all the students");
+            Console.WriteLine("Press 5 to output all the trainers");
+            Console.WriteLine("Press 6 to output all the assignments");
+            Console.WriteLine("Press 7 to output all the courses");
+            Console.WriteLine();
+            Console.WriteLine("Press 8 to output the students per course");
+            Console.WriteLine("Press 9 to output the trainers per course");
+            Console.WriteLine("Press 10 to output the assignments per course");
+            Console.WriteLine();
+            Console.WriteLine("Press 11 to output the assignments per student");
+            Console.WriteLine("Press 12 to output the students with more courses");
+            Console.WriteLine("Press 13 to output the students who need to submit close to a date");
+            Console.WriteLine("Press 14 exit");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("According to what you want to proceed with,\nplease press a number followed by the enter key");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine();
+
+            try
+            {
+                selection = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid Input. Please insert a number from the menu");
+            }
+
+            return selection;
+        }
     }
 }
