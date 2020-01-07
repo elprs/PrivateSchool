@@ -277,21 +277,25 @@ namespace PrivateSchool
             List<Assignment> Assignments = AssignmentsPerStudent(CoursesPerStudent(student));
 
             Console.WriteLine();
-            Console.WriteLine("The Assignments of the student are: ");
+            Console.WriteLine("The Assignments of the student: ");
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(" --------------------- ");
             Console.WriteLine("| " + student.FirstName + " " + student.LastName);
             Console.WriteLine(" --------------------- ");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var assignment in Assignments)
-            {
 
-                Console.WriteLine(" --------------- ");
-                Console.WriteLine("| " + assignment.Title);
-                Console.WriteLine(" --------------- ");
+                    foreach (var assignment in Assignments)
+                    {
 
-            }
+                            foreach (var course in assignment.Courses)
+                            {
+                                Console.WriteLine(" -------------------------------------- ");
+                                Console.WriteLine("| " + assignment.Title + " for the course " + course.Title);
+                                Console.WriteLine(" -------------------------------------- "); 
+                            }
+
+                    }
 
         }
         public static void PrintStudentsWithMultipleCourses(List<Student> Students)
@@ -800,15 +804,15 @@ namespace PrivateSchool
                     {PrintAssignmentsPerStudent(db.Students[i]);}
                     ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
+                case 12:
+                    PrintStudentsWithMultipleCourses(db.Students);
+                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
+                    break;
                 case 13:
                     FindStudentsWhoNeedToSubmit();
                     ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 case 14:
-                    break;
-                case 42:
-                    ExpressGratitude();
-                    ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);
                     break;
                 default:
                     ProceedWithMenuSelection(Input.PrintMenuGetUserSelection(), db);

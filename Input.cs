@@ -83,7 +83,14 @@ namespace PrivateSchool
                     Console.WriteLine("Day/Month/Year e.g. 01/02/2020");
                     Console.ForegroundColor = ConsoleColor.White;
                     userDate = Convert.ToDateTime(Console.ReadLine());
-                    isInputValid = true;
+                    if (userDate.Year >= 1940)
+                    {
+                        isInputValid = true;
+                    }
+                    else
+                    {
+                        isInputValid = false;
+                    }
                 }
                 catch (FormatException)
                 {
@@ -116,7 +123,14 @@ namespace PrivateSchool
                     Console.WriteLine("TIP: max oral mark: 50.0");
                     Console.ForegroundColor = ConsoleColor.White;
                     userNumber = Convert.ToInt32(Console.ReadLine());
-                    isInputValid = true;
+                    if (userNumber >= 0)
+                    {
+                        isInputValid = true;
+                    }
+                    else
+                    {
+                        isInputValid = false;
+                    }
                 }
                 catch (FormatException)
                 {
@@ -144,11 +158,18 @@ namespace PrivateSchool
                 try
                 {
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Insert an integer number");
+                    Console.WriteLine("Insert a positive integer number");
                     Console.WriteLine("e.g. 200");
                     Console.ForegroundColor = ConsoleColor.White;
                     userNumber = Convert.ToInt32(Console.ReadLine());
-                    isInputValid = true;
+                    if (userNumber >= 0)
+                    {
+                        isInputValid = true;
+                    }
+                    else
+                    {
+                        isInputValid = false;
+                    }
                 }
                 catch (FormatException)
                 {
@@ -420,7 +441,6 @@ namespace PrivateSchool
             Console.WriteLine("Press 12 to output the students with more courses");
             Console.WriteLine("Press 13 to output the students who need to submit close to a date");
             Console.WriteLine("Press 14 exit");
-            Console.WriteLine("Press 42 for gratitude.");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("According to what you want to proceed with,\nplease press a number followed by the enter key");
