@@ -661,10 +661,7 @@ namespace PrivateSchool
                 }
             }
         }
-        public static void ExpressGratitude()
-        {
-            Console.WriteLine("Thank you, Daskale.");
-        }
+       
 
         //Return methods
         public static List<Course> CoursesPerStudent(Student student)
