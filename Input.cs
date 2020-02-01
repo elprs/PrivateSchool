@@ -283,7 +283,7 @@ namespace PrivateSchool
                 Console.WriteLine("Add a first name"); t1.FirstName = Console.ReadLine();
                 Console.WriteLine("Add a last name"); t1.LastName = Console.ReadLine();
 
-                SelectSubjectForTrainer(t1);
+                //SelectSubjectForTrainer(t1);
 
                 userTrainers.Add(t1);
                 willRepeat = RepeatAboveProcess();
@@ -332,86 +332,86 @@ namespace PrivateSchool
             return userNumber;
 
         }
-        public static int SelectSubjectForTrainer(Trainer trainer)
-        {
-            int selection = 0;
+        //public static int SelectSubjectForTrainer(Trainer trainer)
+        //{
+        //    int selection = 0;
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Add subject by typing its number shown at the following list :");
-            Console.ForegroundColor = ConsoleColor.White;
+        //    Console.ForegroundColor = ConsoleColor.Cyan;
+        //    Console.WriteLine("Add subject by typing its number shown at the following list :");
+        //    Console.ForegroundColor = ConsoleColor.White;
 
-            Console.WriteLine(" 0 CSharp");
-            Console.WriteLine(" 1 Java");
-            Console.WriteLine(" 2 HTML_CSS");
-            Console.WriteLine(" 3 SQL");
-            Console.WriteLine();
-            Console.WriteLine(" 4 JavaScript");
-            Console.WriteLine(" 5 Bootstrap ");
-            Console.WriteLine(" 6 AngularJSReact");
-            Console.WriteLine(" 7 VersionControlGit");
-            Console.WriteLine();
-            Console.WriteLine(" 8 Architecture");
-            Console.WriteLine(" 9 Apache");
-            Console.WriteLine(" 10 xUnit");
-            Console.WriteLine();
-            Console.WriteLine(" 11 UnixCommandLine");
-            Console.WriteLine(" 12 UiUXDesign");
-            Console.WriteLine(" 13 CloudBasedServices");
+        //    Console.WriteLine(" 0 CSharp");
+        //    Console.WriteLine(" 1 Java");
+        //    Console.WriteLine(" 2 HTML_CSS");
+        //    Console.WriteLine(" 3 SQL");
+        //    Console.WriteLine();
+        //    Console.WriteLine(" 4 JavaScript");
+        //    Console.WriteLine(" 5 Bootstrap ");
+        //    Console.WriteLine(" 6 AngularJSReact");
+        //    Console.WriteLine(" 7 VersionControlGit");
+        //    Console.WriteLine();
+        //    Console.WriteLine(" 8 Architecture");
+        //    Console.WriteLine(" 9 Apache");
+        //    Console.WriteLine(" 10 xUnit");
+        //    Console.WriteLine();
+        //    Console.WriteLine(" 11 UnixCommandLine");
+        //    Console.WriteLine(" 12 UiUXDesign");
+        //    Console.WriteLine(" 13 CloudBasedServices");
 
-            selection = RepeatUntilIntegerIsValid();
+        //    selection = RepeatUntilIntegerIsValid();
 
-            switch (selection)
-            {
-                case 0:
-                    trainer.SchoolSubject = Subject.CSharp;
-                    break;
-                case 1:
-                    trainer.SchoolSubject = Subject.Java;
-                    break;
-                case 2:
-                    trainer.SchoolSubject = Subject.HTML_CSS;
-                    break;
-                case 3:
-                    trainer.SchoolSubject = Subject.SQL;
-                    break;
-                case 4:
-                    trainer.SchoolSubject = Subject.JavaScript;
-                    break;
-                case 5:
-                    trainer.SchoolSubject = Subject.Bootstrap;
-                    break;
-                case 6:
-                    trainer.SchoolSubject = Subject.AngularJSReact;
-                    break;
-                case 8:
-                    trainer.SchoolSubject = Subject.VersionControlGit;
-                    break;
-                case 9:
-                    trainer.SchoolSubject = Subject.architecture;
-                    break;
-                case 10:
-                    trainer.SchoolSubject = Subject.Apache;
-                    break;
-                case 11:
-                    trainer.SchoolSubject = Subject.xUnit;
-                    break;
-                case 13:
-                    trainer.SchoolSubject = Subject.UnixCommandLine;
-                    break;
-                case 14:
-                    trainer.SchoolSubject = Subject.UiUXDesign;
-                    break;
-                case 15:
-                    trainer.SchoolSubject = Subject.CloudBasedServices;
-                    break;
-                default:
-                    trainer.SchoolSubject = Subject.CSharp;
-                    break;
-            }
+        //    switch (selection)
+        //    {
+        //        case 0:
+        //            trainer.SchoolSubject = "CSharp";
+        //            break;
+        //        case 1:
+        //            trainer.SchoolSubject = Subject.Java;
+        //            break;
+        //        case 2:
+        //            trainer.SchoolSubject = Subject.HTML_CSS;
+        //            break;
+        //        case 3:
+        //            trainer.SchoolSubject = Subject.SQL;
+        //            break;
+        //        case 4:
+        //            trainer.SchoolSubject = Subject.JavaScript;
+        //            break;
+        //        case 5:
+        //            trainer.SchoolSubject = Subject.Bootstrap;
+        //            break;
+        //        case 6:
+        //            trainer.SchoolSubject = Subject.AngularJSReact;
+        //            break;
+        //        case 8:
+        //            trainer.SchoolSubject = Subject.VersionControlGit;
+        //            break;
+        //        case 9:
+        //            trainer.SchoolSubject = Subject.architecture;
+        //            break;
+        //        case 10:
+        //            trainer.SchoolSubject = Subject.Apache;
+        //            break;
+        //        case 11:
+        //            trainer.SchoolSubject = Subject.xUnit;
+        //            break;
+        //        case 13:
+        //            trainer.SchoolSubject = Subject.UnixCommandLine;
+        //            break;
+        //        case 14:
+        //            trainer.SchoolSubject = Subject.UiUXDesign;
+        //            break;
+        //        case 15:
+        //            trainer.SchoolSubject = Subject.CloudBasedServices;
+        //            break;
+        //        default:
+        //            trainer.SchoolSubject = Subject.CSharp;
+        //            break;
+        //    }
 
-            return selection;
+        //    return selection;
 
-        }
+        //}
 
         // Menu method
         public static int PrintMenuGetUserSelection()
