@@ -16,6 +16,7 @@ namespace PrivateSchool
         public int TuitionFees { get; set; }
         public List<Course> Courses { get; set; } = new List<Course>();
         public List<Assignment> Assignments { get; set; } = new List<Assignment>();
+       
 
 
         public Student() { }

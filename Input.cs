@@ -363,49 +363,49 @@ namespace PrivateSchool
             switch (selection)
             {
                 case 0:
-                    trainer.Subject = Subject.CSharp;
+                    trainer.SchoolSubject = Subject.CSharp;
                     break;
                 case 1:
-                    trainer.Subject = Subject.Java;
+                    trainer.SchoolSubject = Subject.Java;
                     break;
                 case 2:
-                    trainer.Subject = Subject.HTML_CSS;
+                    trainer.SchoolSubject = Subject.HTML_CSS;
                     break;
                 case 3:
-                    trainer.Subject = Subject.SQL;
+                    trainer.SchoolSubject = Subject.SQL;
                     break;
                 case 4:
-                    trainer.Subject = Subject.JavaScript;
+                    trainer.SchoolSubject = Subject.JavaScript;
                     break;
                 case 5:
-                    trainer.Subject = Subject.Bootstrap;
+                    trainer.SchoolSubject = Subject.Bootstrap;
                     break;
                 case 6:
-                    trainer.Subject = Subject.AngularJSReact;
+                    trainer.SchoolSubject = Subject.AngularJSReact;
                     break;
                 case 8:
-                    trainer.Subject = Subject.VersionControlGit;
+                    trainer.SchoolSubject = Subject.VersionControlGit;
                     break;
                 case 9:
-                    trainer.Subject = Subject.architecture;
+                    trainer.SchoolSubject = Subject.architecture;
                     break;
                 case 10:
-                    trainer.Subject = Subject.Apache;
+                    trainer.SchoolSubject = Subject.Apache;
                     break;
                 case 11:
-                    trainer.Subject = Subject.xUnit;
+                    trainer.SchoolSubject = Subject.xUnit;
                     break;
                 case 13:
-                    trainer.Subject = Subject.UnixCommandLine;
+                    trainer.SchoolSubject = Subject.UnixCommandLine;
                     break;
                 case 14:
-                    trainer.Subject = Subject.UiUXDesign;
+                    trainer.SchoolSubject = Subject.UiUXDesign;
                     break;
                 case 15:
-                    trainer.Subject = Subject.CloudBasedServices;
+                    trainer.SchoolSubject = Subject.CloudBasedServices;
                     break;
                 default:
-                    trainer.Subject = Subject.CSharp;
+                    trainer.SchoolSubject = Subject.CSharp;
                     break;
             }
 

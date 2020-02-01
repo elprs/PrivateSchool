@@ -9,19 +9,19 @@ namespace PrivateSchool
  /// Contains the fields, properties, the constructors and the methods of the child class Trainer
  /// </summary>
  /// 
-    public enum Subject{ CSharp, Java, HTML_CSS, SQL, JavaScript, Bootstrap, AngularJSReact, VersionControlGit, architecture, Apache, xUnit, UnixCommandLine, UiUXDesign, CloudBasedServices}
+
 
     class Trainer : Person
     { 
         public List<Course> Courses { get; set; } = new List<Course>();
-        public Subject Subject;
+        public string SchoolSubject;
 
         public Trainer(){}
-        public Trainer(string firstName, string lastName, Subject subject) 
+        public Trainer(string firstName, string lastName, string subject) 
         { 
             FirstName = firstName;
             LastName = lastName;
-            Subject = subject;
+            SchoolSubject = subject;
         }
     }
 }

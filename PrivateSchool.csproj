@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Assignment.cs" />
     <Compile Include="AssignmentCourse.cs" />
+    <Compile Include="AssignmentStudent.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Output.cs" />

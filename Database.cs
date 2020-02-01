@@ -12,7 +12,7 @@ namespace PrivateSchool
         /// Reads data, creates synthetic data and saves them in corresponding lists
         /// </summary>
 
-       
+
         public List<Course> Courses { get; set; } = new List<Course>();
         public List<Student> Students { get; set; } = new List<Student>();
         public List<Trainer> Trainers { get; set; } = new List<Trainer>();
@@ -20,6 +20,7 @@ namespace PrivateSchool
         public List<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
         public List<TrainerCourse> TrainerCourses { get; set; } = new List<TrainerCourse>();
         public List<AssignmentCourse> CourseAssignments { get; set; } = new List<AssignmentCourse>();
+        public List<AssignmentStudent> AssignmentStudent { get; set; } = new List<AssignmentStudent>();
         public List<DateTime> SubmissionDates { get; set; } = new List<DateTime>();
 
         public Database()
@@ -33,7 +34,6 @@ namespace PrivateSchool
             Courses.Add(c2);
             Courses.Add(c3);
             Courses.Add(c4);
-
 
 
             Student s1 = new Student("Eleni", "Vasiliou", new DateTime(1992, 12, 13), 2000);
@@ -67,17 +67,19 @@ namespace PrivateSchool
             Students.Add(s13);
             Students.Add(s14);
             Students.Add(s15);
+                                                                              
 
 
 
-            Trainer t1 = new Trainer("Eleni", "Papapetrou", Subject.AngularJSReact);
-            Trainer t2 = new Trainer("Nikos", "Zinonos", Subject.HTML_CSS);
-            Trainer t3 = new Trainer("Hektor", "Papadopoulou", Subject.SQL);
-            Trainer t4 = new Trainer("Panos", "Petrakis", Subject.JavaScript);
-            Trainer t5 = new Trainer("Kostas", "Konstantinou", Subject.CSharp);
-            Trainer t6 = new Trainer("Manos", "Axileou", Subject.Java);
-            Trainer t7 = new Trainer("Katia", "Nikouli", Subject.Apache);
-            Trainer t8 = new Trainer("Fillip", "Theoxarous", Subject.Bootstrap);
+
+            Trainer t1 = new Trainer("Eleni", "Papapetrou", "          AngularJSReact");
+            Trainer t2 = new Trainer("Nikos", "Zinonos", "          HTML_CSS");
+            Trainer t3 = new Trainer("Hektor", "Papadopoulou", "           SQL");
+            Trainer t4 = new Trainer("Panos", "Petrakis", "              JavaScript");
+            Trainer t5 = new Trainer("Kostas", "Konstantinou", "          CSharp");
+            Trainer t6 = new Trainer("Manos", "Axileou", "                Java");
+            Trainer t7 = new Trainer("Katia", "Nikouli", "               Apache");
+            Trainer t8 = new Trainer("Fillip", "Theoxarous", "           Bootstrap");
 
             Trainers.Add(t1);
             Trainers.Add(t2);
@@ -88,7 +90,7 @@ namespace PrivateSchool
             Trainers.Add(t7);
             Trainers.Add(t8);
 
-      
+
 
             //Παραδοχη: καθε assignment anikei se 1 mathiti, alla ta 2 projects (ap1, ap2) anikoun kai se perissoterous
             Assignment a1 = new Assignment("Assignment 1", " Individual", new DateTime(2020, 02, 1), 32.2, 62.4);
@@ -109,14 +111,14 @@ namespace PrivateSchool
 
             Assignment ap1 = new Assignment("Project 1    ", "Team proj.", new DateTime(2020, 02, 29), 12.2, 98.2);
             Assignment ap2 = new Assignment("Project 1    ", "Individual.", new DateTime(2020, 06, 06), 12.2, 89.2);
-            
+
             Assignments.Add(a1);
             Assignments.Add(a2);
             Assignments.Add(a3);
             Assignments.Add(a4);
             Assignments.Add(a5);
             Assignments.Add(a6);
-            Assignments.Add(a7); 
+            Assignments.Add(a7);
             Assignments.Add(a8);
             Assignments.Add(a9);
             Assignments.Add(a10);
@@ -212,7 +214,7 @@ namespace PrivateSchool
             AssignmentCourse ac9 = new AssignmentCourse(a9, c3);
             AssignmentCourse ac10 = new AssignmentCourse(a10, c3);
             AssignmentCourse ac11 = new AssignmentCourse(a11, c3);
-            AssignmentCourse ac12 = new AssignmentCourse(a12, c4);           
+            AssignmentCourse ac12 = new AssignmentCourse(a12, c4);
             AssignmentCourse ac13 = new AssignmentCourse(a13, c4);
             AssignmentCourse ac14 = new AssignmentCourse(a14, c4);
             AssignmentCourse ac15 = new AssignmentCourse(a15, c4);

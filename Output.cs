@@ -127,7 +127,7 @@ namespace PrivateSchool
                 Console.WriteLine(" ---------------- ");
                 Console.Write("| " + trainer.FirstName + "   ");
                 Console.Write("\t|  " + trainer.LastName);
-                Console.WriteLine("\t  | " + trainer.Subject);
+                Console.WriteLine("\t  | " + trainer.SchoolSubject);
                 Console.Write(" ------------- ");
                 Console.Write(" ---------------- ");
                 Console.WriteLine(" ---------------- ");
