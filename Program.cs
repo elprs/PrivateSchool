@@ -14,16 +14,16 @@ namespace PrivateSchool
 /// </summary>
     class Program
     { // For the correction's facilitation the Menu will appear repeatedly. 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
 
-            //Queries.SelectAllStudents();
+            Service.GetStudents();
             //Queries.SelectAllTrainers();
             //Queries.SelectAllAssignments();
             //Queries.SelectAllCourses();
-            Queries.SelectAllStudentsPerCourse();
+            //List<Student> students = Service.GetAllStudentsPerCourse();
 
 
 

@@ -50,7 +50,7 @@
     <Compile Include="Input.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Output.cs" />
-    <Compile Include="Queries.cs" />
+    <Compile Include="Service.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="StudentCourse.cs" />

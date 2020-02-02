@@ -11,11 +11,12 @@ namespace PrivateSchool
     /// </summary>
     class Course
     {
+        public int id { get; set; }
         public string Title { get; set; }
         public string Stream { get; set; }
         public string Type { get; set; }
-        public DateTime StartDate { get; set; } = new DateTime();
-        public DateTime EndDate { get; set; } = new DateTime();
+        public DateTime? StartDate { get; set; } = new DateTime();
+        public DateTime? EndDate { get; set; } = new DateTime();
 
         public List<Student> Students = new List<Student>();
         public List<Trainer> Trainers = new List<Trainer>();

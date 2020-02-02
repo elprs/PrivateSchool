@@ -1,34 +1,58 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace PrivateSchool
 {
-    public class Queries
+    public class Service
     {
-        public static void SelectAllStudents()
+        public static string ConString = ConfigurationManager.ConnectionStrings["ParisiConn"].ToString();
+        public static List<Student> GetStudents()
         {
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ParisiConn"].ToString());
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from student", conn);
-            SqlDataReader reader = cmd.ExecuteReader();
+            List<Student> students = new List<Student>();
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("********************************************");
-            Console.WriteLine("                  STUDENTS        ");
-            Console.WriteLine($"|Id |Name Surname| Date&Time Of Birth| Fees");
-            Console.ForegroundColor = ConsoleColor.White;
-            while (reader.Read())
+            using (SqlConnection conn = new SqlConnection(ConString))
             {
-                Console.WriteLine(" " + reader[0].ToString() + "  " + reader[1].ToString() + " " + reader[2].ToString() + " " + reader[3].ToString() +" " + "€ " + reader[4].ToString());
-                Console.WriteLine();
-          
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("select * from student", conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    int id = Convert.ToInt32(reader[0]);
+                    string firstName = string.IsNullOrWhiteSpace(reader[1].ToString()) ? null : reader[1].ToString();
+                    string lastName = reader[2].ToString();
+                    DateTime? dateOfBirth = (string.IsNullOrWhiteSpace(reader[3].ToString()) ? (DateTime?)null : Convert.ToDateTime(reader[3].ToString()));
+                    int? tuitionFees = string.IsNullOrWhiteSpace(reader[4].ToString()) ? (int?)null : Convert.ToInt32(reader[4].ToString());
+
+                    Student s = new Student(id, firstName, lastName, dateOfBirth, tuitionFees);
+                    students.Add(s);
+                }
+                
             }
-            reader.Close();
-            conn.Close();
+
+            return students;
+
         }
-        public static void SelectAllTrainers()
+        
+
+        //    Console.ForegroundColor = ConsoleColor.Cyan;
+        //    Console.WriteLine("********************************************");
+        //    Console.WriteLine("                  STUDENTS        ");
+        //    Console.WriteLine($"|Id |Name Surname| Date&Time Of Birth| Fees");
+        //    Console.ForegroundColor = ConsoleColor.White;
+        //    while (reader.Read())
+        //    {
+        //        Console.WriteLine(" " + reader[0].ToString() + "  " + reader[1].ToString() + " " + reader[2].ToString() + " " + reader[3].ToString() +" " + "€ " + reader[4].ToString());
+        //        Console.WriteLine();
+          
+        //    }
+        //    reader.Close();
+        //    conn.Close();
+        //}
+        public static void GetAllTrainers()
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ParisiConn"].ToString());
             conn.Open();
@@ -49,7 +73,7 @@ namespace PrivateSchool
             reader.Close();
             conn.Close();
         }
-        public static void SelectAllAssignments()
+        public static void GetAllAssignments()
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ParisiConn"].ToString());
             conn.Open();
@@ -71,7 +95,7 @@ namespace PrivateSchool
             reader.Close();
             conn.Close();
         }
-        public static void SelectAllCourses()
+        public static void GetAllCourses()
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ParisiConn"].ToString());
             conn.Open();
@@ -96,8 +120,8 @@ namespace PrivateSchool
 
 
 
-        //public static void SelectAllStudentsPerCourse()
-        //{
+        //public static void GetAllStudentsPerCourse()
+        //{ }
 
         //    DataSet ds = null; 
         //    SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ParisiConn"].ToString());
